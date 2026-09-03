@@ -3769,8 +3769,6 @@ details-disclosure > details {
 
   .featured-collection .product-grid,
   .featured-collection .grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
     gap: 22px !important;
     justify-content: center !important;
   }
@@ -3836,18 +3834,10 @@ details-disclosure > details {
 /* 4 productos: más boutique, menos catálogo */
 @media screen and (min-width: 990px) {
   .ultramaison-featured .product-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-
     gap: 48px 30px !important;
-
     overflow: visible !important;
   }
 
-  .ultramaison-featured .grid__item {
-    width: 100% !important;
-    max-width: none !important;
-  }
 }
 
 /* Card completamente limpia */
