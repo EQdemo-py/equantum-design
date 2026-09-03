@@ -78,6 +78,7 @@
         "text_dMWkTi",
         "button_ggCkMT"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/WhatsApp_Image_2026-09-01_at_16.43.49.jpg",
