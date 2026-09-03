@@ -4322,3 +4322,132 @@ details-disclosure > details {
 
 /* FIN ULTRAMAISON MOBILE BANNER ADAPTATIVO */
 
+
+/* =========================================================
+   ULTRAMAISON — NEWSLETTER + FOOTER PREMIUM
+   ========================================================= */
+
+/* Newsletter */
+.footer {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+.footer .footer-block--newsletter {
+  background: #050505 !important;
+}
+
+.footer .footer-block--newsletter h2,
+.footer .footer-block__heading,
+.footer .newsletter__subheading,
+.footer .newsletter__subheading p {
+  color: #ffffff !important;
+}
+
+.footer .newsletter__subheading {
+  opacity: 0.65;
+}
+
+/* Campo email */
+.footer .newsletter-form__field-wrapper .field {
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 50px !important;
+  overflow: hidden;
+}
+
+.footer .newsletter-form__field-wrapper .field::before,
+.footer .newsletter-form__field-wrapper .field::after {
+  display: none !important;
+}
+
+.footer .newsletter-form__field-wrapper .field__input {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 0 !important;
+}
+
+.footer .newsletter-form__field-wrapper .field__label {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Flecha */
+.footer .newsletter-form__button {
+  color: #0277ff !important;
+}
+
+.footer .newsletter-form__button svg {
+  color: #0277ff !important;
+}
+
+/* Parte inferior */
+.footer__content-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.footer__copyright,
+.footer__copyright a,
+.footer__copyright .copyright__content,
+.footer__content-bottom a {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* MOBILE */
+@media screen and (max-width: 749px) {
+
+  .footer {
+    margin-top: 0 !important;
+  }
+
+  .footer__content-top {
+    padding: 48px 24px 38px !important;
+  }
+
+  .footer .footer-block--newsletter {
+    margin: 0 !important;
+  }
+
+  .footer .footer-block__newsletter {
+    text-align: center !important;
+  }
+
+  .footer .footer-block__heading {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .footer .newsletter__subheading {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    max-width: 310px;
+    margin: 0 auto 24px !important;
+  }
+
+  .footer .newsletter-form {
+    margin: 0 auto !important;
+    max-width: 360px !important;
+  }
+
+  .footer .newsletter-form__field-wrapper {
+    max-width: 100% !important;
+  }
+
+  .footer .newsletter-form__field-wrapper .field {
+    min-height: 54px !important;
+  }
+
+  .footer .newsletter-form__field-wrapper .field__input {
+    height: 54px !important;
+  }
+
+  .footer__content-bottom {
+    padding: 26px 20px !important;
+  }
+
+  .footer__copyright {
+    text-align: center !important;
+    font-size: 11px !important;
+  }
+}
+
+/* FIN ULTRAMAISON NEWSLETTER + FOOTER PREMIUM */
