@@ -4063,3 +4063,356 @@ details-disclosure > details {
    FIN ULTRAMAISON HEADER PREMIUM V2
    ========================================================= */
 
+
+/* ULTRAMAISON — HEADER LUXURY V3 */
+
+/* =========================================================
+   DESKTOP — arquitectura de boutique
+   ========================================================= */
+
+@media screen and (min-width: 990px) {
+
+  .header {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 1600px !important;
+
+    min-height: 126px !important;
+
+    margin: 0 auto !important;
+    padding: 0 56px !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr auto 1fr !important;
+    grid-template-rows: 78px 48px !important;
+
+    grid-template-areas:
+      "left logo icons"
+      "menu menu menu" !important;
+
+    align-items: center !important;
+    column-gap: 24px !important;
+  }
+
+  /* LOGO — centrado como boutique de lujo */
+
+  .header__heading {
+    grid-area: logo !important;
+
+    justify-self: center !important;
+    align-self: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__heading-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__heading-logo-wrapper {
+    width: auto !important;
+    max-width: none !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .header__heading-logo {
+    width: 162px !important;
+    max-width: 162px !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+
+    transition:
+      transform .35s ease,
+      opacity .35s ease !important;
+  }
+
+  .header__heading-link:hover .header__heading-logo {
+    transform: scale(1.015);
+    opacity: .94;
+  }
+
+
+  /* NAVEGACIÓN — segunda fila */
+
+  .header__inline-menu {
+    grid-area: menu !important;
+
+    width: 100% !important;
+
+    justify-self: stretch !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-top: 1px solid rgba(17, 24, 39, .065);
+  }
+
+  .header__inline-menu .list-menu--inline {
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 46px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__menu-item {
+    position: relative !important;
+
+    min-height: 47px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 0 !important;
+
+    color: #171717 !important;
+
+    font-size: 11px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: .18em !important;
+    line-height: 1 !important;
+
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+
+    white-space: nowrap !important;
+
+    transition:
+      color .25s ease,
+      opacity .25s ease !important;
+  }
+
+  .header__menu-item span {
+    text-decoration: none !important;
+  }
+
+  .header__menu-item::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 7px !important;
+
+    width: 0 !important;
+    height: 1px !important;
+
+    background: #0277FF !important;
+
+    transform: translateX(-50%) !important;
+
+    transition: width .3s ease !important;
+  }
+
+  .header__menu-item:hover {
+    color: #0277FF !important;
+  }
+
+  .header__menu-item:hover::after {
+    width: 100% !important;
+  }
+
+
+  /* ICONOS — esquina derecha superior */
+
+  .header__icons {
+    grid-area: icons !important;
+
+    justify-self: end !important;
+    align-self: center !important;
+
+    width: auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__icon,
+  shopify-account.header__icon {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    color: #0b1220 !important;
+
+    transition:
+      color .25s ease,
+      background .25s ease,
+      transform .25s ease !important;
+  }
+
+  .header__icon:hover,
+  shopify-account.header__icon:hover {
+    color: #0277FF !important;
+    background: rgba(2,119,255,.065) !important;
+
+    transform: translateY(-1px);
+  }
+
+  .header__icon .svg-wrapper,
+  shopify-account.header__icon .svg-wrapper {
+    width: 21px !important;
+    height: 21px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header__icon svg,
+  shopify-account.header__icon svg {
+    width: 21px !important;
+    height: 21px !important;
+
+    max-width: 21px !important;
+    max-height: 21px !important;
+  }
+
+
+  /* CARRITO — igual peso visual */
+
+  .header__icon--cart {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+  }
+
+  .header__icon--cart .svg-wrapper,
+  .header__icon--cart svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+
+  /* STICKY */
+
+  .scrolled-past-header .header {
+    min-height: 106px !important;
+
+    grid-template-rows: 64px 42px !important;
+  }
+
+  .scrolled-past-header .header__heading-logo {
+    width: 145px !important;
+    max-width: 145px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SUPERFICIE
+   ========================================================= */
+
+.header-wrapper {
+  background: rgba(255,255,255,.97) !important;
+
+  border-bottom: 1px solid rgba(17,24,39,.08) !important;
+
+  box-shadow: none !important;
+
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.shopify-section-header-sticky .header-wrapper,
+.scrolled-past-header .header-wrapper {
+  background: rgba(255,255,255,.94) !important;
+
+  box-shadow:
+    0 12px 32px rgba(15,23,42,.055) !important;
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT
+   ========================================================= */
+
+.utility-bar,
+.announcement-bar {
+  min-height: 32px !important;
+
+  background: #000000 !important;
+}
+
+.announcement-bar__message {
+  padding: 7px 16px !important;
+
+  color: #ffffff !important;
+
+  font-size: 10px !important;
+  font-weight: 500 !important;
+
+  letter-spacing: .18em !important;
+
+  text-transform: uppercase !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 989px) {
+
+  .header {
+    min-height: 70px !important;
+
+    padding: 0 16px !important;
+  }
+
+  .header__heading-logo {
+    width: 132px !important;
+    max-width: 132px !important;
+  }
+
+  .header__icon,
+  shopify-account.header__icon {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .header__icon svg,
+  .header__icon .svg-wrapper,
+  shopify-account.header__icon svg,
+  shopify-account.header__icon .svg-wrapper {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+}
+
+/* FIN ULTRAMAISON — HEADER LUXURY V3 */
+
