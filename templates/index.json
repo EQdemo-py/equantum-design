@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/banner_UM_1.png",
-            "mobile_image": "shopify://shop_images/banner_UM_1_8857c40e-edf2-4537-8fc1-558e3be8afe0.png",
+            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_22.png",
             "image_overlay_opacity": 10,
             "heading": "",
             "heading_size": "h1",
@@ -130,8 +130,8 @@
         "slide_dDzdHx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner_UM_1.png",
-            "mobile_image": "shopify://shop_images/banner_UM_1_8857c40e-edf2-4537-8fc1-558e3be8afe0.png",
+            "image": "shopify://shop_images/banner_UM_2.png",
+            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_21.png",
             "image_overlay_opacity": 10,
             "heading": "",
             "heading_size": "h1",
