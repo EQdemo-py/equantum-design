@@ -3978,3 +3978,11 @@ details-disclosure > details {
 
 /* FIN ULTRAMAISON FEATURED COLLECTION */
 
+
+/* ULTRAMAISON — ocultar controles del slider en desktop */
+@media screen and (min-width: 990px) {
+  .ultramaison-featured .slider-buttons {
+    display: none !important;
+  }
+}
+
