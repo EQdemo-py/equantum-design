@@ -47,6 +47,54 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "image_with_text_97BDi4": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_kDfBMG": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>EL RITMO DEL LUJO</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_dMWkTi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Están creados para llevar tu estilo a otro nivel, con detalles finos y artesanía excepcional perfecta para cualquiera. </p><p>Los relojes TechnoMarine incluyen modelos clásicos, modernos y casuales con cualidades extraordinarias, son especialmente diseñados para soportar un estilo de vida activo y retador, ya sea dentro o fuera del agua.\"</p>",
+            "text_style": "body"
+          }
+        },
+        "button_ggCkMT": {
+          "type": "button",
+          "settings": {
+            "button_label": "¡Encuentra el tuyo!",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kDfBMG",
+        "text_dMWkTi",
+        "button_ggCkMT"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-01_at_16.43.49.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "bottom",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
     "featured_collection_XF4B43": {
       "type": "featured-collection",
       "name": "ULTRAMAISON",
@@ -72,8 +120,8 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 20,
+        "padding_bottom": 16
       }
     },
     "slideshow_FpdATL": {
@@ -139,13 +187,14 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 20,
+        "padding_bottom": 16
       }
     }
   },
   "order": [
     "slideshow",
+    "image_with_text_97BDi4",
     "featured_collection_XF4B43",
     "slideshow_FpdATL",
     "featured_collection_WmJTTf"
