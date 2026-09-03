@@ -37,6 +37,7 @@
         "paragraph",
         "email-form"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-3",
         "full_width": true,

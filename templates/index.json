@@ -50,7 +50,72 @@
       "type": "featured-collection",
       "settings": {
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 25,
+        "title": "SELECCIÓN ULTRAMAISON",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "slideshow_FpdATL": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_dDzdHx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner_UM_1.png",
+            "mobile_image": "shopify://shop_images/banner_UM_1_8857c40e-edf2-4537-8fc1-558e3be8afe0.png",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dDzdHx"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_collection_DMXJWX": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
         "title": "SELECCIÓN ULTRAMAISON",
         "heading_size": "h2",
         "description": "",
@@ -70,13 +135,15 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 16
+        "padding_top": 20,
+        "padding_bottom": 96
       }
     }
   },
   "order": [
     "slideshow",
-    "featured-collection-0"
+    "featured-collection-0",
+    "slideshow_FpdATL",
+    "featured_collection_DMXJWX"
   ]
 }
