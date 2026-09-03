@@ -3792,8 +3792,6 @@ details-disclosure > details {
 
 .ultramaison-featured {
   background: #ffffff;
-  padding-top: 88px !important;
-  padding-bottom: 100px !important;
 }
 
 /* Encabezado editorial */
@@ -3953,8 +3951,6 @@ details-disclosure > details {
 /* Mobile */
 @media screen and (max-width: 749px) {
   .ultramaison-featured {
-    padding-top: 58px !important;
-    padding-bottom: 64px !important;
   }
 
   .ultramaison-featured .collection__title {
@@ -3992,8 +3988,6 @@ details-disclosure > details {
 @media screen and (max-width: 749px) {
 
   .ultramaison-featured {
-    padding-top: 48px !important;
-    padding-bottom: 56px !important;
   }
 
   .ultramaison-featured .collection__title {
@@ -4133,8 +4127,6 @@ details-disclosure > details {
 @media screen and (max-width: 749px) {
 
   .ultramaison-featured {
-    padding-top: 38px !important;
-    padding-bottom: 42px !important;
   }
 
   .ultramaison-featured .collection__title {
