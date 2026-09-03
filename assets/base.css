@@ -3636,430 +3636,238 @@ details-disclosure > details {
   }
 }
 
-
 /* =========================================================
-   ULTRAMAISON — HEADER PREMIUM V2
+   ULTRAMAISON — PREMIUM HEADER
    ========================================================= */
 
 :root {
-  --ultra-blue: #0277ff;
-  --ultra-blue-light: #058afa;
+  --ultra-blue: #0277FF;
+  --ultra-blue-light: #058AFA;
   --ultra-black: #000000;
-  --ultra-graphite: #4d4b4b;
-  --ultra-white: #ffffff;
-  --ultra-line: rgba(17, 24, 39, 0.09);
+  --ultra-graphite: #4D4B4B;
+  --ultra-white: #FFFFFF;
+  --ultra-border: rgba(0, 0, 0, 0.08);
 }
 
-/* ---------------------------------------------------------
-   ANNOUNCEMENT BAR
-   --------------------------------------------------------- */
-
-.utility-bar,
-.announcement-bar {
-  background: #000000 !important;
-  color: #ffffff !important;
+.section-header {
+  margin-bottom: 0 !important;
+  z-index: 40;
 }
 
-.utility-bar {
-  min-height: 34px !important;
+.header-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid var(--ultra-border);
+  box-shadow: none !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.announcement-bar {
-  min-height: 34px !important;
+.header {
+  min-height: 88px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px !important;
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  align-items: center;
+  column-gap: 42px;
+}
+
+.header__heading,
+.header__heading-link {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header__heading-logo-wrapper {
   display: flex;
+  align-items: center;
+  width: auto !important;
+}
+
+.header__heading-logo {
+  display: block;
+  width: 190px !important;
+  max-width: 190px !important;
+  height: auto !important;
+  object-fit: contain;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.header__heading-link:hover .header__heading-logo {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.header__inline-menu {
+  justify-self: center;
+  margin: 0 !important;
+}
+
+.header__inline-menu .list-menu--inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+
+.header__menu-item {
+  position: relative;
+  padding: 32px 0 !important;
+  color: #121212 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.11em !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.header__menu-item span {
+  text-decoration: none !important;
+}
+
+.header__menu-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  width: 0;
+  height: 1.5px;
+  background: var(--ultra-blue);
+  transform: translateX(-50%);
+  transition: width 0.28s ease;
+}
+
+.header__menu-item:hover {
+  color: var(--ultra-blue) !important;
+}
+
+.header__menu-item:hover::after,
+.header__active-menu-item::after {
+  width: 100%;
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.header__icon {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50%;
+  color: #111827 !important;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.header__icon:hover {
+  color: var(--ultra-blue) !important;
+  background: rgba(2, 119, 255, 0.07);
+  transform: translateY(-1px);
+}
+
+.header__icon .svg-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-count-bubble {
+  background: var(--ultra-blue) !important;
+  color: #fff !important;
+  border: 2px solid #fff;
+  font-size: 10px !important;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.shopify-section-header-sticky .header-wrapper,
+.scrolled-past-header .header-wrapper {
+  background: rgba(255, 255, 255, 0.93) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.055) !important;
+}
+
+.scrolled-past-header .header {
+  min-height: 72px;
+}
+
+.scrolled-past-header .header__heading-logo {
+  width: 165px !important;
+  max-width: 165px !important;
+}
+
+.header,
+.header__heading-logo {
+  transition: min-height 0.3s ease, width 0.3s ease, max-width 0.3s ease;
+}
+
+@media screen and (max-width: 989px) {
+  .header {
+    min-height: 72px;
+    padding: 0 20px !important;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+  }
+
+  .header__heading-logo {
+    width: 142px !important;
+    max-width: 142px !important;
+  }
+
+  .header__icons {
+    gap: 0;
+  }
+
+  .header__icon {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+
+/* ULTRAMAISON — ajuste final de iconos del header */
+
+.header__icon--cart {
+  width: 42px !important;
+  height: 42px !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }
 
-.announcement-bar__message {
-  margin: 0 !important;
-  padding: 8px 20px !important;
-
-  color: #ffffff !important;
-
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  line-height: 1.4 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase;
+.header__icon--cart .svg-wrapper {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-/* ---------------------------------------------------------
-   HEADER WRAPPER
-   --------------------------------------------------------- */
-
-.section-header {
-  margin-bottom: 0 !important;
-  z-index: 50 !important;
+.header__icon--cart svg {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-.header-wrapper {
-  background: rgba(255, 255, 255, 0.98) !important;
-  border-bottom: 1px solid var(--ultra-line) !important;
-  box-shadow: none !important;
-
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
+.header__heading-logo {
+  width: 172px !important;
+  max-width: 172px !important;
 }
-
-/* ---------------------------------------------------------
-   DESKTOP HEADER
-   --------------------------------------------------------- */
-
-@media screen and (min-width: 990px) {
-
-  .header {
-    width: 100%;
-    max-width: 1540px !important;
-
-    min-height: 94px;
-
-    margin: 0 auto !important;
-    padding: 0 56px !important;
-
-    display: grid !important;
-    grid-template-columns: 220px minmax(0, 1fr) 220px !important;
-    align-items: center !important;
-
-    column-gap: 32px !important;
-  }
-
-  /* Logo */
-
-  .header__heading {
-    margin: 0 !important;
-    justify-self: start !important;
-  }
-
-  .header__heading-link {
-    display: flex !important;
-    align-items: center !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    text-decoration: none !important;
-  }
-
-  .header__heading-logo-wrapper {
-    width: auto !important;
-    max-width: none !important;
-
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .header__heading-logo {
-    width: 174px !important;
-    max-width: 174px !important;
-    height: auto !important;
-
-    display: block !important;
-    object-fit: contain;
-
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-  }
-
-  .header__heading-link:hover .header__heading-logo {
-    transform: translateY(-1px);
-    opacity: 0.94;
-  }
-
-  /* Menú */
-
-  .header__inline-menu {
-    justify-self: center !important;
-    margin: 0 !important;
-  }
-
-  .header__inline-menu .list-menu--inline {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    flex-wrap: nowrap !important;
-
-    gap: 38px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .header__menu-item {
-    position: relative;
-
-    display: flex !important;
-    align-items: center !important;
-
-    min-height: 94px;
-
-    padding: 0 !important;
-
-    color: #111827 !important;
-
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    line-height: 1 !important;
-    letter-spacing: 0.14em !important;
-
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-
-    white-space: nowrap;
-
-    transition: color 0.25s ease;
-  }
-
-  .header__menu-item span {
-    text-decoration: none !important;
-  }
-
-  .header__menu-item::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 24px;
-
-    width: 0;
-    height: 1px;
-
-    background: var(--ultra-blue);
-
-    transform: translateX(-50%);
-
-    transition: width 0.28s ease;
-  }
-
-  .header__menu-item:hover {
-    color: var(--ultra-blue) !important;
-  }
-
-  .header__menu-item:hover::after {
-    width: 100%;
-  }
-
-  /* Iconos */
-
-  .header__icons {
-    width: 220px;
-
-    justify-self: end !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-
-    gap: 10px !important;
-
-    padding: 0 !important;
-  }
-
-  .header__icon,
-  shopify-account.header__icon {
-    width: 44px !important;
-    min-width: 44px !important;
-    height: 44px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 999px;
-
-    color: #111827 !important;
-
-    transition:
-      color 0.25s ease,
-      background-color 0.25s ease,
-      transform 0.25s ease;
-  }
-
-  .header__icon:hover,
-  shopify-account.header__icon:hover {
-    color: var(--ultra-blue) !important;
-    background: rgba(2, 119, 255, 0.065) !important;
-
-    transform: translateY(-1px);
-  }
-
-  /* TODOS los SVG del header con proporción pareja */
-
-  .header__icon .svg-wrapper,
-  shopify-account.header__icon .svg-wrapper {
-    width: 22px !important;
-    height: 22px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .header__icon svg,
-  shopify-account.header__icon svg,
-  .header__icon .icon,
-  shopify-account.header__icon .icon {
-    width: 22px !important;
-    height: 22px !important;
-
-    max-width: 22px !important;
-    max-height: 22px !important;
-  }
-
-  /* Corrección específica carrito */
-
-  .header__icon--cart {
-    width: 44px !important;
-    min-width: 44px !important;
-    height: 44px !important;
-  }
-
-  .header__icon--cart .svg-wrapper {
-    width: 22px !important;
-    height: 22px !important;
-  }
-
-  .header__icon--cart svg,
-  .header__icon--cart .icon {
-    width: 22px !important;
-    height: 22px !important;
-
-    min-width: 22px !important;
-    min-height: 22px !important;
-  }
-
-  /* Burbuja cantidad */
-
-  .cart-count-bubble {
-    min-width: 18px !important;
-    min-height: 18px !important;
-
-    background: var(--ultra-blue) !important;
-    color: #ffffff !important;
-
-    border: 2px solid #ffffff;
-
-    font-size: 9px !important;
-  }
-}
-
-/* ---------------------------------------------------------
-   STICKY HEADER
-   --------------------------------------------------------- */
-
-.shopify-section-header-sticky .header-wrapper,
-.scrolled-past-header .header-wrapper {
-  background: rgba(255, 255, 255, 0.94) !important;
-
-  box-shadow:
-    0 10px 35px rgba(15, 23, 42, 0.055) !important;
-}
-
-@media screen and (min-width: 990px) {
-
-  .scrolled-past-header .header {
-    min-height: 76px !important;
-  }
-
-  .scrolled-past-header .header__menu-item {
-    min-height: 76px !important;
-  }
-
-  .scrolled-past-header .header__menu-item::after {
-    bottom: 17px;
-  }
-
-  .scrolled-past-header .header__heading-logo {
-    width: 154px !important;
-    max-width: 154px !important;
-  }
-}
-
-/* ---------------------------------------------------------
-   MOBILE / TABLET
-   --------------------------------------------------------- */
 
 @media screen and (max-width: 989px) {
-
-  .header {
-    min-height: 72px !important;
-
-    padding: 0 18px !important;
-
-    grid-template-columns: 44px 1fr auto !important;
-
-    align-items: center !important;
-  }
-
-  .header__heading,
-  .header__heading-link {
-    margin: 0 !important;
-  }
-
-  .header__heading {
-    justify-self: center !important;
-  }
-
-  .header__heading-logo-wrapper {
-    width: auto !important;
-  }
-
   .header__heading-logo {
     width: 138px !important;
     max-width: 138px !important;
-    height: auto !important;
   }
 
-  .header__icons {
-    gap: 0 !important;
+  .header__icon--cart {
+    width: 38px !important;
+    height: 38px !important;
   }
 
-  .header__icon,
-  shopify-account.header__icon {
-    width: 40px !important;
-    min-width: 40px !important;
-    height: 40px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .header__icon .svg-wrapper,
-  shopify-account.header__icon .svg-wrapper,
-  .header__icon svg,
-  shopify-account.header__icon svg {
-    width: 21px !important;
-    height: 21px !important;
-  }
-
-  .header__icon--cart,
   .header__icon--cart .svg-wrapper,
   .header__icon--cart svg {
-    width: 21px !important;
-    height: 21px !important;
-  }
-
-  .utility-bar,
-  .announcement-bar {
-    min-height: 30px !important;
-  }
-
-  .announcement-bar__message {
-    padding: 6px 14px !important;
-
-    font-size: 9px !important;
-    letter-spacing: 0.1em !important;
+    width: 20px !important;
+    height: 20px !important;
   }
 }
-
-/* =========================================================
-   FIN ULTRAMAISON HEADER PREMIUM V2
-   ========================================================= */
 
