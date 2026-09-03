@@ -3754,3 +3754,34 @@ details-disclosure > details {
   }
 }
 
+
+/* ULTRAMAISON — grilla premium compacta de productos destacados */
+
+@media screen and (min-width: 990px) {
+  .featured-collection .page-width,
+  .collection .page-width {
+    max-width: 1500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .featured-collection .product-grid,
+  .featured-collection .grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    justify-content: center !important;
+  }
+
+  .featured-collection .grid__item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .featured-collection .card-wrapper {
+    width: 100% !important;
+  }
+}
+
