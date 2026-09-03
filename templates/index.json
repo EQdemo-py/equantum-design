@@ -46,32 +46,33 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "featured-collection-0": {
+    "featured_collection_XF4B43": {
       "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "all",
-        "products_to_show": 25,
-        "title": "SELECCIÓN ULTRAMAISON",
-        "heading_size": "h2",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "ULTRAMAISON",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "enable_desktop_slider": true,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "color_scheme": "",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": true,
+        "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 0
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "slideshow_FpdATL": {
@@ -111,39 +112,40 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "featured_collection_DMXJWX": {
+    "featured_collection_WmJTTf": {
       "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "all",
+        "collection": "frontpage",
         "products_to_show": 4,
-        "title": "SELECCIÓN ULTRAMAISON",
-        "heading_size": "h2",
+        "title": "Featured collection",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
-        "enable_desktop_slider": true,
-        "full_width": true,
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "color_scheme": "",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": true,
+        "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 96
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "slideshow",
-    "featured-collection-0",
+    "featured_collection_XF4B43",
     "slideshow_FpdATL",
-    "featured_collection_DMXJWX"
+    "featured_collection_WmJTTf"
   ]
 }
