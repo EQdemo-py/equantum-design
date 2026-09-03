@@ -3700,3 +3700,29 @@ details-disclosure > details {
   }
 }
 
+
+/* ULTRAMAISON — tarjetas de producto limpias */
+
+.product-card-wrapper .card,
+.contains-card--product {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.product-card-wrapper .card__inner,
+.contains-card--product .card__inner {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.product-card-wrapper .card__content,
+.contains-card--product .card__content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: transparent !important;
+}
+
