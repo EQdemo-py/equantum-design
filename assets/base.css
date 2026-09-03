@@ -3675,3 +3675,28 @@ details-disclosure > details {
   text-transform: uppercase;
 }
 
+
+/* ULTRAMAISON — banners responsive slideshow */
+
+.ultramaison-responsive-banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ultramaison-responsive-banner img,
+.ultramaison-banner-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 749px) {
+  .ultramaison-responsive-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
