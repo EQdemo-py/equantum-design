@@ -15,6 +15,7 @@
         "slide-0": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/banner_UM_1.png",
             "image_overlay_opacity": 10,
             "heading": "",
             "heading_size": "h1",
