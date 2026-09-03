@@ -3726,3 +3726,31 @@ details-disclosure > details {
   background: transparent !important;
 }
 
+
+/* ULTRAMAISON — compactar grilla de productos destacados */
+
+@media screen and (min-width: 990px) {
+  .featured-collection .grid,
+  .collection .grid,
+  .product-grid {
+    column-gap: 18px !important;
+    row-gap: 28px !important;
+  }
+
+  .featured-collection .grid__item,
+  .collection .grid__item,
+  .product-grid .grid__item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .featured-collection .grid,
+  .collection .grid,
+  .product-grid {
+    column-gap: 14px !important;
+    row-gap: 24px !important;
+  }
+}
+
