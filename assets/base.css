@@ -3785,3 +3785,196 @@ details-disclosure > details {
   }
 }
 
+
+/* =========================================================
+   ULTRAMAISON — FEATURED COLLECTION EDITORIAL
+   ========================================================= */
+
+.ultramaison-featured {
+  background: #ffffff;
+  padding-top: 88px !important;
+  padding-bottom: 100px !important;
+}
+
+/* Encabezado editorial */
+.ultramaison-featured .collection__title {
+  max-width: 1440px;
+  margin: 0 auto 52px !important;
+  padding: 0 48px !important;
+}
+
+.ultramaison-featured .collection__title::before {
+  content: "PIEZAS DESTACADAS";
+  display: block;
+  margin-bottom: 14px;
+
+  color: #0277ff;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  line-height: 1;
+}
+
+.ultramaison-featured .collection__title .title {
+  margin: 0 !important;
+
+  color: #0b0b0c !important;
+
+  font-size: clamp(30px, 3vw, 46px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.025em !important;
+  line-height: 1.05 !important;
+}
+
+/* Contenedor */
+.ultramaison-featured slider-component {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
+
+/* 4 productos: más boutique, menos catálogo */
+@media screen and (min-width: 990px) {
+  .ultramaison-featured .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 48px 30px !important;
+
+    overflow: visible !important;
+  }
+
+  .ultramaison-featured .grid__item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Card completamente limpia */
+.ultramaison-featured .card,
+.ultramaison-featured .card__inner,
+.ultramaison-featured .card__content {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Imagen editorial */
+.ultramaison-featured .card__media {
+  overflow: hidden !important;
+  background: #f4f4f2 !important;
+}
+
+.ultramaison-featured .card__media img {
+  transform: scale(1);
+  transition:
+    transform .7s cubic-bezier(.2,.65,.3,1),
+    opacity .45s ease;
+}
+
+.ultramaison-featured .card-wrapper:hover .card__media img {
+  transform: scale(1.035);
+}
+
+/* Información producto */
+.ultramaison-featured .card__information {
+  padding-top: 22px !important;
+}
+
+.ultramaison-featured .card__heading {
+  margin: 0 0 9px !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: .015em !important;
+}
+
+.ultramaison-featured .card__heading a {
+  color: #111214 !important;
+  text-decoration: none !important;
+}
+
+.ultramaison-featured .card__heading a:hover {
+  color: #0277ff !important;
+}
+
+/* Precio más discreto */
+.ultramaison-featured .price {
+  color: #55585d !important;
+
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: .04em !important;
+}
+
+/* Línea de acento mínima */
+.ultramaison-featured .card__information::before {
+  content: "";
+  display: block;
+
+  width: 24px;
+  height: 1px;
+
+  margin-bottom: 15px;
+
+  background: #0277ff;
+
+  transition: width .35s ease;
+}
+
+.ultramaison-featured .card-wrapper:hover .card__information::before {
+  width: 46px;
+}
+
+/* Evitar look de slider genérico en desktop */
+@media screen and (min-width: 990px) {
+  .ultramaison-featured .slider-buttons {
+    margin-top: 48px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .ultramaison-featured .product-grid {
+    gap: 28px !important;
+  }
+
+  .ultramaison-featured slider-component,
+  .ultramaison-featured .collection__title {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .ultramaison-featured {
+    padding-top: 58px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .ultramaison-featured .collection__title {
+    margin-bottom: 32px !important;
+    padding: 0 20px !important;
+  }
+
+  .ultramaison-featured slider-component {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+  }
+
+  .ultramaison-featured .collection__title .title {
+    font-size: 30px !important;
+  }
+
+  .ultramaison-featured .card__information {
+    padding-top: 16px !important;
+  }
+}
+
+/* FIN ULTRAMAISON FEATURED COLLECTION */
+
