@@ -3827,3 +3827,47 @@ details-disclosure > details {
   }
 }
 
+
+/* ULTRAMAISON — ajuste final de iconos del header */
+
+.header__icon--cart {
+  width: 42px !important;
+  height: 42px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon--cart .svg-wrapper {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.header__icon--cart svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.header__heading-logo {
+  width: 172px !important;
+  max-width: 172px !important;
+}
+
+@media screen and (max-width: 989px) {
+  .header__heading-logo {
+    width: 138px !important;
+    max-width: 138px !important;
+  }
+
+  .header__icon--cart {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .header__icon--cart .svg-wrapper,
+  .header__icon--cart svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
