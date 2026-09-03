@@ -4180,3 +4180,72 @@ details-disclosure > details {
   }
 }
 
+
+/* =========================================================
+   ULTRAMAISON — SLIDESHOW MOBILE 750x1000 COMPLETO
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  /* El slideshow deja de heredar la altura desktop */
+  slideshow-component .slideshow.banner {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  slideshow-component .slideshow__slide {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Contenedor exacto para banner mobile 750 × 1000 */
+  slideshow-component .slideshow__media.banner__media {
+    position: relative !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  /* El picture ocupa exactamente el contenedor */
+  slideshow-component .ultramaison-responsive-banner {
+    position: absolute !important;
+    inset: 0 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Mostrar TODA la composición mobile */
+  slideshow-component .ultramaison-responsive-banner img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  /* Evitar espacio fantasma generado por el banner */
+  slideshow-component .banner::before,
+  slideshow-component .banner__media::before {
+    display: none !important;
+    padding-bottom: 0 !important;
+    content: none !important;
+  }
+
+  /* Si no hay texto configurado en Shopify,
+     el wrapper no debe generar espacio debajo */
+  slideshow-component .banner__content:has(.banner__box:empty) {
+    display: none !important;
+  }
+}
+
+/* FIN ULTRAMAISON SLIDESHOW MOBILE */
+
