@@ -3,21 +3,36 @@
      fill="none"
      class="icon icon-cart"
      aria-hidden="true">
-  <rect x="15.5" y="3.5" width="9" height="6.5" rx="2"
-        stroke="currentColor" stroke-width="1.7"/>
-  <rect x="15.5" y="30" width="9" height="6.5" rx="2"
-        stroke="currentColor" stroke-width="1.7"/>
-  <circle cx="20" cy="20" r="10.5"
-          stroke="currentColor" stroke-width="1.7"/>
-  <circle cx="20" cy="20" r="1.2"
-          fill="currentColor"/>
-  <path d="M20 13.5V20L24.2 22.4"
+  <path d="M16.2 8.5h7.6"
         stroke="currentColor"
-        stroke-width="1.7"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <path d="M16.2 31.5h7.6"
+        stroke="currentColor"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <path d="M17.2 8.5V11"
+        stroke="currentColor"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <path d="M22.8 8.5V11"
+        stroke="currentColor"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <path d="M17.2 29V31.5"
+        stroke="currentColor"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <path d="M22.8 29V31.5"
+        stroke="currentColor"
+        stroke-width="1.35"
+        stroke-linecap="round"/>
+  <circle cx="20" cy="20" r="9"
+          stroke="currentColor"
+          stroke-width="1.35"/>
+  <path d="M20 14.3V20L23.7 22"
+        stroke="currentColor"
+        stroke-width="1.35"
         stroke-linecap="round"
         stroke-linejoin="round"/>
-  <path d="M17 9.8h6M17 30.2h6"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"/>
 </svg>
