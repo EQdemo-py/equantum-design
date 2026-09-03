@@ -4056,3 +4056,58 @@ details-disclosure > details {
   }
 }
 
+
+/* =========================================================
+   ULTRAMAISON — RESTAURAR CARRUSEL MOBILE REAL
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  /* Cuando Shopify tiene Carousel activado */
+  .ultramaison-featured .product-grid.slider.slider--tablet {
+    display: flex !important;
+    grid-template-columns: none !important;
+
+    gap: 16px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding-bottom: 4px !important;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ultramaison-featured .product-grid.slider.slider--tablet .slider__slide {
+    flex: 0 0 calc(50% - 8px) !important;
+
+    width: calc(50% - 8px) !important;
+    max-width: calc(50% - 8px) !important;
+
+    scroll-snap-align: start;
+  }
+
+  /* Mostrar nuevamente controles SOLO si existe slider */
+  .ultramaison-featured slider-component:has(.slider--tablet) .slider-buttons {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 28px !important;
+  }
+
+  .ultramaison-featured slider-component:has(.slider--tablet) .slider-counter {
+    font-size: 11px !important;
+    letter-spacing: .08em;
+    color: #6b7280 !important;
+  }
+
+  .ultramaison-featured slider-component:has(.slider--tablet) .slider-button {
+    color: #0277ff !important;
+  }
+
+}
+
