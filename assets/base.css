@@ -4111,3 +4111,11 @@ details-disclosure > details {
 
 }
 
+
+/* ULTRAMAISON — ocultar controles visibles del carrusel en mobile */
+@media screen and (max-width: 749px) {
+  .ultramaison-featured .slider-buttons {
+    display: none !important;
+  }
+}
+
