@@ -4119,3 +4119,11 @@ details-disclosure > details {
   }
 }
 
+
+/* ULTRAMAISON — ocultar definitivamente controles del carrusel mobile */
+@media screen and (max-width: 749px) {
+  .ultramaison-featured slider-component:has(.slider--tablet) .slider-buttons {
+    display: none !important;
+  }
+}
+
