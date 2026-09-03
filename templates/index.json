@@ -53,14 +53,14 @@
         "heading_kDfBMG": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>EL RITMO DEL LUJO</strong>",
-            "heading_size": "h2"
+            "heading": "<strong>Una selección excepcional.</strong>",
+            "heading_size": "h1"
           }
         },
         "text_dMWkTi": {
           "type": "text",
           "settings": {
-            "text": "<p>\"Están creados para llevar tu estilo a otro nivel, con detalles finos y artesanía excepcional perfecta para cualquiera. </p><p>Los relojes TechnoMarine incluyen modelos clásicos, modernos y casuales con cualidades extraordinarias, son especialmente diseñados para soportar un estilo de vida activo y retador, ya sea dentro o fuera del agua.\"</p>",
+            "text": "<p>Seleccionamos piezas que trascienden el tiempo.<br/>Diseño, precisión y carácter en perfecta armonía.</p>",
             "text_style": "body"
           }
         },
@@ -78,21 +78,20 @@
         "text_dMWkTi",
         "button_ggCkMT"
       ],
-      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-01_at_16.43.49.jpg",
-        "height": "small",
+        "image": "shopify://shop_images/ChatGPT_Image_3_sept_2026_05_27_33_p.m..png",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
-        "desktop_content_position": "bottom",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 16,
+        "section_color_scheme": "scheme-3",
+        "color_scheme": "scheme-5",
+        "padding_top": 8,
         "padding_bottom": 0
       }
     },
