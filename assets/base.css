@@ -4446,88 +4446,10 @@ details-disclosure > details {
 
 
 
-/* =========================================================
-   ULTRAMAISON — AJUSTE TAMAÑO ICONO RELOJ
-   ========================================================= */
-
-.header__icon--cart .svg-wrapper {
-  width: 26px !important;
-  height: 26px !important;
-}
-
-.header__icon--cart svg {
-  width: 26px !important;
-  height: 26px !important;
-  transform: scale(1.18);
-  transform-origin: center;
-}
-
-/* Mobile */
-@media screen and (max-width: 989px) {
-  .header__icon--cart .svg-wrapper {
-    width: 25px !important;
-    height: 25px !important;
-  }
-
-  .header__icon--cart svg {
-    width: 25px !important;
-    height: 25px !important;
-    transform: scale(1.18);
-  }
-}
-
-/* FIN AJUSTE ICONO RELOJ */
 
 
-/* =========================================================
-   ULTRAMAISON — FIX DEFINITIVO TAMAÑO RELOJ HEADER
-   Solo afecta al icono carrito/reloj
-   ========================================================= */
 
-.header__icons .header__icon--cart {
-  width: 42px !important;
-  min-width: 42px !important;
-  height: 42px !important;
-  overflow: visible !important;
-}
 
-.header__icons .header__icon--cart > .svg-wrapper {
-  width: 32px !important;
-  min-width: 32px !important;
-  height: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: visible !important;
-}
-
-.header__icons .header__icon--cart > .svg-wrapper > svg {
-  width: 32px !important;
-  min-width: 32px !important;
-  height: 32px !important;
-  max-width: none !important;
-  max-height: none !important;
-  transform: none !important;
-  overflow: visible !important;
-}
-
-/* Mobile */
-@media screen and (max-width: 989px) {
-  .header__icons .header__icon--cart {
-    width: 40px !important;
-    min-width: 40px !important;
-    height: 40px !important;
-  }
-
-  .header__icons .header__icon--cart > .svg-wrapper,
-  .header__icons .header__icon--cart > .svg-wrapper > svg {
-    width: 30px !important;
-    min-width: 30px !important;
-    height: 30px !important;
-  }
-}
-
-/* FIN FIX DEFINITIVO RELOJ HEADER */
 
 
 /* =========================================================
@@ -4559,45 +4481,43 @@ details-disclosure > details {
 /* FIN ICONOS HEADER TRAZO FINO */
 
 
+
+
+
 /* =========================================================
-   ULTRAMAISON — ICONOS HEADER MISMA ESCALA VISUAL
+   ULTRAMAISON — ICONOS HEADER TAMAÑO UNIFICADO
    ========================================================= */
 
-/* Búsqueda */
-.header__search .svg-wrapper,
-.header__search .svg-wrapper svg {
-  width: 25px !important;
-  height: 25px !important;
-}
-
-/* Usuario */
+/* TODOS: 24 x 24 reales */
+.header__icon--search .svg-wrapper,
 .header__icon--account .svg-wrapper,
-.header__icon--account .svg-wrapper svg {
-  width: 25px !important;
-  height: 25px !important;
-}
-
-/* Reloj */
 .header__icon--cart .svg-wrapper,
-.header__icon--cart .svg-wrapper svg {
-  width: 27px !important;
-  height: 27px !important;
+.header__icon--menu .svg-wrapper {
+  width: 24px !important;
+  height: 24px !important;
 }
 
-/* Menú hamburguesa — mobile */
-.menu-drawer-container .header__icon .svg-wrapper,
-.menu-drawer-container .header__icon .svg-wrapper svg {
-  width: 25px !important;
-  height: 25px !important;
+.header__icon--search svg,
+.header__icon--account svg,
+.header__icon--cart svg,
+.header__icon--menu svg {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  transform: none !important;
 }
 
-/* Mantener todos centrados */
-.header__icon,
-.header__search {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+/* Evitar que reglas anteriores agranden solamente el reloj */
+.header__icons .header__icon--cart > .svg-wrapper,
+.header__icons .header__icon--cart > .svg-wrapper > svg {
+  width: 24px !important;
+  min-width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  transform: none !important;
 }
 
-/* FIN ICONOS HEADER MISMA ESCALA VISUAL */
+/* FIN ICONOS HEADER TAMAÑO UNIFICADO */
 
