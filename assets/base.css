@@ -4661,3 +4661,103 @@ details-disclosure > details {
 /* =========================================================
    FIN ULTRAMAISON — CARRUSEL PRODUCTOS
    ========================================================= */
+
+/* =========================================================
+   ULTRAMAISON — FIX MOBILE COLLECTION
+   Respeta 1 / 2 columnas + compacta espacio inferior
+   SOLO MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  /* -----------------------------------------
+     SIN CARRUSEL
+     Respetar selector 1 / 2 columnas de Shopify
+     ----------------------------------------- */
+
+  .ultramaison-featured
+  .product-grid.grid--1-col-tablet-down:not(.slider--tablet) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 22px 0 !important;
+  }
+
+  .ultramaison-featured
+  .product-grid.grid--2-col-tablet-down:not(.slider--tablet) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px 14px !important;
+  }
+
+  .ultramaison-featured
+  .product-grid.grid--1-col-tablet-down:not(.slider--tablet)
+  .grid__item,
+  .ultramaison-featured
+  .product-grid.grid--2-col-tablet-down:not(.slider--tablet)
+  .grid__item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+
+  /* -----------------------------------------
+     CON CARRUSEL
+     También respetar 1 / 2 columnas
+     ----------------------------------------- */
+
+  .ultramaison-featured
+  .product-grid.slider--tablet {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 1 producto visible */
+  .ultramaison-featured
+  .product-grid.slider--tablet.grid--1-col-tablet-down
+  .slider__slide {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 2 productos visibles */
+  .ultramaison-featured
+  .product-grid.slider--tablet.grid--2-col-tablet-down
+  .slider__slide {
+    flex: 0 0 calc(50% - 7px) !important;
+    width: calc(50% - 7px) !important;
+    max-width: calc(50% - 7px) !important;
+  }
+
+
+  /* -----------------------------------------
+     COMPACTAR ESPACIO BAJO LOS PRODUCTOS
+     ----------------------------------------- */
+
+  .ultramaison-featured slider-component {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .ultramaison-featured .product-grid {
+    margin-bottom: 0 !important;
+  }
+
+  .ultramaison-featured .grid__item {
+    margin-bottom: 0 !important;
+  }
+
+  .ultramaison-featured .card-wrapper,
+  .ultramaison-featured .card {
+    margin-bottom: 0 !important;
+  }
+
+}
+
+/* =========================================================
+   FIN FIX MOBILE COLLECTION
+   ========================================================= */
