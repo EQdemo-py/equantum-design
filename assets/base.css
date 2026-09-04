@@ -4521,3 +4521,50 @@ details-disclosure > details {
 
 /* FIN ICONOS HEADER TAMAÑO UNIFICADO */
 
+
+/* =========================================================
+   ULTRAMAISON — FIX CARRUSEL DESKTOP
+   Respeta el toggle nativo "Enable carousel on desktop"
+   ========================================================= */
+
+@media screen and (min-width: 990px) {
+
+  /* Si Shopify activa el slider, anular el grid editorial */
+  .ultramaison-featured .product-grid.slider.slider--desktop {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+
+    gap: 30px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mantener 4 productos visibles por pantalla */
+  .ultramaison-featured .product-grid.slider.slider--desktop .slider__slide {
+    flex: 0 0 calc((100% - 90px) / 4) !important;
+    width: calc((100% - 90px) / 4) !important;
+    max-width: calc((100% - 90px) / 4) !important;
+
+    scroll-snap-align: start;
+  }
+
+  /* Restaurar controles SOLO cuando existe slider desktop */
+  .ultramaison-featured slider-component:has(.slider--desktop) .slider-buttons {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px !important;
+  }
+}
+
+/* =========================================================
+   FIN FIX CARRUSEL DESKTOP
+   ========================================================= */
+
