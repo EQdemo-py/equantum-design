@@ -52,15 +52,15 @@
       "name": "ULTRAMAISON — Editorial",
       "settings": {
         "eyebrow": "ULTRAMAISON",
-        "heading": "Una selección excepcional.",
-        "text": "<p>Seleccionamos piezas que trascienden el tiempo. Diseño, precisión y carácter en perfecta armonía.</p>",
+        "heading": "\"Una selección excepcional\"",
+        "text": "<p><em>Seleccionamos piezas que trascienden el tiempo. Diseño, precisión y carácter en perfecta armonía.</em></p>",
         "button_label": "Conoce nuestra filosofía",
         "button_link": "",
         "text_alignment": "center",
-        "content_width": 760,
+        "content_width": 920,
         "color_scheme": "scheme-5",
-        "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_top": 28,
+        "padding_bottom": 20,
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 20
       }
