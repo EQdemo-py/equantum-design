@@ -74,10 +74,11 @@
         "banner_HfxRmX": {
           "type": "banner",
           "settings": {
-            "eyebrow": "ULTRAMAISON",
-            "title": "Una expresión de carácter.",
-            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
-            "button_label": "Descubrir",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept_2026_03_40_49_p.m..png",
+            "eyebrow": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "link": "",
             "alignment": "left",
             "overlay_left": 60,
@@ -87,10 +88,11 @@
         "banner_EY7UWj": {
           "type": "banner",
           "settings": {
-            "eyebrow": "ULTRAMAISON",
-            "title": "Una expresión de carácter.",
-            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
-            "button_label": "Descubrir",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept_2026_03_39_41_p.m..png",
+            "eyebrow": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "link": "",
             "alignment": "left",
             "overlay_left": 60,
@@ -110,10 +112,10 @@
         "banner_height": 460,
         "gap_mobile": 16,
         "banner_height_mobile": 380,
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
       }
     },
     "featured_collection_XF4B43": {
@@ -151,10 +153,11 @@
         "banner_Kw3D3D": {
           "type": "banner",
           "settings": {
-            "eyebrow": "ULTRAMAISON",
-            "title": "Una expresión de carácter.",
-            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
-            "button_label": "Descubrir",
+            "image": "shopify://shop_images/1.png",
+            "eyebrow": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "link": "",
             "alignment": "left",
             "overlay_left": 60,
@@ -164,10 +167,11 @@
         "banner_yRnVaD": {
           "type": "banner",
           "settings": {
-            "eyebrow": "ULTRAMAISON",
-            "title": "Una expresión de carácter.",
-            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
-            "button_label": "Descubrir",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept_2026_03_40_49_p.m..png",
+            "eyebrow": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "link": "",
             "alignment": "left",
             "overlay_left": 60,
@@ -182,8 +186,8 @@
       "name": "UM — Doble banner",
       "settings": {
         "color_scheme": "",
-        "content_width": 1440,
-        "gap": 20,
+        "content_width": 1600,
+        "gap": 36,
         "banner_height": 460,
         "gap_mobile": 16,
         "banner_height_mobile": 380,
