@@ -29,6 +29,17 @@
     color: #fff;
   }
 
+  #shopify-section-{{ section.id }} .ultra-commercial__banner--adapt {
+    min-height: 0;
+    aspect-ratio: var(--aspect-desktop);
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__banner--adapt
+  .ultra-commercial__content {
+    min-height: 0;
+    height: 100%;
+  }
+
   #shopify-section-{{ section.id }} .ultra-commercial__media {
     position: absolute;
     inset: 0;
@@ -179,6 +190,17 @@
       min-height: {{ section.settings.banner_height_mobile }}px;
     }
 
+    #shopify-section-{{ section.id }} .ultra-commercial__banner--adapt {
+      min-height: 0;
+      aspect-ratio: var(--aspect-mobile);
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__banner--adapt
+    .ultra-commercial__content {
+      min-height: 0;
+      height: 100%;
+    }
+
     #shopify-section-{{ section.id }} .ultra-commercial__content {
       padding: 28px 24px;
     }
@@ -200,11 +222,13 @@
 
       {%- for block in section.blocks -%}
         <a
-          class="ultra-commercial__banner ultra-commercial__banner--{{ block.settings.alignment }}"
+          class="ultra-commercial__banner ultra-commercial__banner--{{ block.settings.alignment }}{% if section.settings.height_mode == 'adapt' %} ultra-commercial__banner--adapt{% endif %}"
           href="{{ block.settings.link | default: '#' }}"
           style="
             --overlay-left: {{ block.settings.overlay_left | divided_by: 100.0 }};
             --overlay-right: {{ block.settings.overlay_right | divided_by: 100.0 }};
+            --aspect-desktop: {{ block.settings.image.aspect_ratio | default: 1.5 }};
+            --aspect-mobile: {% if block.settings.image_mobile != blank %}{{ block.settings.image_mobile.aspect_ratio }}{% else %}{{ block.settings.image.aspect_ratio | default: 0.75 }}{% endif %};
           "
           {{ block.shopify_attributes }}
         >
@@ -291,6 +315,23 @@
       "unit": "px",
       "label": "Ancho máximo",
       "default": 1440
+    },
+    {
+      "type": "select",
+      "id": "height_mode",
+      "label": "Ajuste del banner",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adaptar a la imagen"
+        },
+        {
+          "value": "fixed",
+          "label": "Altura fija"
+        }
+      ],
+      "default": "adapt",
+      "info": "Adaptar a la imagen respeta la proporción original. Altura fija utiliza los controles de altura desktop y mobile."
     },
     {
       "type": "range",
@@ -387,14 +428,18 @@
       "name": "Banner",
       "settings": [
         {
+          "type": "paragraph",
+          "content": "IMÁGENES: Desktop recomendado 1536 × 1024 px (3:2). Mobile recomendado 900 × 1200 px (3:4)."
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Imagen desktop"
+          "label": "Imagen desktop — 1536 × 1024 px"
         },
         {
           "type": "image_picker",
           "id": "image_mobile",
-          "label": "Imagen mobile"
+          "label": "Imagen mobile — 900 × 1200 px"
         },
         {
           "type": "text",
