@@ -1,0 +1,466 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .ultra-commercial {
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__inner {
+    width: min(
+      calc(100% - 48px),
+      {{ section.settings.content_width }}px
+    );
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: {{ section.settings.gap }}px;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__banner {
+    position: relative;
+    overflow: hidden;
+    min-height: {{ section.settings.banner_height }}px;
+    background: #080808;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__media picture,
+  #shopify-section-{{ section.id }} .ultra-commercial__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__media img {
+    object-fit: cover;
+    object-position: center;
+    transition: transform .8s cubic-bezier(.2,.65,.3,1);
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__banner:hover
+  .ultra-commercial__media img {
+    transform: scale(1.025);
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,var(--overlay-left)),
+      rgba(0,0,0,var(--overlay-right))
+    );
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: {{ section.settings.banner_height }}px;
+    padding: 42px;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__eyebrow {
+    margin: 0 0 12px;
+    font-family: var(--font-body-family);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #4d8dff;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__title {
+    max-width: 520px;
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(34px, 3.4vw, 54px);
+    line-height: 1;
+    letter-spacing: -.025em;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__text {
+    max-width: 470px;
+    margin-top: 16px;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.78);
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__text p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    margin-top: 22px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,.45);
+    font-family: var(--font-body-family);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__cta-arrow {
+    color: #4d8dff;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__banner--center
+  .ultra-commercial__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .ultra-commercial__banner--center
+  .ultra-commercial__title,
+  #shopify-section-{{ section.id }} .ultra-commercial__banner--center
+  .ultra-commercial__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .ultra-commercial {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__inner {
+      width: calc(100% - 32px);
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__grid {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.gap_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__banner,
+    #shopify-section-{{ section.id }} .ultra-commercial__content {
+      min-height: {{ section.settings.banner_height_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__content {
+      padding: 28px 24px;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__title {
+      font-size: clamp(30px, 9.5vw, 42px);
+      line-height: 1;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__text {
+      font-size: 13px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ultra-commercial color-{{ section.settings.color_scheme }} gradient">
+  <div class="ultra-commercial__inner">
+    <div class="ultra-commercial__grid">
+
+      {%- for block in section.blocks -%}
+        <a
+          class="ultra-commercial__banner ultra-commercial__banner--{{ block.settings.alignment }}"
+          href="{{ block.settings.link | default: '#' }}"
+          style="
+            --overlay-left: {{ block.settings.overlay_left | divided_by: 100.0 }};
+            --overlay-right: {{ block.settings.overlay_right | divided_by: 100.0 }};
+          "
+          {{ block.shopify_attributes }}
+        >
+
+          <div class="ultra-commercial__media">
+            {%- if block.settings.image != blank -%}
+              <picture>
+                {%- if block.settings.image_mobile != blank -%}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="{{ block.settings.image_mobile | image_url: width: 900 }}"
+                  >
+                {%- endif -%}
+
+                {{
+                  block.settings.image
+                  | image_url: width: 1800
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '600, 900, 1200, 1500, 1800',
+                    sizes: '(min-width: 750px) 50vw, 100vw'
+                }}
+              </picture>
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+
+          <div class="ultra-commercial__overlay"></div>
+
+          <div class="ultra-commercial__content">
+            {%- if block.settings.eyebrow != blank -%}
+              <p class="ultra-commercial__eyebrow">
+                {{ block.settings.eyebrow | escape }}
+              </p>
+            {%- endif -%}
+
+            {%- if block.settings.title != blank -%}
+              <h2 class="ultra-commercial__title">
+                {{ block.settings.title }}
+              </h2>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <div class="ultra-commercial__text rte">
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.button_label != blank -%}
+              <span class="ultra-commercial__cta">
+                {{ block.settings.button_label | escape }}
+                <span class="ultra-commercial__cta-arrow">→</span>
+              </span>
+            {%- endif -%}
+          </div>
+
+        </a>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ULTRAMAISON — Doble banner",
+  "tag": "section",
+  "class": "section ultra-commercial-section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de colores",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Ancho máximo",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "banner_height",
+      "min": 320,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Altura banner desktop",
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación mobile",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "banner_height_mobile",
+      "min": 280,
+      "max": 620,
+      "step": 20,
+      "unit": "px",
+      "label": "Altura banner mobile",
+      "default": 380
+    },
+    {
+      "type": "header",
+      "content": "Espaciado desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Espaciado mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior mobile",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Imagen mobile"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Antetítulo",
+          "default": "ULTRAMAISON"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Título",
+          "default": "Una expresión de carácter."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Descripción",
+          "default": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Texto del botón",
+          "default": "Descubrir"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alineación",
+          "options": [
+            {
+              "value": "left",
+              "label": "Izquierda"
+            },
+            {
+              "value": "center",
+              "label": "Centro"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "overlay_left",
+          "min": 0,
+          "max": 90,
+          "step": 5,
+          "unit": "%",
+          "label": "Oscurecimiento izquierda",
+          "default": 60
+        },
+        {
+          "type": "range",
+          "id": "overlay_right",
+          "min": 0,
+          "max": 90,
+          "step": 5,
+          "unit": "%",
+          "label": "Oscurecimiento derecha",
+          "default": 10
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ULTRAMAISON — Doble banner",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
