@@ -108,6 +108,7 @@
       "settings": {
         "color_scheme": "",
         "content_width": 1440,
+        "height_mode": "adapt",
         "gap": 20,
         "banner_height": 460,
         "gap_mobile": 16,
@@ -123,13 +124,13 @@
       "name": "ULTRAMAISON",
       "settings": {
         "collection": "frontpage",
-        "products_to_show": 4,
+        "products_to_show": 25,
         "title": "ULTRAMAISON",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": false,
@@ -187,6 +188,7 @@
       "settings": {
         "color_scheme": "",
         "content_width": 1600,
+        "height_mode": "adapt",
         "gap": 36,
         "banner_height": 460,
         "gap_mobile": 16,
