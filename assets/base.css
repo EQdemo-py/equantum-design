@@ -4497,3 +4497,36 @@ details-disclosure > details {
 }
 
 /* FIN ICONOS HEADER BOLD PREMIUM */
+
+/* =========================================================
+   ULTRAMAISON — AJUSTE TAMAÑO ICONO RELOJ
+   ========================================================= */
+
+.header__icon--cart .svg-wrapper {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.header__icon--cart svg {
+  width: 26px !important;
+  height: 26px !important;
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+/* Mobile */
+@media screen and (max-width: 989px) {
+  .header__icon--cart .svg-wrapper {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .header__icon--cart svg {
+    width: 25px !important;
+    height: 25px !important;
+    transform: scale(1.18);
+  }
+}
+
+/* FIN AJUSTE ICONO RELOJ */
+
