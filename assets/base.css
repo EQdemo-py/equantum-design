@@ -4568,3 +4568,15 @@ details-disclosure > details {
    FIN FIX CARRUSEL DESKTOP
    ========================================================= */
 
+
+/* =========================================================
+   ULTRAMAISON — OCULTAR CONTROLES VISUALES DEL CARRUSEL
+   El carrusel sigue funcionando sin flechas ni contador
+   ========================================================= */
+
+.ultramaison-featured .slider-buttons {
+  display: none !important;
+}
+
+/* FIN OCULTAR CONTROLES VISUALES DEL CARRUSEL */
+
