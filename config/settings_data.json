@@ -171,7 +171,7 @@
           "background": "#000000",
           "background_gradient": "",
           "text": "#0053fb",
-          "button": "#ffffff",
+          "button": "#FBFCFF",
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#0e1b4d"

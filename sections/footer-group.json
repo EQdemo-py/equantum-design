@@ -47,6 +47,35 @@
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "image_mN6hyn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Diseno_sin_titulo_17.png",
+            "image_width": 235,
+            "alignment": ""
+          }
+        },
+        "link_list_UACbit": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Enlaces rápidos",
+            "menu": "customer-account-main-menu"
+          }
+        },
+        "text_nHDppP": {
+          "type": "text",
+          "settings": {
+            "heading": "Encabezado",
+            "subtext": "<p>Comparte la información de contacto, los detalles de la tienda y el contenido de la marca con tus clientes.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_mN6hyn",
+        "link_list_UACbit",
+        "text_nHDppP"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "newsletter_enable": false,
