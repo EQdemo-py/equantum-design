@@ -4530,3 +4530,54 @@ details-disclosure > details {
 
 /* FIN AJUSTE ICONO RELOJ */
 
+
+/* =========================================================
+   ULTRAMAISON — FIX DEFINITIVO TAMAÑO RELOJ HEADER
+   Solo afecta al icono carrito/reloj
+   ========================================================= */
+
+.header__icons .header__icon--cart {
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  overflow: visible !important;
+}
+
+.header__icons .header__icon--cart > .svg-wrapper {
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.header__icons .header__icon--cart > .svg-wrapper > svg {
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  max-width: none !important;
+  max-height: none !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 989px) {
+  .header__icons .header__icon--cart {
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+  }
+
+  .header__icons .header__icon--cart > .svg-wrapper,
+  .header__icons .header__icon--cart > .svg-wrapper > svg {
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* FIN FIX DEFINITIVO RELOJ HEADER */
+
