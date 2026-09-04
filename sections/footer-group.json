@@ -11,40 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Subscribe to our emails</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
-          }
-        },
-        "email-form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "paragraph",
-        "email-form"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-3",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 12
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -52,7 +18,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Diseno_sin_titulo_17.png",
-            "image_width": 235,
+            "image_width": 100,
             "alignment": ""
           }
         },
@@ -93,7 +59,6 @@
     }
   },
   "order": [
-    "newsletter",
     "footer"
   ]
 }
