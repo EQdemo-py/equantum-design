@@ -4761,3 +4761,106 @@ details-disclosure > details {
 /* =========================================================
    FIN FIX MOBILE COLLECTION
    ========================================================= */
+
+/* =========================================================
+   ULTRAMAISON — CARRUSEL DESKTOP SIN ESPACIOS EXCESIVOS
+   ========================================================= */
+
+@media screen and (min-width: 990px) {
+
+  /* Menos margen lateral del catálogo */
+  .ultramaison-featured slider-component {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* El primer producto empieza alineado al contenedor */
+  .ultramaison-featured .slider--desktop .slider__slide:first-child {
+    margin-left: 0 !important;
+    scroll-margin-left: 0 !important;
+  }
+
+  /* Quitar espacio artificial que Dawn agrega al final */
+  .ultramaison-featured .slider--desktop::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Evitar padding de scroll innecesario */
+  .ultramaison-featured .slider--desktop {
+    scroll-padding-left: 0 !important;
+    scroll-padding-right: 0 !important;
+  }
+
+}
+
+/* =========================================================
+   FIN CARRUSEL DESKTOP SIN ESPACIOS EXCESIVOS
+   ========================================================= */
+
+/* =========================================================
+   ULTRAMAISON — DESKTOP CARRUSEL FULL WIDTH REAL
+   4 productos ocupan todo el ancho disponible
+   ========================================================= */
+
+@media screen and (min-width: 990px) {
+
+  /* Aprovechar mejor el ancho de la sección */
+  .ultramaison-featured slider-component {
+    max-width: 1440px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Carrusel sin márgenes artificiales */
+  .ultramaison-featured .product-grid.slider--desktop {
+    gap: 24px !important;
+    scroll-padding-left: 0 !important;
+    scroll-padding-right: 0 !important;
+  }
+
+  /* Cada slide ocupa exactamente 1/4 del ancho disponible */
+  .ultramaison-featured
+  .product-grid.slider--desktop.grid--4-col-desktop
+  .slider__slide {
+    flex: 0 0 calc((100% - 72px) / 4) !important;
+    width: calc((100% - 72px) / 4) !important;
+    max-width: calc((100% - 72px) / 4) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Primer elemento sin desplazamiento de Dawn */
+  .ultramaison-featured
+  .product-grid.slider--desktop
+  .slider__slide:first-child {
+    margin-left: 0 !important;
+    scroll-margin-left: 0 !important;
+  }
+
+  /* Último producto termina exactamente en el borde */
+  .ultramaison-featured
+  .product-grid.slider--desktop
+  .slider__slide:last-child {
+    margin-right: 0 !important;
+  }
+
+  /* Eliminar definitivamente espacio fantasma final */
+  .ultramaison-featured .product-grid.slider--desktop::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+}
+
+/* =========================================================
+   FIN DESKTOP CARRUSEL FULL WIDTH REAL
+   ========================================================= */
