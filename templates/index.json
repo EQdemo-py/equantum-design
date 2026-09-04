@@ -47,52 +47,22 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "image_with_text_97BDi4": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_kDfBMG": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Una selección excepcional.</strong>",
-            "heading_size": "h1"
-          }
-        },
-        "text_dMWkTi": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Seleccionamos piezas que trascienden el tiempo.<br/>Diseño, precisión y carácter en perfecta armonía.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_ggCkMT": {
-          "type": "button",
-          "settings": {
-            "button_label": "¡Encuentra el tuyo!",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_kDfBMG",
-        "text_dMWkTi",
-        "button_ggCkMT"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
+    "ultramaison_editorial_9JUVHL": {
+      "type": "ultramaison-editorial",
+      "name": "ULTRAMAISON — Editorial",
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_3_sept_2026_05_27_33_p.m..png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "scheme-3",
+        "eyebrow": "ULTRAMAISON",
+        "heading": "Una selección excepcional.",
+        "text": "<p>Seleccionamos piezas que trascienden el tiempo. Diseño, precisión y carácter en perfecta armonía.</p>",
+        "button_label": "Conoce nuestra filosofía",
+        "button_link": "",
+        "text_alignment": "center",
+        "content_width": 760,
         "color_scheme": "scheme-5",
-        "padding_top": 8,
-        "padding_bottom": 0
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
       }
     },
     "featured_collection_XF4B43": {
@@ -194,7 +164,7 @@
   },
   "order": [
     "slideshow",
-    "image_with_text_97BDi4",
+    "ultramaison_editorial_9JUVHL",
     "featured_collection_XF4B43",
     "slideshow_FpdATL",
     "featured_collection_WmJTTf"
