@@ -4558,3 +4558,46 @@ details-disclosure > details {
 
 /* FIN ICONOS HEADER TRAZO FINO */
 
+
+/* =========================================================
+   ULTRAMAISON — ICONOS HEADER MISMA ESCALA VISUAL
+   ========================================================= */
+
+/* Búsqueda */
+.header__search .svg-wrapper,
+.header__search .svg-wrapper svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/* Usuario */
+.header__icon--account .svg-wrapper,
+.header__icon--account .svg-wrapper svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/* Reloj */
+.header__icon--cart .svg-wrapper,
+.header__icon--cart .svg-wrapper svg {
+  width: 27px !important;
+  height: 27px !important;
+}
+
+/* Menú hamburguesa — mobile */
+.menu-drawer-container .header__icon .svg-wrapper,
+.menu-drawer-container .header__icon .svg-wrapper svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/* Mantener todos centrados */
+.header__icon,
+.header__search {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* FIN ICONOS HEADER MISMA ESCALA VISUAL */
+
