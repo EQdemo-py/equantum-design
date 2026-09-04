@@ -155,8 +155,23 @@
     }
 
     #shopify-section-{{ section.id }} .ultra-commercial__grid {
-      grid-template-columns: 1fr;
+      display: flex;
       gap: {{ section.settings.gap_mobile }}px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .ultra-commercial__banner {
+      flex: 0 0 88%;
+      scroll-snap-align: start;
     }
 
     #shopify-section-{{ section.id }} .ultra-commercial__banner,
