@@ -148,83 +148,8 @@
         "padding_bottom": 0
       }
     },
-    "ultramaison_commercial_banners_AL3UzB": {
-      "type": "ultramaison-commercial-banners",
-      "blocks": {
-        "banner_Kw3D3D": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_4_sept_2026_03_39_41_p.m..png",
-            "eyebrow": "",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "link": "",
-            "alignment": "left",
-            "overlay_left": 60,
-            "overlay_right": 10
-          }
-        },
-        "banner_yRnVaD": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_4_sept_2026_03_40_49_p.m..png",
-            "eyebrow": "",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "link": "",
-            "alignment": "left",
-            "overlay_left": 60,
-            "overlay_right": 10
-          }
-        }
-      },
-      "block_order": [
-        "banner_Kw3D3D",
-        "banner_yRnVaD"
-      ],
-      "name": "UM — Doble banner",
-      "settings": {
-        "color_scheme": "",
-        "content_width": 1600,
-        "height_mode": "adapt",
-        "gap": 36,
-        "banner_height": 460,
-        "gap_mobile": 16,
-        "banner_height_mobile": 380,
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
     "slideshow_FpdATL": {
       "type": "slideshow",
-      "blocks": {
-        "slide_dDzdHx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner_UM_2.png",
-            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_21.png",
-            "image_overlay_opacity": 10,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-2"
-          }
-        }
-      },
-      "block_order": [
-        "slide_dDzdHx"
-      ],
       "name": "PROMOCION",
       "settings": {
         "layout": "full_bleed",
@@ -236,35 +161,6 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
-    },
-    "featured_collection_WmJTTf": {
-      "type": "featured-collection",
-      "name": "¡ÚLTIMAS UNIDADES!",
-      "settings": {
-        "collection": "frontpage",
-        "products_to_show": 4,
-        "title": "¡ÚLTIMAS UNIDADES!",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 16
-      }
     }
   },
   "order": [
@@ -272,8 +168,6 @@
     "ultramaison_editorial_9JUVHL",
     "ultramaison_commercial_banners_pyUPNU",
     "featured_collection_XF4B43",
-    "ultramaison_commercial_banners_AL3UzB",
-    "slideshow_FpdATL",
-    "featured_collection_WmJTTf"
+    "slideshow_FpdATL"
   ]
 }
