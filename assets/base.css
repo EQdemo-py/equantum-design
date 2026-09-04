@@ -3835,18 +3835,33 @@ details-disclosure > details {
 
 /* 4 productos: más boutique, menos catálogo */
 @media screen and (min-width: 990px) {
-  .ultramaison-featured .product-grid {
+
+  /* GRID normal cuando Carousel está desactivado */
+  .ultramaison-featured .product-grid:not(.slider--desktop) {
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-
     gap: 48px 30px !important;
-
     overflow: visible !important;
   }
 
-  .ultramaison-featured .grid__item {
+  .ultramaison-featured .product-grid:not(.slider--desktop) .grid__item {
     width: 100% !important;
     max-width: none !important;
+  }
+
+  /* CARRUSEL: respetar comportamiento nativo de Dawn */
+  .ultramaison-featured .product-grid.slider--desktop {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: var(--grid-desktop-horizontal-spacing) !important;
+  }
+
+  .ultramaison-featured .product-grid.slider--desktop .grid__item {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
   }
 }
 
