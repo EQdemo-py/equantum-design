@@ -68,6 +68,54 @@
         "padding_bottom_mobile": 20
       }
     },
+    "ultramaison_commercial_banners_pyUPNU": {
+      "type": "ultramaison-commercial-banners",
+      "blocks": {
+        "banner_HfxRmX": {
+          "type": "banner",
+          "settings": {
+            "eyebrow": "ULTRAMAISON",
+            "title": "Una expresión de carácter.",
+            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
+            "button_label": "Descubrir",
+            "link": "",
+            "alignment": "left",
+            "overlay_left": 60,
+            "overlay_right": 10
+          }
+        },
+        "banner_EY7UWj": {
+          "type": "banner",
+          "settings": {
+            "eyebrow": "ULTRAMAISON",
+            "title": "Una expresión de carácter.",
+            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
+            "button_label": "Descubrir",
+            "link": "",
+            "alignment": "left",
+            "overlay_left": 60,
+            "overlay_right": 10
+          }
+        }
+      },
+      "block_order": [
+        "banner_HfxRmX",
+        "banner_EY7UWj"
+      ],
+      "name": "UM — Doble banner",
+      "settings": {
+        "color_scheme": "",
+        "content_width": 1440,
+        "gap": 20,
+        "banner_height": 460,
+        "gap_mobile": 16,
+        "banner_height_mobile": 380,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
     "featured_collection_XF4B43": {
       "type": "featured-collection",
       "name": "ULTRAMAISON",
@@ -95,6 +143,54 @@
         "swipe_on_mobile": true,
         "padding_top": 20,
         "padding_bottom": 16
+      }
+    },
+    "ultramaison_commercial_banners_AL3UzB": {
+      "type": "ultramaison-commercial-banners",
+      "blocks": {
+        "banner_Kw3D3D": {
+          "type": "banner",
+          "settings": {
+            "eyebrow": "ULTRAMAISON",
+            "title": "Una expresión de carácter.",
+            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
+            "button_label": "Descubrir",
+            "link": "",
+            "alignment": "left",
+            "overlay_left": 60,
+            "overlay_right": 10
+          }
+        },
+        "banner_yRnVaD": {
+          "type": "banner",
+          "settings": {
+            "eyebrow": "ULTRAMAISON",
+            "title": "Una expresión de carácter.",
+            "text": "<p>Descubrí una selección creada para quienes buscan algo fuera de lo común.</p>",
+            "button_label": "Descubrir",
+            "link": "",
+            "alignment": "left",
+            "overlay_left": 60,
+            "overlay_right": 10
+          }
+        }
+      },
+      "block_order": [
+        "banner_Kw3D3D",
+        "banner_yRnVaD"
+      ],
+      "name": "UM — Doble banner",
+      "settings": {
+        "color_scheme": "",
+        "content_width": 1440,
+        "gap": 20,
+        "banner_height": 460,
+        "gap_mobile": 16,
+        "banner_height_mobile": 380,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "slideshow_FpdATL": {
@@ -168,7 +264,9 @@
   "order": [
     "slideshow",
     "ultramaison_editorial_9JUVHL",
+    "ultramaison_commercial_banners_pyUPNU",
     "featured_collection_XF4B43",
+    "ultramaison_commercial_banners_AL3UzB",
     "slideshow_FpdATL",
     "featured_collection_WmJTTf"
   ]
