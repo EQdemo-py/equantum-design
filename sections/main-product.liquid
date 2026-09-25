@@ -194,9 +194,44 @@
                     {%- endif -%}
                   </p>
                 {%- when 'description' -%}
-                  {%- if product.description != blank -%}
-                    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                      {{ product.description }}
+                  {%- if product.description != blank and block.settings.show_description -%}
+                    <div
+                      class="um-description quick-add-hidden"
+                      style="
+                        --um-desc-heading: {{ block.settings.heading_color }};
+                        --um-desc-text: {{ block.settings.text_color }};
+                        --um-desc-border: {{ block.settings.border_color }};
+                      "
+                      {{ block.shopify_attributes }}
+                    >
+                      {%- if block.settings.collapsible -%}
+                        <details class="um-description__details"{% if block.settings.open_by_default %} open{% endif %}>
+                          <summary>
+                            <span class="um-description__heading">
+                              {{ block.settings.heading | escape }}
+                            </span>
+
+                            <span class="um-description__action">
+                              <span>Ver detalles</span>
+                              <span class="um-description__plus">+</span>
+                            </span>
+                          </summary>
+
+                          <div class="um-description__content rte">
+                            {{ product.description }}
+                          </div>
+                        </details>
+                      {%- else -%}
+                        {%- if block.settings.heading != blank -%}
+                          <h2 class="um-description__title">
+                            {{ block.settings.heading | escape }}
+                          </h2>
+                        {%- endif -%}
+
+                        <div class="um-description__content rte">
+                          {{ product.description }}
+                        </div>
+                      {%- endif -%}
                     </div>
                   {%- endif -%}
                 {%- when 'sku' -%}
@@ -947,8 +982,56 @@
     },
     {
       "type": "description",
-      "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
+      "name": "Descripción",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_description",
+          "label": "Mostrar descripción",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Descripción del producto"
+        },
+        {
+          "type": "checkbox",
+          "id": "collapsible",
+          "label": "Mostrar como desplegable",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "Abierto por defecto",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colores"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color del título",
+          "default": "#0f1f43"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Color del texto",
+          "default": "#4b5563"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Color de líneas",
+          "default": "#d9dde5"
+        }
+      ]
     },
     {
       "type": "share",

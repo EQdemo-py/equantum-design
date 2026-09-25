@@ -68,3 +68,89 @@
     font-size: 11px;
   }
 }
+
+/* UltraMaison — descripción configurable */
+.um-description {
+  width: 100%;
+  margin-top: 18px;
+  color: var(--um-desc-text);
+}
+
+.um-description__details {
+  border-top: 1px solid var(--um-desc-border);
+  border-bottom: 1px solid var(--um-desc-border);
+}
+
+.um-description__details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.um-description__details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.um-description__heading {
+  color: var(--um-desc-heading);
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.um-description__action {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: var(--um-desc-heading);
+  font-size: 11px;
+}
+
+.um-description__plus {
+  font-size: 22px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+.um-description__details[open] .um-description__plus {
+  transform: rotate(45deg);
+}
+
+.um-description__content {
+  padding: 4px 0 24px;
+  color: var(--um-desc-text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.um-description__title {
+  margin: 0 0 14px;
+  color: var(--um-desc-heading);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 749px) {
+  .um-description {
+    margin-top: 14px;
+  }
+
+  .um-description__details > summary {
+    padding: 17px 0;
+  }
+
+  .um-description__heading {
+    font-size: 14px;
+  }
+
+  .um-description__content {
+    padding-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}
