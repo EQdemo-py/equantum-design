@@ -1,0 +1,125 @@
+{%- liquid
+  assign specs_count = 0
+
+  if product.metafields.custom.collection.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.gender.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.case_size.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.case_material.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.bezel_material.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.bezel_color.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.crown_type.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.crystal_type.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.dial_material.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.caliber.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.movement.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.water_resistance.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.band_material.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.band_tone.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.band_length.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+  if product.metafields.custom.band_size.value != blank
+    assign specs_count = specs_count | plus: 1
+  endif
+-%}
+
+{%- if specs_count > 0 -%}
+  <div class="um-specs">
+    <div class="um-specs__eyebrow">DETALLES DEL RELOJ</div>
+    <h2 class="um-specs__title">Especificaciones técnicas</h2>
+
+    <div class="um-specs__grid">
+      {% if product.metafields.custom.collection.value != blank %}
+        <div class="um-spec"><span>Colección</span><strong>{{ product.metafields.custom.collection.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.gender.value != blank %}
+        <div class="um-spec"><span>Género</span><strong>{{ product.metafields.custom.gender.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.case_size.value != blank %}
+        <div class="um-spec"><span>Tamaño de caja</span><strong>{{ product.metafields.custom.case_size.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.case_material.value != blank %}
+        <div class="um-spec"><span>Material de caja</span><strong>{{ product.metafields.custom.case_material.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.bezel_material.value != blank %}
+        <div class="um-spec"><span>Material del bisel</span><strong>{{ product.metafields.custom.bezel_material.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.bezel_color.value != blank %}
+        <div class="um-spec"><span>Color del bisel</span><strong>{{ product.metafields.custom.bezel_color.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.crown_type.value != blank %}
+        <div class="um-spec"><span>Corona</span><strong>{{ product.metafields.custom.crown_type.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.crystal_type.value != blank %}
+        <div class="um-spec"><span>Cristal</span><strong>{{ product.metafields.custom.crystal_type.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.dial_material.value != blank %}
+        <div class="um-spec"><span>Material del dial</span><strong>{{ product.metafields.custom.dial_material.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.caliber.value != blank %}
+        <div class="um-spec"><span>Calibre</span><strong>{{ product.metafields.custom.caliber.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.movement.value != blank %}
+        <div class="um-spec"><span>Movimiento</span><strong>{{ product.metafields.custom.movement.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.water_resistance.value != blank %}
+        <div class="um-spec"><span>Resistencia al agua</span><strong>{{ product.metafields.custom.water_resistance.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.band_material.value != blank %}
+        <div class="um-spec"><span>Material de correa</span><strong>{{ product.metafields.custom.band_material.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.band_tone.value != blank %}
+        <div class="um-spec"><span>Color de correa</span><strong>{{ product.metafields.custom.band_tone.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.band_length.value != blank %}
+        <div class="um-spec"><span>Largo de correa</span><strong>{{ product.metafields.custom.band_length.value }}</strong></div>
+      {% endif %}
+
+      {% if product.metafields.custom.band_size.value != blank %}
+        <div class="um-spec"><span>Ancho de correa</span><strong>{{ product.metafields.custom.band_size.value }}</strong></div>
+      {% endif %}
+    </div>
+  </div>
+{%- endif -%}

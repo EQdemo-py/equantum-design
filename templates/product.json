@@ -102,10 +102,15 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
+    },
+    "ultramaison_specs": {
+      "type": "ultramaison-product-specs",
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "ultramaison_specs",
     "disclosures",
     "related-products"
   ]

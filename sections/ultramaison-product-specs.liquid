@@ -1,0 +1,19 @@
+{{ 'ultramaison-product-specs.css' | asset_url | stylesheet_tag }}
+
+<section class="um-product-specs-section">
+  <div class="page-width">
+    {% render 'ultramaison-product-specs' %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ficha técnica UltraMaison",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ficha técnica UltraMaison"
+    }
+  ]
+}
+{% endschema %}
