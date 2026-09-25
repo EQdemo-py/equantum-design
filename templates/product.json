@@ -51,7 +51,15 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+            "show_description": true,
+            "heading": "Descripción del producto",
+            "collapsible": true,
+            "open_by_default": false,
+            "heading_color": "#0053FB",
+            "text_color": "#4b5563",
+            "border_color": "#d9dde5"
+          }
         },
         "share": {
           "type": "share",
@@ -91,7 +99,7 @@
       "type": "ultramaison-product-specs",
       "settings": {
         "background_color": "#ffffff",
-        "heading_color": "#0053FB",
+        "heading_color": "#0053fb",
         "label_color": "#000000",
         "value_color": "#1f5cff",
         "border_color": "#e5e7eb"
