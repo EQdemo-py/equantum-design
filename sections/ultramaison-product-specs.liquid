@@ -11,29 +11,23 @@
   "
 >
   <div class="page-width">
-    <div class="um-specs-mobile">
-      <details class="um-specs-disclosure">
-        <summary>
-          <div>
-            <span class="um-specs-mobile__eyebrow">DETALLES DEL RELOJ</span>
-            <strong>Especificaciones técnicas</strong>
-          </div>
-
-          <div class="um-specs-mobile__action">
-            <span>Ver detalles</span>
-            <span class="um-specs-mobile__plus">+</span>
-          </div>
-        </summary>
-
-        <div class="um-specs-mobile__content">
-          {% render 'ultramaison-product-specs' %}
+    <details class="um-specs-disclosure">
+      <summary>
+        <div>
+          <span class="um-specs-mobile__eyebrow">DETALLES DEL RELOJ</span>
+          <strong>Especificaciones técnicas</strong>
         </div>
-      </details>
-    </div>
 
-    <div class="um-specs-desktop">
-      {% render 'ultramaison-product-specs' %}
-    </div>
+        <div class="um-specs-mobile__action">
+          <span>Ver detalles</span>
+          <span class="um-specs-mobile__plus">+</span>
+        </div>
+      </summary>
+
+      <div class="um-specs-mobile__content">
+        {% render 'ultramaison-product-specs' %}
+      </div>
+    </details>
   </div>
 </section>
 
