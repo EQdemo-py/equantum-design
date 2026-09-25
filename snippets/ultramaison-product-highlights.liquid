@@ -1,0 +1,80 @@
+{%- liquid
+  assign highlight_count = 0
+-%}
+
+{%- capture highlights -%}
+
+  {%- if product.metafields.custom.case_size.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.case_size.value }}</strong>
+      <span>Tamaño de<br>caja</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.water_resistance.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.water_resistance.value }}</strong>
+      <span>Resistencia al<br>agua</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.crystal_type.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.crystal_type.value }}</strong>
+      <span>Cristal</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.movement.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.movement.value }}</strong>
+      <span>Movimiento</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.caliber.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.caliber.value }}</strong>
+      <span>Calibre</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.crown_type.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.crown_type.value }}</strong>
+      <span>Tipo de<br>corona</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.band_tone.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.band_tone.value }}</strong>
+      <span>Color de<br>correa</span>
+    </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
+  {%- endif -%}
+
+  {%- if product.metafields.custom.bezel_color.value != blank and highlight_count < 4 -%}
+    <div class="um-highlight">
+      <strong>{{ product.metafields.custom.bezel_color.value }}</strong>
+      <span>Color del<br>bisel</span>
+    </div>
+  {%- endif -%}
+
+{%- endcapture -%}
+
+{%- if highlight_count > 0 -%}
+  <div class="um-highlights">
+    <div class="um-highlights__heading">LO ESENCIAL DE ESTA PIEZA</div>
+
+    <div class="um-highlights__grid">
+      {{ highlights }}
+    </div>
+  </div>
+{%- endif -%}

@@ -11,6 +11,7 @@
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+  {{ 'ultramaison-product-highlights.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -491,6 +492,7 @@
                     block: block,
                     product_form_id: product_form_id
                   %}
+                {% render 'ultramaison-product-highlights' %}
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,
