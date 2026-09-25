@@ -84,3 +84,108 @@
     font-size: 13px;
   }
 }
+
+/* UltraMaison — configuración visual */
+.um-product-specs-section {
+  background: var(--um-spec-bg);
+}
+
+.um-specs__eyebrow,
+.um-specs__title {
+  color: var(--um-spec-heading);
+}
+
+.um-spec {
+  border-color: var(--um-spec-border);
+}
+
+.um-spec span {
+  color: var(--um-spec-label);
+  opacity: 1;
+}
+
+.um-spec strong {
+  color: var(--um-spec-value);
+}
+
+.um-specs-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .um-product-specs-section {
+    padding: 0;
+  }
+
+  .um-specs-desktop {
+    display: none;
+  }
+
+  .um-specs-mobile {
+    display: block;
+  }
+
+  .um-specs-disclosure {
+    border-top: 1px solid var(--um-spec-border);
+    border-bottom: 1px solid var(--um-spec-border);
+  }
+
+  .um-specs-disclosure > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .um-specs-disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .um-specs-mobile__eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--um-spec-label);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .18em;
+  }
+
+  .um-specs-disclosure summary strong {
+    display: block;
+    color: var(--um-spec-heading);
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 500;
+  }
+
+  .um-specs-mobile__action {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    color: var(--um-spec-heading);
+    font-size: 11px;
+  }
+
+  .um-specs-mobile__plus {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform .2s ease;
+  }
+
+  .um-specs-disclosure[open] .um-specs-mobile__plus {
+    transform: rotate(45deg);
+  }
+
+  .um-specs-mobile__content {
+    padding: 0 0 28px;
+  }
+
+  .um-specs-mobile__content .um-specs__eyebrow,
+  .um-specs-mobile__content .um-specs__title {
+    display: none;
+  }
+}

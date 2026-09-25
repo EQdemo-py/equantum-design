@@ -1,15 +1,81 @@
 {{ 'ultramaison-product-specs.css' | asset_url | stylesheet_tag }}
 
-<section class="um-product-specs-section">
+<section
+  class="um-product-specs-section"
+  style="
+    --um-spec-bg: {{ section.settings.background_color }};
+    --um-spec-heading: {{ section.settings.heading_color }};
+    --um-spec-label: {{ section.settings.label_color }};
+    --um-spec-value: {{ section.settings.value_color }};
+    --um-spec-border: {{ section.settings.border_color }};
+  "
+>
   <div class="page-width">
-    {% render 'ultramaison-product-specs' %}
+    <div class="um-specs-mobile">
+      <details class="um-specs-disclosure">
+        <summary>
+          <div>
+            <span class="um-specs-mobile__eyebrow">DETALLES DEL RELOJ</span>
+            <strong>Especificaciones técnicas</strong>
+          </div>
+
+          <div class="um-specs-mobile__action">
+            <span>Ver detalles</span>
+            <span class="um-specs-mobile__plus">+</span>
+          </div>
+        </summary>
+
+        <div class="um-specs-mobile__content">
+          {% render 'ultramaison-product-specs' %}
+        </div>
+      </details>
+    </div>
+
+    <div class="um-specs-desktop">
+      {% render 'ultramaison-product-specs' %}
+    </div>
   </div>
 </section>
 
 {% schema %}
 {
   "name": "Ficha técnica UltraMaison",
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del título",
+      "default": "#0f1f43"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Color de etiquetas",
+      "default": "#74819b"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "Color de valores",
+      "default": "#1f5cff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color de líneas",
+      "default": "#e5e7eb"
+    }
+  ],
   "presets": [
     {
       "name": "Ficha técnica UltraMaison"
