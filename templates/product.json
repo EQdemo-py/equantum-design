@@ -56,7 +56,7 @@
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "COMPARTIR PRODUCTO"
           }
         }
       },
@@ -91,7 +91,7 @@
       "type": "ultramaison-product-specs",
       "settings": {
         "background_color": "#ffffff",
-        "heading_color": "#0f1f43",
+        "heading_color": "#0053FB",
         "label_color": "#000000",
         "value_color": "#1f5cff",
         "border_color": "#e5e7eb"
