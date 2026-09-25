@@ -15,7 +15,6 @@
         "slide-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner_UM_2_2.png",
             "mobile_image": "shopify://shop_images/Diseno_sin_titulo_23.png",
             "image_overlay_opacity": 10,
             "heading": "",
@@ -123,7 +122,7 @@
       "type": "featured-collection",
       "name": "ULTRAMAISON",
       "settings": {
-        "collection": "frontpage",
+        "collection": "dream-sea-hombres",
         "products_to_show": 25,
         "title": "ULTRAMAISON",
         "heading_size": "h0",
@@ -205,8 +204,6 @@
         "slide_dDzdHx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner_UM_2.png",
-            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_21.png",
             "image_overlay_opacity": 10,
             "heading": "",
             "heading_size": "h1",
