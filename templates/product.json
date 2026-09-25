@@ -89,7 +89,13 @@
     },
     "ultramaison_specs": {
       "type": "ultramaison-product-specs",
-      "settings": {}
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_color": "#0f1f43",
+        "label_color": "#000000",
+        "value_color": "#1f5cff",
+        "border_color": "#e5e7eb"
+      }
     },
     "disclosures": {
       "type": "disclosures",
