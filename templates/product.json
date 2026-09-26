@@ -31,17 +31,38 @@
           "type": "price",
           "settings": {
             "current_price_size": 24,
-            "current_price_color": "#F10C0C",
+            "current_price_color": "#f10c0c",
             "compare_price_size": 18,
             "compare_price_color": "#666666",
             "show_discount": true,
             "discount_size": 20,
             "discount_text_color": "#ffffff",
-            "discount_background": "#F10C0C",
-            "discount_border_color": "#FFFFFF",
+            "discount_background": "#f10c0c",
+            "discount_border_color": "#ffffff",
             "show_tax_text": true,
             "tax_size": 15,
             "tax_color": "#666666"
+          }
+        },
+        "ultramaison_highlights_4Y9CMt": {
+          "type": "ultramaison_highlights",
+          "settings": {
+            "show_highlights": true,
+            "heading": "LO ESENCIAL DE ESTA PIEZA",
+            "heading_size": 11,
+            "heading_color": "#0053FB",
+            "heading_weight": "600",
+            "value_size": 18,
+            "value_color": "#0f1f43",
+            "value_weight": "600",
+            "label_size": 11,
+            "label_color": "#000000",
+            "label_weight": "500",
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "spacing": 16,
+            "desktop_columns": "4",
+            "mobile_columns": "2"
           }
         },
         "variant_picker": {
@@ -86,6 +107,7 @@
         "title",
         "rating",
         "price",
+        "ultramaison_highlights_4Y9CMt",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
