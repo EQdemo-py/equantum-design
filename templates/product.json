@@ -15,8 +15,8 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "body"
+            "text": "Producto exclusivo de Ultramaison",
+            "text_style": "uppercase"
           }
         },
         "title": {
