@@ -154,3 +154,59 @@
     line-height: 1.65;
   }
 }
+
+/* UltraMaison — precio configurable */
+.um-product-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.um-product-price .price {
+  margin: 0;
+}
+
+.um-product-price .price__sale {
+  align-items: baseline;
+}
+
+.um-product-price .price-item--regular {
+  color: var(--um-price-compare-color) !important;
+  font-size: var(--um-price-compare-size) !important;
+}
+
+.um-product-price .price__sale .price-item--sale,
+.um-product-price .price__regular .price-item--regular {
+  color: var(--um-price-current-color) !important;
+  font-size: var(--um-price-current-size) !important;
+}
+
+.um-product-price__discount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid var(--um-price-discount-border);
+  background: var(--um-price-discount-bg);
+  color: var(--um-price-discount-color);
+  font-size: var(--um-price-discount-size);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.um-product-tax {
+  color: var(--um-price-tax-color) !important;
+  font-size: var(--um-price-tax-size) !important;
+}
+
+@media screen and (max-width: 749px) {
+  .um-product-price {
+    gap: 8px 10px;
+  }
+
+  .um-product-price__discount {
+    padding: 4px 8px;
+  }
+}

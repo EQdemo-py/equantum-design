@@ -108,21 +108,59 @@
                     </a>
                   </div>
                 {%- when 'price' -%}
-                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  <div
+                    id="price-{{ section.id }}"
+                    class="um-product-price"
+                    role="status"
+                    style="
+                      --um-price-current-size: {{ block.settings.current_price_size }}px;
+                      --um-price-current-color: {{ block.settings.current_price_color }};
+                      --um-price-compare-size: {{ block.settings.compare_price_size }}px;
+                      --um-price-compare-color: {{ block.settings.compare_price_color }};
+                      --um-price-discount-size: {{ block.settings.discount_size }}px;
+                      --um-price-discount-color: {{ block.settings.discount_text_color }};
+                      --um-price-discount-bg: {{ block.settings.discount_background }};
+                      --um-price-discount-border: {{ block.settings.discount_border_color }};
+                      --um-price-tax-size: {{ block.settings.tax_size }}px;
+                      --um-price-tax-color: {{ block.settings.tax_color }};
+                    "
+                    {{ block.shopify_attributes }}
+                  >
                     {%- render 'price',
                       product: product,
                       use_variant: true,
-                      show_badges: true,
+                      show_badges: false,
                       price_class: 'price--large'
                     -%}
+
+                    {%- assign current_variant = product.selected_or_first_available_variant -%}
+                    {%- if block.settings.show_discount
+                      and current_variant.compare_at_price > current_variant.price
+                    -%}
+                      {%- assign discount_amount = current_variant.compare_at_price
+                        | minus: current_variant.price
+                        | times: 100.0
+                        | divided_by: current_variant.compare_at_price
+                        | round
+                      -%}
+                      <span class="um-product-price__discount">
+                        -{{ discount_amount }}%
+                      </span>
+                    {%- endif -%}
                   </div>
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                       <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                     </div>
                   {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
+                  {%- if block.settings.show_tax_text and cart.taxes_included or block.settings.show_tax_text and cart.duties_included or block.settings.show_tax_text and shop.shipping_policy.body != blank -%}
+                    <div
+                      class="product__tax caption rte um-product-tax"
+                      style="
+                        --um-price-tax-size: {{ block.settings.tax_size }}px;
+                        --um-price-tax-color: {{ block.settings.tax_color }};
+                      "
+                    >
                       {%- if cart.duties_included and cart.taxes_included -%}
                         {{ 'products.product.duties_and_taxes_included' | t }}
                       {%- elsif cart.taxes_included -%}
@@ -838,8 +876,114 @@
     },
     {
       "type": "price",
-      "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
+      "name": "Precio",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Precio actual"
+        },
+        {
+          "type": "range",
+          "id": "current_price_size",
+          "min": 14,
+          "max": 42,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño",
+          "default": 24
+        },
+        {
+          "type": "color",
+          "id": "current_price_color",
+          "label": "Color",
+          "default": "#111111"
+        },
+        {
+          "type": "header",
+          "content": "Precio anterior"
+        },
+        {
+          "type": "range",
+          "id": "compare_price_size",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño",
+          "default": 18
+        },
+        {
+          "type": "color",
+          "id": "compare_price_color",
+          "label": "Color",
+          "default": "#666666"
+        },
+        {
+          "type": "header",
+          "content": "Descuento"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_discount",
+          "label": "Mostrar porcentaje de descuento",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "discount_size",
+          "min": 10,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño del porcentaje",
+          "default": 13
+        },
+        {
+          "type": "color",
+          "id": "discount_text_color",
+          "label": "Color del porcentaje",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "discount_background",
+          "label": "Fondo del porcentaje",
+          "default": "#0057ff"
+        },
+        {
+          "type": "color",
+          "id": "discount_border_color",
+          "label": "Borde del porcentaje",
+          "default": "#0057ff"
+        },
+        {
+          "type": "header",
+          "content": "Impuestos"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tax_text",
+          "label": "Mostrar texto de impuestos",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "tax_size",
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño del texto",
+          "default": 12
+        },
+        {
+          "type": "color",
+          "id": "tax_color",
+          "label": "Color del texto",
+          "default": "#666666"
+        }
+      ]
     },
     {
       "type": "sku",
