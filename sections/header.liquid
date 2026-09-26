@@ -181,6 +181,10 @@
       endif
     -%}
 
+    <div class="um-header-search-slot">
+      {% render 'ultramaison-header-search' %}
+    </div>
+
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">

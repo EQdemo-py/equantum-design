@@ -1,0 +1,80 @@
+
+<div class="um-header-search">
+  {%- if settings.predictive_search_enabled -%}
+    <predictive-search
+      class="um-header-search__predictive"
+      data-loading-text="{{ 'accessibility.loading' | t }}"
+    >
+  {%- else -%}
+    <search-form class="um-header-search__predictive">
+  {%- endif -%}
+
+    <form
+      action="{{ routes.search_url }}"
+      method="get"
+      role="search"
+      class="um-header-search__form"
+    >
+      <div class="um-header-search__field">
+        <span class="um-header-search__icon">
+          {{- 'icon-search.svg' | inline_asset_content -}}
+        </span>
+
+        <input
+          class="um-header-search__input"
+          id="UltraMaisonHeaderSearch"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="Buscar relojes, colecciones..."
+          aria-label="Buscar productos"
+          {% if settings.predictive_search_enabled %}
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="predictive-search-results"
+            aria-controls="predictive-search-results"
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            autocorrect="off"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          {% endif %}
+        >
+
+        <input type="hidden" name="options[prefix]" value="last">
+
+        <button
+          type="submit"
+          class="um-header-search__submit"
+          aria-label="Buscar"
+        >
+          {{- 'icon-search.svg' | inline_asset_content -}}
+        </button>
+      </div>
+
+      {% if settings.predictive_search_enabled %}
+        <div
+          class="predictive-search predictive-search--header"
+          tabindex="-1"
+          data-predictive-search
+        >
+          {%- render 'loading-spinner',
+            class: 'predictive-search__loading-state'
+          -%}
+        </div>
+
+        <span
+          class="predictive-search-status visually-hidden"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      {% endif %}
+    </form>
+
+  {%- if settings.predictive_search_enabled -%}
+    </predictive-search>
+  {%- else -%}
+    </search-form>
+  {%- endif -%}
+</div>

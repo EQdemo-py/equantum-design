@@ -1,32 +1,31 @@
 
 /* ==========================================================
-   UltraMaison — Premium Ecommerce Header
-   Desktop: logo | search | utilities / navigation below
-   Mobile: drawer | logo | utilities
+   ULTRAMAISON HEADER
+   Ecommerce desktop + mobile Dawn
    ========================================================== */
 
 @media screen and (min-width: 990px) {
 
-  /* Two-row ecommerce structure */
   .section-header .header {
-    display: grid;
-    grid-template-columns: minmax(170px, 240px) minmax(320px, 1fr) auto;
+    display: grid !important;
+    grid-template-columns: 210px minmax(360px, 1fr) auto !important;
     grid-template-areas:
       "logo search icons"
-      "nav nav nav";
-    column-gap: 3rem;
-    row-gap: 0;
-    align-items: center;
-    padding-top: 1.4rem;
-    padding-bottom: 0;
+      "nav nav nav" !important;
+    align-items: center !important;
+    column-gap: 32px !important;
+    row-gap: 0 !important;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 32px 0 !important;
   }
 
-  /* Logo */
+  /* LOGO */
   .section-header .header__heading,
   .section-header .header__heading-link {
-    grid-area: logo;
-    justify-self: start;
-    margin: 0;
+    grid-area: logo !important;
+    justify-self: start !important;
+    margin: 0 !important;
   }
 
   .section-header .header__heading-logo-wrapper {
@@ -34,80 +33,129 @@
     align-items: center;
   }
 
-  /* Search */
+  /* Ocultamos lupa modal Dawn SOLO desktop */
   .section-header .header > details-modal.header__search {
+    display: none !important;
+  }
+
+  /* BUSCADOR REAL */
+  .um-header-search-slot {
     grid-area: search;
-    justify-self: stretch;
+    display: block;
     width: 100%;
+    min-width: 0;
   }
 
-  /*
-   * Dawn uses a modal search button by default.
-   * This gives it a commercial search-bar appearance while
-   * retaining Shopify predictive search/modal behaviour.
-   */
-  .section-header .header__search {
+  .um-header-search,
+  .um-header-search__predictive,
+  .um-header-search__form {
+    display: block;
     width: 100%;
-    max-width: none;
+    position: relative;
   }
 
-  .section-header .header__search .header__icon {
-    width: 100%;
-    height: 4.6rem;
-    min-width: 32rem;
-    justify-content: flex-start;
-    border: 1px solid rgba(var(--color-foreground), .18);
-    border-radius: 6px;
-    padding: 0 1.6rem;
-    background: rgb(var(--color-background));
-  }
-
-  .section-header .header__search .header__icon::after {
-    content: var(--um-search-placeholder, "Buscar relojes, colecciones...");
-    margin-left: 1rem;
-    font-size: 1.4rem;
-    font-weight: 400;
-    opacity: .62;
-    white-space: nowrap;
-  }
-
-  .section-header .header__search .svg-wrapper {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  /* Account + cart */
-  .section-header .header__icons {
-    grid-area: icons;
-    justify-self: end;
+  .um-header-search__field {
+    height: 46px;
+    display: flex;
     align-items: center;
-    gap: .3rem;
-  }
-
-  .section-header .header__icon {
-    transition: opacity .2s ease;
-  }
-
-  .section-header .header__icons > .header__icon:hover,
-  .section-header .header__icons > shopify-account:hover {
-    opacity: .65;
-  }
-
-  /* Navigation becomes the full second row */
-  .section-header .header__inline-menu {
-    grid-area: nav;
     width: 100%;
-    margin: 1.2rem 0 0;
-    border-top: 1px solid rgba(var(--color-foreground), .10);
-    justify-self: stretch;
+    border: 1px solid #d8dce5;
+    border-radius: 7px;
+    background: #fff;
+    overflow: hidden;
+    transition:
+      border-color .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .um-header-search__field:focus-within {
+    border-color: #175cff;
+    box-shadow: 0 0 0 1px #175cff;
+  }
+
+  .um-header-search__icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    flex: 0 0 20px;
+    color: #667085;
+  }
+
+  .um-header-search__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .um-header-search__input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0 12px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #111827;
+    font: inherit;
+    font-size: 14px;
+  }
+
+  .um-header-search__input::placeholder {
+    color: #7c8495;
+    opacity: 1;
+  }
+
+  .um-header-search__submit {
+    width: 48px;
+    height: 100%;
+    flex: 0 0 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-left: 1px solid #e5e7eb;
+    background: transparent;
+    color: #175cff;
+    cursor: pointer;
+  }
+
+  .um-header-search__submit svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* Predictive results */
+  .um-header-search .predictive-search {
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 20;
+  }
+
+  /* ICONOS */
+  .section-header .header__icons {
+    grid-area: icons !important;
+    justify-self: end !important;
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  /* MENÚ SEGUNDA FILA */
+  .section-header .header__inline-menu {
+    grid-area: nav !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 15px 0 0 !important;
+    border-top: 1px solid #edf0f4;
   }
 
   .section-header .header__inline-menu > .list-menu {
+    display: flex !important;
     width: 100%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
+    align-items: center;
+    flex-wrap: nowrap !important;
     gap: 0;
   }
 
@@ -116,50 +164,52 @@
   }
 
   .section-header .header__inline-menu .header__menu-item {
-    padding: 1.35rem 1.7rem;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    letter-spacing: .045em;
-    font-weight: 600;
-    text-decoration: none;
+    padding: 14px 18px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .04em;
+    text-decoration: none !important;
   }
 
-  .section-header .header__inline-menu .header__menu-item:hover span,
-  .section-header .header__inline-menu .header__active-menu-item {
-    text-decoration: none;
-  }
-
-  .section-header .header__inline-menu .header__menu-item:hover {
-    opacity: .65;
+  .section-header .header__inline-menu .header__menu-item:hover,
+  .section-header .header__inline-menu .header__menu-item:hover span {
+    text-decoration: none !important;
   }
 }
 
-/* Medium desktop: keep menu on ONE row */
-@media screen and (min-width: 990px) and (max-width: 1250px) {
+/* Pantallas desktop más ajustadas */
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+
   .section-header .header {
-    grid-template-columns: 170px minmax(280px, 1fr) auto;
-    column-gap: 1.8rem;
+    grid-template-columns: 170px minmax(280px, 1fr) auto !important;
+    column-gap: 20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .section-header .header__inline-menu .header__menu-item {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 1.15rem;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 11px !important;
   }
 }
 
-/* Mobile / tablet */
+/* MOBILE
+   Conservamos drawer + buscador modal nativo de Dawn.
+*/
 @media screen and (max-width: 989px) {
+
+  .um-header-search-slot {
+    display: none !important;
+  }
+
   .section-header .header {
-    min-height: 6rem;
+    min-height: 60px;
   }
 
   .section-header .header__heading-logo {
-    max-height: 4rem;
+    max-height: 40px;
     object-fit: contain;
-  }
-
-  .section-header .header__icons {
-    gap: 0;
   }
 }
