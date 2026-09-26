@@ -1259,6 +1259,73 @@
         "default": "scheme-5"
       },
       {
+        "type": "header",
+        "content": "Descuento porcentual"
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_size",
+        "min": 9,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del porcentaje",
+        "default": 12
+      },
+      {
+        "type": "select",
+        "id": "um_discount_badge_weight",
+        "label": "Peso del porcentaje",
+        "default": "700",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "500", "label": "Medio" },
+          { "value": "600", "label": "Semibold" },
+          { "value": "700", "label": "Negrita" },
+          { "value": "800", "label": "Extra negrita" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "um_discount_badge_text_color",
+        "label": "Color del porcentaje",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "um_discount_badge_background",
+        "label": "Fondo del descuento",
+        "default": "#175cff"
+      },
+      {
+        "type": "color",
+        "id": "um_discount_badge_border_color",
+        "label": "Color del borde",
+        "default": "#175cff"
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_radius",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Redondeado",
+        "default": 3
+      },
+      {
+        "type": "select",
+        "id": "um_discount_badge_position",
+        "label": "Ubicación del descuento",
+        "default": "bottom-left",
+        "options": [
+          { "value": "top-left", "label": "Arriba izquierda" },
+          { "value": "top-right", "label": "Arriba derecha" },
+          { "value": "bottom-left", "label": "Abajo izquierda" },
+          { "value": "bottom-right", "label": "Abajo derecha" }
+        ]
+      },
+      {
         "type": "color_scheme",
         "id": "sold_out_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",

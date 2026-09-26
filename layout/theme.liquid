@@ -319,6 +319,40 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+  
+    <style>
+      .um-discount-badge {
+        font-size: {{ settings.um_discount_badge_size | default: 12 }}px !important;
+        font-weight: {{ settings.um_discount_badge_weight | default: '700' }} !important;
+        color: {{ settings.um_discount_badge_text_color | default: '#ffffff' }} !important;
+        background: {{ settings.um_discount_badge_background | default: '#175cff' }} !important;
+        border: 1px solid {{ settings.um_discount_badge_border_color | default: '#175cff' }} !important;
+        border-radius: {{ settings.um_discount_badge_radius | default: 3 }}px !important;
+        line-height: 1 !important;
+        padding: .55em .75em !important;
+      }
+
+      .card__badge:has(.um-discount-badge--top-left) {
+        align-self: flex-start !important;
+        justify-self: flex-start !important;
+      }
+
+      .card__badge:has(.um-discount-badge--top-right) {
+        align-self: flex-start !important;
+        justify-self: flex-end !important;
+      }
+
+      .card__badge:has(.um-discount-badge--bottom-left) {
+        align-self: flex-end !important;
+        justify-self: flex-start !important;
+      }
+
+      .card__badge:has(.um-discount-badge--bottom-right) {
+        align-self: flex-end !important;
+        justify-self: flex-end !important;
+      }
+    </style>
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
