@@ -51,7 +51,15 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+            "show_description": true,
+            "heading": "Descripción del producto",
+            "collapsible": true,
+            "open_by_default": false,
+            "heading_color": "#0f1f43",
+            "text_color": "#4b5563",
+            "border_color": "#d9dde5"
+          }
         },
         "share": {
           "type": "share",
@@ -108,6 +116,35 @@
         "padding_bottom": 0
       }
     },
+    "featured_collection_fc3QTX": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "dream-sea-hombres",
+        "products_to_show": 4,
+        "title": "Colección destacada",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -131,6 +168,7 @@
     "main",
     "ultramaison_specs",
     "disclosures",
+    "featured_collection_fc3QTX",
     "related-products"
   ]
 }
