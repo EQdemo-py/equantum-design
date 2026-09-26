@@ -51,15 +51,7 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-            "show_description": true,
-            "heading": "Descripción del producto",
-            "collapsible": true,
-            "open_by_default": false,
-            "heading_color": "#0053FB",
-            "text_color": "#4b5563",
-            "border_color": "#d9dde5"
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
@@ -82,7 +74,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "small",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",

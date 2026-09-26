@@ -12,9 +12,9 @@
     "logo": "shopify://shop_images/Diseno_sin_titulo_17.png",
     "logo_width": 190,
     "favicon": "shopify://shop_images/Diseno_sin_titulo_20.png",
-    "type_header_font": "cormorant_n4",
+    "type_header_font": "sans_serif_n7",
     "heading_scale": 115,
-    "type_body_font": "manrope_n4",
+    "type_body_font": "sans_serif_n4",
     "body_scale": 100,
     "page_width": 1600,
     "spacing_sections": 0,
@@ -146,7 +146,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#000000",
           "button": "#0053fb",
