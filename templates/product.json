@@ -21,7 +21,15 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "desktop_size": 40,
+            "mobile_size": 23,
+            "title_color": "#111111",
+            "title_weight": "700",
+            "line_height": 110,
+            "alignment": "left",
+            "margin_bottom": 8
+          }
         },
         "rating": {
           "type": "rating",
@@ -39,7 +47,7 @@
             "discount_text_color": "#ffffff",
             "discount_background": "#f10c0c",
             "discount_border_color": "#ffffff",
-            "show_tax_text": true,
+            "show_tax_text": false,
             "tax_size": 15,
             "tax_color": "#666666"
           }
@@ -50,7 +58,7 @@
             "show_highlights": true,
             "heading": "LO ESENCIAL DE ESTA PIEZA",
             "heading_size": 11,
-            "heading_color": "#0053FB",
+            "heading_color": "#0053fb",
             "heading_weight": "600",
             "value_size": 18,
             "value_color": "#0f1f43",
