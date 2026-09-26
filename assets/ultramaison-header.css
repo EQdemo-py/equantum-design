@@ -213,3 +213,199 @@
     object-fit: contain;
   }
 }
+
+/* ==========================================================
+   ULTRAMAISON — MOBILE PREMIUM DRAWER
+   Mantiene la lógica nativa de Shopify / Dawn
+   ========================================================== */
+
+@media screen and (max-width: 989px) {
+
+  /* Drawer */
+  #menu-drawer.menu-drawer {
+    width: min(88vw, 390px);
+    max-width: 390px;
+    border-right: 0;
+    background: #ffffff;
+    box-shadow: 18px 0 50px rgba(15, 31, 67, 0.12);
+  }
+
+  .menu-drawer__inner-container {
+    background: #ffffff;
+  }
+
+  .menu-drawer__navigation-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #ffffff;
+  }
+
+  .menu-drawer__navigation {
+    padding: 22px 20px 28px !important;
+  }
+
+  /* Links principales */
+  .menu-drawer__menu > li {
+    border-bottom: 1px solid #edf0f5;
+  }
+
+  .menu-drawer__menu > li:last-child {
+    border-bottom: 0;
+  }
+
+  .menu-drawer__menu-item {
+    min-height: 58px;
+    padding: 0 4px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    color: #0f1f43 !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    letter-spacing: .035em;
+    text-decoration: none !important;
+    transition:
+      color .18s ease,
+      padding-left .18s ease,
+      background .18s ease;
+  }
+
+  .menu-drawer__menu-item:hover,
+  .menu-drawer__menu-item:focus-visible {
+    color: #175cff !important;
+    padding-left: 8px !important;
+    background: transparent !important;
+  }
+
+  .menu-drawer__menu-item--active {
+    color: #175cff !important;
+    background: transparent !important;
+  }
+
+  /* Flechas */
+  .menu-drawer__menu-item > .svg-wrapper {
+    width: 17px;
+    height: 17px;
+    color: #8290aa;
+  }
+
+  .menu-drawer__menu-item > .svg-wrapper:last-child {
+    display: none;
+  }
+
+  /* Submenú */
+  .menu-drawer__submenu {
+    background: #ffffff !important;
+  }
+
+  .menu-drawer__inner-submenu {
+    background: #ffffff;
+    padding: 0 20px 30px;
+  }
+
+  /* Botón volver */
+  .menu-drawer__close-button {
+    width: 100%;
+    min-height: 64px;
+    margin: 0 !important;
+    padding: 0 4px !important;
+    border-bottom: 1px solid #e8ecf3;
+    color: #0f1f43 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: .04em;
+  }
+
+  .menu-drawer__close-button .svg-wrapper {
+    width: 18px;
+    margin-right: 12px;
+    color: #175cff;
+  }
+
+  /* Segundo nivel */
+  .menu-drawer__submenu .menu-drawer__menu-item {
+    min-height: 54px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Utility area */
+  .menu-drawer__utility-links {
+    margin-top: auto;
+    padding: 20px !important;
+    border-top: 1px solid #e8ecf3;
+    background: #f8f9fc !important;
+  }
+
+  .menu-drawer__utility-links .list-social {
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  /* Animación más suave */
+  .menu-drawer,
+  .menu-drawer__submenu {
+    transition:
+      transform .28s cubic-bezier(.22, .61, .36, 1),
+      visibility .28s ease !important;
+  }
+
+  /* Botón hamburguesa / cerrar */
+  .header__icon--menu {
+    border-radius: 50%;
+    transition: background .2s ease;
+  }
+
+  .header__icon--menu:hover {
+    background: #f4f6fa;
+  }
+
+  /* Header mobile más limpio */
+  .section-header .header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section-header .header__heading-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-header .header__heading-logo {
+    width: auto;
+    max-height: 42px;
+  }
+
+  /* Iconos */
+  .section-header .header__icons .header__icon,
+  .section-header shopify-account.header__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section-header .header__icons .svg-wrapper,
+  .section-header shopify-account .svg-wrapper {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* Mobile pequeño */
+@media screen and (max-width: 480px) {
+  #menu-drawer.menu-drawer {
+    width: 88vw;
+  }
+
+  .menu-drawer__navigation {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .menu-drawer__menu-item {
+    min-height: 56px;
+    font-size: 13.5px !important;
+  }
+}
