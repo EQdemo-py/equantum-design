@@ -210,3 +210,50 @@
     padding: 4px 8px;
   }
 }
+
+
+/* UltraMaison — Lo esencial configurable */
+.um-highlights {
+  background: var(--um-highlight-bg);
+  border-top: 1px solid var(--um-highlight-border);
+  border-bottom: 1px solid var(--um-highlight-border);
+  padding: var(--um-highlight-spacing) 0;
+}
+
+.um-highlights__heading {
+  margin-bottom: var(--um-highlight-spacing);
+  color: var(--um-highlight-heading-color);
+  font-size: var(--um-highlight-heading-size);
+  font-weight: var(--um-highlight-heading-weight);
+  line-height: 1.2;
+  letter-spacing: .14em;
+}
+
+.um-highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--um-highlight-desktop-columns), minmax(0, 1fr));
+  gap: var(--um-highlight-spacing);
+}
+
+.um-highlight strong {
+  display: block;
+  color: var(--um-highlight-value-color);
+  font-size: var(--um-highlight-value-size);
+  font-weight: var(--um-highlight-value-weight);
+  line-height: 1.15;
+}
+
+.um-highlight span {
+  display: block;
+  margin-top: 5px;
+  color: var(--um-highlight-label-color);
+  font-size: var(--um-highlight-label-size);
+  font-weight: var(--um-highlight-label-weight);
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 749px) {
+  .um-highlights__grid {
+    grid-template-columns: repeat(var(--um-highlight-mobile-columns), minmax(0, 1fr));
+  }
+}

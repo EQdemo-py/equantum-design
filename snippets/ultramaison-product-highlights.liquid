@@ -65,13 +65,37 @@
       <strong>{{ product.metafields.custom.bezel_color.value }}</strong>
       <span>Color del<br>bisel</span>
     </div>
+    {%- assign highlight_count = highlight_count | plus: 1 -%}
   {%- endif -%}
 
 {%- endcapture -%}
 
 {%- if highlight_count > 0 -%}
-  <div class="um-highlights">
-    <div class="um-highlights__heading">LO ESENCIAL DE ESTA PIEZA</div>
+  <div
+    class="um-highlights"
+    style="
+      --um-highlight-heading-size: {{ block.settings.heading_size }}px;
+      --um-highlight-heading-color: {{ block.settings.heading_color }};
+      --um-highlight-heading-weight: {{ block.settings.heading_weight }};
+      --um-highlight-value-size: {{ block.settings.value_size }}px;
+      --um-highlight-value-color: {{ block.settings.value_color }};
+      --um-highlight-value-weight: {{ block.settings.value_weight }};
+      --um-highlight-label-size: {{ block.settings.label_size }}px;
+      --um-highlight-label-color: {{ block.settings.label_color }};
+      --um-highlight-label-weight: {{ block.settings.label_weight }};
+      --um-highlight-bg: {{ block.settings.background_color }};
+      --um-highlight-border: {{ block.settings.border_color }};
+      --um-highlight-spacing: {{ block.settings.spacing }}px;
+      --um-highlight-desktop-columns: {{ block.settings.desktop_columns }};
+      --um-highlight-mobile-columns: {{ block.settings.mobile_columns }};
+    "
+    {{ block.shopify_attributes }}
+  >
+    {%- if block.settings.heading != blank -%}
+      <div class="um-highlights__heading">
+        {{ block.settings.heading | escape }}
+      </div>
+    {%- endif -%}
 
     <div class="um-highlights__grid">
       {{ highlights }}

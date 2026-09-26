@@ -55,6 +55,27 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "ultramaison_highlights": {
+          "type": "ultramaison_highlights",
+          "settings": {
+            "show_highlights": true,
+            "heading": "LO ESENCIAL DE ESTA PIEZA",
+            "heading_size": 11,
+            "heading_color": "#74819b",
+            "heading_weight": "600",
+            "value_size": 18,
+            "value_color": "#0f1f43",
+            "value_weight": "500",
+            "label_size": 11,
+            "label_color": "#74819b",
+            "label_weight": "500",
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "spacing": 18,
+            "desktop_columns": "4",
+            "mobile_columns": "2"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -88,6 +109,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "ultramaison_highlights",
         "buy_buttons",
         "description",
         "share"
