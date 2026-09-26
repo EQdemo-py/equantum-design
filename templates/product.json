@@ -22,9 +22,9 @@
         "title": {
           "type": "title",
           "settings": {
-            "desktop_size": 40,
+            "desktop_size": 30,
             "mobile_size": 23,
-            "title_color": "#111111",
+            "title_color": "#0053FB",
             "title_weight": "700",
             "line_height": 110,
             "alignment": "left",
