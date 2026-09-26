@@ -29,7 +29,20 @@
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+            "current_price_size": 24,
+            "current_price_color": "#F10C0C",
+            "compare_price_size": 18,
+            "compare_price_color": "#666666",
+            "show_discount": true,
+            "discount_size": 20,
+            "discount_text_color": "#ffffff",
+            "discount_background": "#F10C0C",
+            "discount_border_color": "#FFFFFF",
+            "show_tax_text": true,
+            "tax_size": 15,
+            "tax_color": "#666666"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
