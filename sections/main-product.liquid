@@ -99,8 +99,21 @@
                     {{- block.settings.text -}}
                   </p>
                 {%- when 'title' -%}
-                  <div class="product__title" {{ block.shopify_attributes }}>
+                  <div
+                    class="product__title um-product-title"
+                    style="
+                      --um-title-desktop-size: {{ block.settings.desktop_size }}px;
+                      --um-title-mobile-size: {{ block.settings.mobile_size }}px;
+                      --um-title-color: {{ block.settings.title_color }};
+                      --um-title-weight: {{ block.settings.title_weight }};
+                      --um-title-line-height: {{ block.settings.line_height | divided_by: 100.0 }};
+                      --um-title-margin-bottom: {{ block.settings.margin_bottom }}px;
+                      --um-title-align: {{ block.settings.alignment }};
+                    "
+                    {{ block.shopify_attributes }}
+                  >
                     <h1>{{ product.title | escape }}</h1>
+
                     <a href="{{ product.url }}" class="product__title">
                       <h2 class="h1">
                         {{ product.title | escape }}
@@ -876,8 +889,84 @@
     },
     {
       "type": "title",
-      "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "name": "Título del producto",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Tipografía"
+        },
+        {
+          "type": "range",
+          "id": "desktop_size",
+          "min": 20,
+          "max": 64,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño en escritorio",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "mobile_size",
+          "min": 18,
+          "max": 44,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño en móvil",
+          "default": 32
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Color",
+          "default": "#111111"
+        },
+        {
+          "type": "select",
+          "id": "title_weight",
+          "label": "Peso",
+          "default": "700",
+          "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "500", "label": "Medio" },
+            { "value": "600", "label": "Semibold" },
+            { "value": "700", "label": "Negrita" },
+            { "value": "800", "label": "Extra negrita" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "line_height",
+          "min": 90,
+          "max": 150,
+          "step": 5,
+          "unit": "%",
+          "label": "Altura de línea",
+          "default": 110
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alineación",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "center", "label": "Centro" },
+            { "value": "right", "label": "Derecha" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Espacio inferior",
+          "default": 8
+        }
+      ]
     },
     {
       "type": "ultramaison_highlights",

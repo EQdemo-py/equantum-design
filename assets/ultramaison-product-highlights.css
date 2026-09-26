@@ -257,3 +257,26 @@
     grid-template-columns: repeat(var(--um-highlight-mobile-columns), minmax(0, 1fr));
   }
 }
+
+
+/* UltraMaison — título del producto configurable */
+.um-product-title {
+  margin-bottom: var(--um-title-margin-bottom);
+  text-align: var(--um-title-align);
+}
+
+.um-product-title h1,
+.um-product-title h2 {
+  color: var(--um-title-color) !important;
+  font-size: var(--um-title-desktop-size) !important;
+  font-weight: var(--um-title-weight) !important;
+  line-height: var(--um-title-line-height) !important;
+  letter-spacing: normal;
+}
+
+@media screen and (max-width: 749px) {
+  .um-product-title h1,
+  .um-product-title h2 {
+    font-size: var(--um-title-mobile-size) !important;
+  }
+}
