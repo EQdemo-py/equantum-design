@@ -1,0 +1,165 @@
+
+/* ==========================================================
+   UltraMaison — Premium Ecommerce Header
+   Desktop: logo | search | utilities / navigation below
+   Mobile: drawer | logo | utilities
+   ========================================================== */
+
+@media screen and (min-width: 990px) {
+
+  /* Two-row ecommerce structure */
+  .section-header .header {
+    display: grid;
+    grid-template-columns: minmax(170px, 240px) minmax(320px, 1fr) auto;
+    grid-template-areas:
+      "logo search icons"
+      "nav nav nav";
+    column-gap: 3rem;
+    row-gap: 0;
+    align-items: center;
+    padding-top: 1.4rem;
+    padding-bottom: 0;
+  }
+
+  /* Logo */
+  .section-header .header__heading,
+  .section-header .header__heading-link {
+    grid-area: logo;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .section-header .header__heading-logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Search */
+  .section-header .header > details-modal.header__search {
+    grid-area: search;
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  /*
+   * Dawn uses a modal search button by default.
+   * This gives it a commercial search-bar appearance while
+   * retaining Shopify predictive search/modal behaviour.
+   */
+  .section-header .header__search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .section-header .header__search .header__icon {
+    width: 100%;
+    height: 4.6rem;
+    min-width: 32rem;
+    justify-content: flex-start;
+    border: 1px solid rgba(var(--color-foreground), .18);
+    border-radius: 6px;
+    padding: 0 1.6rem;
+    background: rgb(var(--color-background));
+  }
+
+  .section-header .header__search .header__icon::after {
+    content: var(--um-search-placeholder, "Buscar relojes, colecciones...");
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: .62;
+    white-space: nowrap;
+  }
+
+  .section-header .header__search .svg-wrapper {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* Account + cart */
+  .section-header .header__icons {
+    grid-area: icons;
+    justify-self: end;
+    align-items: center;
+    gap: .3rem;
+  }
+
+  .section-header .header__icon {
+    transition: opacity .2s ease;
+  }
+
+  .section-header .header__icons > .header__icon:hover,
+  .section-header .header__icons > shopify-account:hover {
+    opacity: .65;
+  }
+
+  /* Navigation becomes the full second row */
+  .section-header .header__inline-menu {
+    grid-area: nav;
+    width: 100%;
+    margin: 1.2rem 0 0;
+    border-top: 1px solid rgba(var(--color-foreground), .10);
+    justify-self: stretch;
+  }
+
+  .section-header .header__inline-menu > .list-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .section-header .header__inline-menu .list-menu__item {
+    white-space: nowrap;
+  }
+
+  .section-header .header__inline-menu .header__menu-item {
+    padding: 1.35rem 1.7rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: .045em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .section-header .header__inline-menu .header__menu-item:hover span,
+  .section-header .header__inline-menu .header__active-menu-item {
+    text-decoration: none;
+  }
+
+  .section-header .header__inline-menu .header__menu-item:hover {
+    opacity: .65;
+  }
+}
+
+/* Medium desktop: keep menu on ONE row */
+@media screen and (min-width: 990px) and (max-width: 1250px) {
+  .section-header .header {
+    grid-template-columns: 170px minmax(280px, 1fr) auto;
+    column-gap: 1.8rem;
+  }
+
+  .section-header .header__inline-menu .header__menu-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile / tablet */
+@media screen and (max-width: 989px) {
+  .section-header .header {
+    min-height: 6rem;
+  }
+
+  .section-header .header__heading-logo {
+    max-height: 4rem;
+    object-fit: contain;
+  }
+
+  .section-header .header__icons {
+    gap: 0;
+  }
+}
