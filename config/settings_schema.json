@@ -1342,26 +1342,28 @@
       {
         "type": "select",
         "id": "um_discount_badge_position",
-        "label": "Ubicación del descuento",
-        "default": "bottom-left",
+        "label": "Lado del descuento",
+        "default": "left",
         "options": [
           {
-            "value": "top-left",
-            "label": "Arriba izquierda"
+            "value": "left",
+            "label": "Izquierda"
           },
           {
-            "value": "top-right",
-            "label": "Arriba derecha"
-          },
-          {
-            "value": "bottom-left",
-            "label": "Abajo izquierda"
-          },
-          {
-            "value": "bottom-right",
-            "label": "Abajo derecha"
+            "value": "right",
+            "label": "Derecha"
           }
         ]
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_vertical",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Altura del descuento",
+        "default": 10
       }
     ]
   },

@@ -330,26 +330,26 @@
         border-radius: {{ settings.um_discount_badge_radius | default: 3 }}px !important;
         line-height: 1 !important;
         padding: .55em .75em !important;
+        --um-badge-vertical: {{ settings.um_discount_badge_vertical | default: 10 }}%;
       }
 
-      .card__badge:has(.um-discount-badge--top-left) {
-        align-self: flex-start !important;
-        justify-self: flex-start !important;
+      .card__badge:has(.um-discount-badge--left),
+      .card__badge:has(.um-discount-badge--right) {
+        position: absolute !important;
+        top: var(--um-badge-vertical) !important;
+        bottom: auto !important;
+        z-index: 3 !important;
+        width: auto !important;
       }
 
-      .card__badge:has(.um-discount-badge--top-right) {
-        align-self: flex-start !important;
-        justify-self: flex-end !important;
+      .card__badge:has(.um-discount-badge--left) {
+        left: 0 !important;
+        right: auto !important;
       }
 
-      .card__badge:has(.um-discount-badge--bottom-left) {
-        align-self: flex-end !important;
-        justify-self: flex-start !important;
-      }
-
-      .card__badge:has(.um-discount-badge--bottom-right) {
-        align-self: flex-end !important;
-        justify-self: flex-end !important;
+      .card__badge:has(.um-discount-badge--right) {
+        right: 0 !important;
+        left: auto !important;
       }
     </style>
 
