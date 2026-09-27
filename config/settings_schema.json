@@ -1259,8 +1259,19 @@
         "default": "scheme-5"
       },
       {
-        "type": "header",
-        "content": "Descuento porcentual"
+        "type": "color_scheme",
+        "id": "sold_out_badge_color_scheme",
+        "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
+        "default": "scheme-3"
+      }
+    ]
+  },
+  {
+    "name": "Descuento porcentual",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Personaliza la insignia automática de descuento que aparece en las tarjetas de producto."
       },
       {
         "type": "range",
@@ -1278,11 +1289,26 @@
         "label": "Peso del porcentaje",
         "default": "700",
         "options": [
-          { "value": "400", "label": "Normal" },
-          { "value": "500", "label": "Medio" },
-          { "value": "600", "label": "Semibold" },
-          { "value": "700", "label": "Negrita" },
-          { "value": "800", "label": "Extra negrita" }
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medio"
+          },
+          {
+            "value": "600",
+            "label": "Semibold"
+          },
+          {
+            "value": "700",
+            "label": "Negrita"
+          },
+          {
+            "value": "800",
+            "label": "Extra negrita"
+          }
         ]
       },
       {
@@ -1319,17 +1345,23 @@
         "label": "Ubicación del descuento",
         "default": "bottom-left",
         "options": [
-          { "value": "top-left", "label": "Arriba izquierda" },
-          { "value": "top-right", "label": "Arriba derecha" },
-          { "value": "bottom-left", "label": "Abajo izquierda" },
-          { "value": "bottom-right", "label": "Abajo derecha" }
+          {
+            "value": "top-left",
+            "label": "Arriba izquierda"
+          },
+          {
+            "value": "top-right",
+            "label": "Arriba derecha"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Abajo izquierda"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Abajo derecha"
+          }
         ]
-      },
-      {
-        "type": "color_scheme",
-        "id": "sold_out_badge_color_scheme",
-        "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
-        "default": "scheme-3"
       }
     ]
   },
