@@ -112,6 +112,7 @@
     "um_discount_badge_border_color": "#F10C0C",
     "um_discount_badge_radius": 24,
     "um_discount_badge_position": "top-left",
+    "um_discount_badge_vertical": 0,
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
