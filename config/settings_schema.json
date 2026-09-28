@@ -1519,7 +1519,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Datos automáticos de cada reloj mostrados entre el nombre y el precio."
+        "content": "Personaliza los datos técnicos que aparecen entre el nombre y el precio de cada reloj."
       },
       {
         "type": "checkbox",
