@@ -112,7 +112,7 @@
     "um_discount_badge_border_color": "#F10C0C",
     "um_discount_badge_radius": 24,
     "um_discount_badge_position": "top-left",
-    "um_card_vendor_size": 15,
+    "um_card_vendor_size": 12,
     "um_card_title_size": 16,
     "um_card_title_weight": "600",
     "um_card_price_size": 15,
