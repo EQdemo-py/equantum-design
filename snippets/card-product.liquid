@@ -180,7 +180,19 @@
               {%- if card_product.metafields.custom.case_size.value != blank -%}
                 <div class="um-product-card-spec">
                   {%- if settings.um_card_show_spec_icons -%}
-                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_case | escape }}</span>
+                    <span class="um-product-card-spec__icon" aria-hidden="true">
+                      {%- if settings.um_card_icon_case != blank -%}
+                        {{
+                          settings.um_card_icon_case
+                          | image_url: width: 80
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '24, 32, 48, 64, 80',
+                            class: 'um-product-card-spec__icon-image',
+                            alt: ''
+                        }}
+                      {%- endif -%}
+                    </span>
                   {%- endif -%}
                   <strong>{{ card_product.metafields.custom.case_size.value }}</strong>
                   <span>Tamaño de caja</span>
@@ -190,7 +202,19 @@
               {%- if card_product.metafields.custom.water_resistance.value != blank -%}
                 <div class="um-product-card-spec">
                   {%- if settings.um_card_show_spec_icons -%}
-                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_water | escape }}</span>
+                    <span class="um-product-card-spec__icon" aria-hidden="true">
+                      {%- if settings.um_card_icon_water != blank -%}
+                        {{
+                          settings.um_card_icon_water
+                          | image_url: width: 80
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '24, 32, 48, 64, 80',
+                            class: 'um-product-card-spec__icon-image',
+                            alt: ''
+                        }}
+                      {%- endif -%}
+                    </span>
                   {%- endif -%}
                   <strong>{{ card_product.metafields.custom.water_resistance.value }}</strong>
                   <span>Resistencia al agua</span>
@@ -200,7 +224,19 @@
               {%- if card_product.metafields.custom.crystal_type.value != blank -%}
                 <div class="um-product-card-spec">
                   {%- if settings.um_card_show_spec_icons -%}
-                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_crystal | escape }}</span>
+                    <span class="um-product-card-spec__icon" aria-hidden="true">
+                      {%- if settings.um_card_icon_crystal != blank -%}
+                        {{
+                          settings.um_card_icon_crystal
+                          | image_url: width: 80
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '24, 32, 48, 64, 80',
+                            class: 'um-product-card-spec__icon-image',
+                            alt: ''
+                        }}
+                      {%- endif -%}
+                    </span>
                   {%- endif -%}
                   <strong>{{ card_product.metafields.custom.crystal_type.value }}</strong>
                   <span>Cristal</span>

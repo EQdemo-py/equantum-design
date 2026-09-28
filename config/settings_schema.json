@@ -1599,22 +1599,19 @@
         "content": "Iconos"
       },
       {
-        "type": "text",
+        "type": "image_picker",
         "id": "um_card_icon_case",
-        "label": "Icono — Tamaño de caja",
-        "default": "◷"
+        "label": "Icono — Tamaño de caja"
       },
       {
-        "type": "text",
+        "type": "image_picker",
         "id": "um_card_icon_water",
-        "label": "Icono — Resistencia al agua",
-        "default": "◇"
+        "label": "Icono — Resistencia al agua"
       },
       {
-        "type": "text",
+        "type": "image_picker",
         "id": "um_card_icon_crystal",
-        "label": "Icono — Cristal",
-        "default": "♢"
+        "label": "Icono — Cristal"
       },
       {
         "type": "color",
