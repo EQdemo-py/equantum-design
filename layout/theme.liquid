@@ -455,6 +455,103 @@
       }
     </style>
 
+
+    <style id="um-product-card-premium">
+      /* UltraMaison — información premium de producto */
+      .um-product-card-info {
+        padding-top: {{ settings.um_card_info_top_spacing | default: 18 }}px !important;
+        text-align: {{ settings.um_card_alignment | default: 'left' }} !important;
+      }
+
+      .um-product-card-info::before {
+        content: "";
+        display: block;
+        width: {{ settings.um_card_accent_width | default: 35 }}px;
+        height: 2px;
+        margin-bottom: {{ settings.um_card_info_gap | default: 8 }}px;
+        background: {{ settings.um_card_accent_color | default: '#006BFF' }};
+      }
+
+      .um-product-card-info .um-product-card-vendor {
+        margin: 0 0 6px;
+        color: {{ settings.um_card_vendor_color | default: '#006BFF' }};
+        font-size: {{ settings.um_card_vendor_size | default: 11 }}px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      .um-product-card-info .um-product-card-title {
+        margin: 0 !important;
+        color: {{ settings.um_card_title_color | default: '#111111' }};
+        font-size: {{ settings.um_card_title_size | default: 18 }}px !important;
+        font-weight: {{ settings.um_card_title_weight | default: 500 }} !important;
+        line-height: 1.3 !important;
+        letter-spacing: -.015em;
+      }
+
+      .um-product-card-details {
+        margin-top: {{ settings.um_card_info_gap | default: 8 }}px;
+      }
+
+      .um-product-card-details .price {
+        margin-top: 0 !important;
+      }
+
+      .um-product-card-details .price__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px 12px;
+      }
+
+      .um-product-card-details .price-item--sale,
+      .um-product-card-details .price__regular .price-item--regular {
+        color: {{ settings.um_card_price_color | default: '#006BFF' }} !important;
+        font-size: {{ settings.um_card_price_size | default: 18 }}px !important;
+        font-weight: {{ settings.um_card_price_weight | default: 600 }} !important;
+        line-height: 1.15;
+      }
+
+      .um-product-card-details .price__sale .price-item--regular {
+        color: {{ settings.um_card_compare_color | default: '#777777' }} !important;
+        font-size: {{ settings.um_card_compare_size | default: 13 }}px !important;
+        font-weight: 400 !important;
+        opacity: .8;
+      }
+
+      {% if settings.um_card_alignment == 'center' %}
+        .um-product-card-info::before {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .um-product-card-details .price__container {
+          justify-content: center;
+        }
+      {% endif %}
+
+      @media screen and (max-width: 749px) {
+        .um-product-card-info {
+          padding-top: 12px !important;
+        }
+
+        .um-product-card-info .um-product-card-title {
+          font-size: calc({{ settings.um_card_title_size | default: 18 }}px - 2px) !important;
+        }
+
+        .um-product-card-details .price-item--sale,
+        .um-product-card-details .price__regular .price-item--regular {
+          font-size: calc({{ settings.um_card_price_size | default: 18 }}px - 2px) !important;
+        }
+
+        .um-product-card-info .um-product-card-vendor {
+          letter-spacing: .12em;
+        }
+      }
+    </style>
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
