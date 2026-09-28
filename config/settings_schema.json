@@ -5,7 +5,8 @@
     "theme_version": "16.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_support_url": "https://support.shopify.com/",
+    "settings": []
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -616,196 +617,6 @@
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
-      },
-      {
-        "type": "header",
-        "content": "Diseño premium UltraMaison"
-      },
-      {
-        "type": "header",
-        "content": "Marca"
-      },
-      {
-        "type": "checkbox",
-        "id": "um_card_show_vendor",
-        "label": "Mostrar marca",
-        "default": true
-      },
-      {
-        "type": "range",
-        "id": "um_card_vendor_size",
-        "min": 9,
-        "max": 18,
-        "step": 1,
-        "unit": "px",
-        "label": "Tamaño de la marca",
-        "default": 11
-      },
-      {
-        "type": "color",
-        "id": "um_card_vendor_color",
-        "label": "Color de la marca",
-        "default": "#006BFF"
-      },
-      {
-        "type": "header",
-        "content": "Nombre del producto"
-      },
-      {
-        "type": "range",
-        "id": "um_card_title_size",
-        "min": 14,
-        "max": 28,
-        "step": 1,
-        "unit": "px",
-        "label": "Tamaño del nombre",
-        "default": 18
-      },
-      {
-        "type": "select",
-        "id": "um_card_title_weight",
-        "label": "Peso del nombre",
-        "default": "500",
-        "options": [
-          {
-            "value": "400",
-            "label": "Regular"
-          },
-          {
-            "value": "500",
-            "label": "Medio"
-          },
-          {
-            "value": "600",
-            "label": "Seminegrita"
-          },
-          {
-            "value": "700",
-            "label": "Negrita"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "id": "um_card_title_color",
-        "label": "Color del nombre",
-        "default": "#111111"
-      },
-      {
-        "type": "header",
-        "content": "Precios"
-      },
-      {
-        "type": "range",
-        "id": "um_card_price_size",
-        "min": 14,
-        "max": 28,
-        "step": 1,
-        "unit": "px",
-        "label": "Tamaño del precio actual",
-        "default": 18
-      },
-      {
-        "type": "select",
-        "id": "um_card_price_weight",
-        "label": "Peso del precio actual",
-        "default": "600",
-        "options": [
-          {
-            "value": "400",
-            "label": "Regular"
-          },
-          {
-            "value": "500",
-            "label": "Medio"
-          },
-          {
-            "value": "600",
-            "label": "Seminegrita"
-          },
-          {
-            "value": "700",
-            "label": "Negrita"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "id": "um_card_price_color",
-        "label": "Color del precio actual",
-        "default": "#006BFF"
-      },
-      {
-        "type": "range",
-        "id": "um_card_compare_size",
-        "min": 10,
-        "max": 20,
-        "step": 1,
-        "unit": "px",
-        "label": "Tamaño del precio anterior",
-        "default": 13
-      },
-      {
-        "type": "color",
-        "id": "um_card_compare_color",
-        "label": "Color del precio anterior",
-        "default": "#777777"
-      },
-      {
-        "type": "header",
-        "content": "Diseño"
-      },
-      {
-        "type": "select",
-        "id": "um_card_alignment",
-        "label": "Alineación",
-        "default": "left",
-        "options": [
-          {
-            "value": "left",
-            "label": "Izquierda"
-          },
-          {
-            "value": "center",
-            "label": "Centro"
-          }
-        ]
-      },
-      {
-        "type": "range",
-        "id": "um_card_info_top_spacing",
-        "min": 8,
-        "max": 36,
-        "step": 2,
-        "unit": "px",
-        "label": "Espacio después de la fotografía",
-        "default": 18
-      },
-      {
-        "type": "range",
-        "id": "um_card_info_gap",
-        "min": 4,
-        "max": 20,
-        "step": 1,
-        "unit": "px",
-        "label": "Separación entre elementos",
-        "default": 8
-      },
-      {
-        "type": "color",
-        "id": "um_card_accent_color",
-        "label": "Color del detalle",
-        "default": "#006BFF"
-      },
-      {
-        "type": "range",
-        "id": "um_card_accent_width",
-        "min": 20,
-        "max": 80,
-        "step": 5,
-        "unit": "px",
-        "label": "Ancho del detalle",
-        "default": 35
       }
     ]
   },
@@ -1584,6 +1395,201 @@
         "unit": "px",
         "label": "Separación lateral",
         "default": -10
+      }
+    ]
+  },
+  {
+    "name": "Tarjetas premium UltraMaison",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Personaliza la información que aparece debajo de las fotografías de producto en Inicio y colecciones."
+      },
+      {
+        "type": "header",
+        "content": "Marca"
+      },
+      {
+        "type": "checkbox",
+        "id": "um_card_show_vendor",
+        "label": "Mostrar marca",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "um_card_vendor_size",
+        "min": 9,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño de la marca",
+        "default": 11
+      },
+      {
+        "type": "color",
+        "id": "um_card_vendor_color",
+        "label": "Color de la marca",
+        "default": "#006BFF"
+      },
+      {
+        "type": "header",
+        "content": "Nombre del producto"
+      },
+      {
+        "type": "range",
+        "id": "um_card_title_size",
+        "min": 14,
+        "max": 28,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del nombre",
+        "default": 18
+      },
+      {
+        "type": "select",
+        "id": "um_card_title_weight",
+        "label": "Peso del nombre",
+        "default": "500",
+        "options": [
+          {
+            "value": "400",
+            "label": "Regular"
+          },
+          {
+            "value": "500",
+            "label": "Medio"
+          },
+          {
+            "value": "600",
+            "label": "Seminegrita"
+          },
+          {
+            "value": "700",
+            "label": "Negrita"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "um_card_title_color",
+        "label": "Color del nombre",
+        "default": "#111111"
+      },
+      {
+        "type": "header",
+        "content": "Precio"
+      },
+      {
+        "type": "range",
+        "id": "um_card_price_size",
+        "min": 14,
+        "max": 28,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del precio actual",
+        "default": 18
+      },
+      {
+        "type": "select",
+        "id": "um_card_price_weight",
+        "label": "Peso del precio actual",
+        "default": "600",
+        "options": [
+          {
+            "value": "400",
+            "label": "Regular"
+          },
+          {
+            "value": "500",
+            "label": "Medio"
+          },
+          {
+            "value": "600",
+            "label": "Seminegrita"
+          },
+          {
+            "value": "700",
+            "label": "Negrita"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "um_card_price_color",
+        "label": "Color del precio actual",
+        "default": "#006BFF"
+      },
+      {
+        "type": "range",
+        "id": "um_card_compare_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del precio anterior",
+        "default": 13
+      },
+      {
+        "type": "color",
+        "id": "um_card_compare_color",
+        "label": "Color del precio anterior",
+        "default": "#777777"
+      },
+      {
+        "type": "header",
+        "content": "Presentación"
+      },
+      {
+        "type": "select",
+        "id": "um_card_alignment",
+        "label": "Alineación",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Izquierda"
+          },
+          {
+            "value": "center",
+            "label": "Centro"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "um_card_info_top_spacing",
+        "min": 8,
+        "max": 36,
+        "step": 2,
+        "unit": "px",
+        "label": "Espacio después de la fotografía",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "um_card_info_gap",
+        "min": 4,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Separación entre elementos",
+        "default": 8
+      },
+      {
+        "type": "color",
+        "id": "um_card_accent_color",
+        "label": "Color del detalle",
+        "default": "#006BFF"
+      },
+      {
+        "type": "range",
+        "id": "um_card_accent_width",
+        "min": 20,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "label": "Ancho del detalle",
+        "default": 35
       }
     ]
   },
