@@ -383,38 +383,26 @@
         overflow: visible !important;
       }
 
-      .card__inner .card__badge:has(.um-discount-badge) {
+      .um-image-discount {
         position: absolute !important;
-        top: {{ settings.um_discount_badge_top | default: -10 }}px !important;
-        bottom: auto !important;
-
-        display: flex !important;
-        align-items: flex-start !important;
-
+        top: -12px !important;
+        z-index: 30 !important;
         width: auto !important;
         height: auto !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        z-index: 20 !important;
-        transform: none !important;
         pointer-events: none !important;
       }
 
-      .card__inner .card__badge:has(.um-discount-badge--left) {
-        left: {{ settings.um_discount_badge_side | default: -10 }}px !important;
+      .um-image-discount--left {
+        left: -12px !important;
         right: auto !important;
       }
 
-      .card__inner .card__badge:has(.um-discount-badge--right) {
-        right: {{ settings.um_discount_badge_side | default: -10 }}px !important;
+      .um-image-discount--right {
+        right: -12px !important;
         left: auto !important;
       }
 
-      .card__inner .um-discount-badge {
-        position: relative !important;
-        inset: auto !important;
+      .um-image-discount .um-discount-badge {
         margin: 0 !important;
         pointer-events: auto !important;
       }
