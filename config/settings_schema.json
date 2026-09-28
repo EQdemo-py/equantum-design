@@ -1268,7 +1268,7 @@
     ]
   },
   {
-    "name": "Descuento porcentual",
+    "name": "Productos UltraMaison",
     "settings": [
       {
         "type": "paragraph",
@@ -1377,30 +1377,9 @@
         "default": -10
       },
       {
-        "type": "range",
-        "id": "um_discount_badge_top",
-        "min": -30,
-        "max": 60,
-        "step": 2,
-        "unit": "px",
-        "label": "Separación vertical",
-        "default": -10
+        "type": "header",
+        "content": "Tarjetas de producto premium"
       },
-      {
-        "type": "range",
-        "id": "um_discount_badge_side",
-        "min": -30,
-        "max": 60,
-        "step": 2,
-        "unit": "px",
-        "label": "Separación lateral",
-        "default": -10
-      }
-    ]
-  },
-  {
-    "name": "Tarjetas premium UltraMaison",
-    "settings": [
       {
         "type": "paragraph",
         "content": "Personaliza la información que aparece debajo de las fotografías de producto en Inicio y colecciones."
