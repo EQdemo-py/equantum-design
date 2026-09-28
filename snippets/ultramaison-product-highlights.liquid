@@ -70,7 +70,8 @@
 
 {%- endcapture -%}
 
-{%- if highlights | strip != blank -%}
+{%- assign highlights_clean = highlights | strip -%}
+{%- if highlights_clean != blank -%}
   <div
     class="um-highlights"
     style="
