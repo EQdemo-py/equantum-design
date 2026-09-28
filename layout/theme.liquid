@@ -563,45 +563,79 @@
 
       @media screen and (max-width: 749px) {
         .um-product-card-specs {
-          gap: 6px;
-          margin: 14px 0 12px;
-          padding: 12px 0;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 0;
+          margin: {{ settings.um_card_spec_mobile_spacing | default: 16 }}px 0;
+          padding: 14px 0;
           border-top: 1px solid rgba(17, 17, 17, .08);
           border-bottom: 1px solid rgba(17, 17, 17, .08);
         }
 
         .um-product-card-spec {
-          padding: 0 4px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          min-width: 0;
+          padding: 0 7px;
+          text-align: center;
+        }
+
+        .um-product-card-spec:first-child {
+          padding-left: 3px;
+        }
+
+        .um-product-card-spec:last-child {
+          padding-right: 3px;
         }
 
         .um-product-card-spec + .um-product-card-spec {
-          border-left-color: rgba(17, 17, 17, .08);
+          border-left: 1px solid rgba(17, 17, 17, .08);
         }
 
         .um-product-card-spec__icon {
-          min-height: 17px;
-          margin-bottom: 5px;
-          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 22px;
+          margin-bottom: 7px;
         }
 
         .um-product-card-spec__icon-image {
-          width: 16px;
-          height: 16px;
+          width: 19px;
+          height: 19px;
+          object-fit: contain;
         }
 
         .um-product-card-spec strong {
-          font-size: 12px;
-          line-height: 1.2;
+          display: block;
+          width: 100%;
+          margin: 0 0 5px;
+          overflow: visible;
+          color: {{ settings.um_card_spec_value_color | default: '#111111' }} !important;
+          font-size: {{ settings.um_card_spec_mobile_value_size | default: 12 }}px !important;
+          font-weight: 700 !important;
+          line-height: 1.15;
+          opacity: 1 !important;
+          text-overflow: clip;
+          white-space: nowrap;
         }
 
         .um-product-card-spec > span:last-child {
-          margin-top: 4px;
-          font-size: 8px;
-          line-height: 1.25;
+          display: block;
+          width: 100%;
+          margin-top: 0;
+          color: {{ settings.um_card_spec_label_color | default: '#777777' }} !important;
+          font-size: {{ settings.um_card_spec_mobile_label_size | default: 9 }}px !important;
+          font-weight: 500;
+          line-height: 1.3;
+          opacity: 1 !important;
+          overflow-wrap: normal;
+          word-break: normal;
         }
 
         .um-product-card-details {
-          margin-top: 10px;
+          margin-top: 12px;
         }
       }
 
