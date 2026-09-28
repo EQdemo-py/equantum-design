@@ -175,6 +175,32 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            <div class="um-product-card-specs">
+              {%- if card_product.metafields.custom.case_size.value != blank -%}
+                <div class="um-product-card-spec">
+                  <span class="um-product-card-spec__icon" aria-hidden="true">◷</span>
+                  <strong>{{ card_product.metafields.custom.case_size.value }}</strong>
+                  <span>Tamaño de caja</span>
+                </div>
+              {%- endif -%}
+
+              {%- if card_product.metafields.custom.water_resistance.value != blank -%}
+                <div class="um-product-card-spec">
+                  <span class="um-product-card-spec__icon" aria-hidden="true">◇</span>
+                  <strong>{{ card_product.metafields.custom.water_resistance.value }}</strong>
+                  <span>Resistencia al agua</span>
+                </div>
+              {%- endif -%}
+
+              {%- if card_product.metafields.custom.crystal_type.value != blank -%}
+                <div class="um-product-card-spec">
+                  <span class="um-product-card-spec__icon" aria-hidden="true">♢</span>
+                  <strong>{{ card_product.metafields.custom.crystal_type.value }}</strong>
+                  <span>Cristal</span>
+                </div>
+              {%- endif -%}
+            </div>
+
             <div class="card-information um-product-card-details">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

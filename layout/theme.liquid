@@ -495,6 +495,90 @@
         margin-top: {{ settings.um_card_info_gap | default: 8 }}px;
       }
 
+      /* UltraMaison — especificaciones rápidas */
+      .um-product-card-specs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 14px 0 12px;
+        padding: 12px 0;
+        border-top: 1px solid rgba(17, 17, 17, .10);
+        border-bottom: 1px solid rgba(17, 17, 17, .10);
+      }
+
+      .um-product-card-spec {
+        position: relative;
+        min-width: 0;
+        padding: 0 10px;
+        text-align: center;
+      }
+
+      .um-product-card-spec:first-child {
+        padding-left: 0;
+      }
+
+      .um-product-card-spec:last-child {
+        padding-right: 0;
+      }
+
+      .um-product-card-spec + .um-product-card-spec {
+        border-left: 1px solid rgba(17, 17, 17, .10);
+      }
+
+      .um-product-card-spec__icon {
+        display: block;
+        min-height: 18px;
+        margin-bottom: 4px;
+        color: {{ settings.um_card_accent_color | default: '#006BFF' }};
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      .um-product-card-spec strong {
+        display: block;
+        overflow: hidden;
+        margin: 0 0 3px;
+        color: {{ settings.um_card_title_color | default: '#111111' }};
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.15;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .um-product-card-spec > span:last-child {
+        display: block;
+        color: {{ settings.um_card_compare_color | default: '#777777' }};
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      @media screen and (max-width: 749px) {
+        .um-product-card-specs {
+          margin: 10px 0;
+          padding: 9px 0;
+        }
+
+        .um-product-card-spec {
+          padding: 0 5px;
+        }
+
+        .um-product-card-spec__icon {
+          min-height: 15px;
+          margin-bottom: 3px;
+          font-size: 13px;
+        }
+
+        .um-product-card-spec strong {
+          font-size: 11px;
+        }
+
+        .um-product-card-spec > span:last-child {
+          font-size: 8px;
+          line-height: 1.15;
+        }
+      }
+
       .um-product-card-details .price {
         margin-top: 0 !important;
       }
