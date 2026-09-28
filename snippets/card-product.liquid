@@ -125,10 +125,7 @@
           {%- endif -%}
 
           <div class="card__content">
-            <div class="card__information um-product-card-info">
-              {%- if settings.um_card_show_vendor and card_product.vendor != blank -%}
-                <div class="um-product-card-vendor">{{ card_product.vendor | escape }}</div>
-              {%- endif -%}
+            <div class="card__information">
               <h3
                 class="card__heading"
                 {% if card_product.featured_media == null and settings.card_style == 'standard' %}
@@ -159,7 +156,10 @@
           </div>
         </div>
         <div class="card__content">
-          <div class="card__information">
+          <div class="card__information um-product-card-info">
+              {%- if settings.um_card_show_vendor and card_product.vendor != blank -%}
+                <div class="um-product-card-vendor">{{ card_product.vendor | escape }}</div>
+              {%- endif -%}
             <h3
               class="card__heading um-product-card-title{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
               {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -175,7 +175,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
-            <div class="card-information">
+            <div class="card-information um-product-card-details">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
