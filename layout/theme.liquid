@@ -380,12 +380,11 @@
     <style id="um-discount-position-fix">
       .card__inner {
         position: relative !important;
-        overflow: visible !important;
       }
 
       .um-image-discount {
         position: absolute !important;
-        top: -12px !important;
+        top: 12px !important;
         z-index: 30 !important;
         width: auto !important;
         height: auto !important;
@@ -393,18 +392,66 @@
       }
 
       .um-image-discount--left {
-        left: -12px !important;
+        left: 12px !important;
         right: auto !important;
       }
 
       .um-image-discount--right {
-        right: -12px !important;
+        right: 12px !important;
         left: auto !important;
       }
 
       .um-image-discount .um-discount-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        min-width: 0 !important;
+        padding: 7px 10px !important;
         margin: 0 !important;
+        line-height: 1 !important;
+        letter-spacing: 0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10) !important;
         pointer-events: auto !important;
+      }
+
+      .um-discount-badge__value {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: 1;
+      }
+
+      .um-discount-badge__off {
+        font-size: 9px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        opacity: 0.78;
+        padding-left: 6px;
+        border-left: 1px solid currentColor;
+      }
+
+      @media screen and (max-width: 749px) {
+        .um-image-discount {
+          top: 8px !important;
+        }
+
+        .um-image-discount--left {
+          left: 8px !important;
+        }
+
+        .um-image-discount--right {
+          right: 8px !important;
+        }
+
+        .um-image-discount .um-discount-badge {
+          gap: 5px !important;
+          padding: 6px 8px !important;
+        }
+
+        .um-discount-badge__off {
+          font-size: 8px;
+          padding-left: 5px;
+        }
       }
     </style>
 

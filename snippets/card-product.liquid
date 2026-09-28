@@ -118,7 +118,8 @@
             -%}
             <div class="um-image-discount um-image-discount--{{ settings.um_discount_badge_position }}">
               <span class="badge um-discount-badge">
-                -{{ discount_percentage }}%
+                <span class="um-discount-badge__value">−{{ discount_percentage }}%</span>
+                <span class="um-discount-badge__off">OFF</span>
               </span>
             </div>
           {%- endif -%}
