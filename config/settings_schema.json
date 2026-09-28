@@ -1357,13 +1357,43 @@
       },
       {
         "type": "range",
-        "id": "um_discount_badge_vertical",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "%",
-        "label": "Altura del descuento",
-        "default": 10
+        "id": "um_discount_badge_top",
+        "min": -30,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Separación vertical",
+        "default": -10
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_side",
+        "min": -30,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Separación lateral",
+        "default": -10
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_top",
+        "min": -30,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Separación vertical",
+        "default": -10
+      },
+      {
+        "type": "range",
+        "id": "um_discount_badge_side",
+        "min": -30,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Separación lateral",
+        "default": -10
       }
     ]
   },
