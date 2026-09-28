@@ -175,10 +175,13 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            {%- if settings.um_card_show_specs -%}
             <div class="um-product-card-specs">
               {%- if card_product.metafields.custom.case_size.value != blank -%}
                 <div class="um-product-card-spec">
-                  <span class="um-product-card-spec__icon" aria-hidden="true">◷</span>
+                  {%- if settings.um_card_show_spec_icons -%}
+                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_case | escape }}</span>
+                  {%- endif -%}
                   <strong>{{ card_product.metafields.custom.case_size.value }}</strong>
                   <span>Tamaño de caja</span>
                 </div>
@@ -186,7 +189,9 @@
 
               {%- if card_product.metafields.custom.water_resistance.value != blank -%}
                 <div class="um-product-card-spec">
-                  <span class="um-product-card-spec__icon" aria-hidden="true">◇</span>
+                  {%- if settings.um_card_show_spec_icons -%}
+                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_water | escape }}</span>
+                  {%- endif -%}
                   <strong>{{ card_product.metafields.custom.water_resistance.value }}</strong>
                   <span>Resistencia al agua</span>
                 </div>
@@ -194,12 +199,15 @@
 
               {%- if card_product.metafields.custom.crystal_type.value != blank -%}
                 <div class="um-product-card-spec">
-                  <span class="um-product-card-spec__icon" aria-hidden="true">♢</span>
+                  {%- if settings.um_card_show_spec_icons -%}
+                    <span class="um-product-card-spec__icon" aria-hidden="true">{{ settings.um_card_icon_crystal | escape }}</span>
+                  {%- endif -%}
                   <strong>{{ card_product.metafields.custom.crystal_type.value }}</strong>
                   <span>Cristal</span>
                 </div>
               {%- endif -%}
             </div>
+            {%- endif -%}
 
             <div class="card-information um-product-card-details">
               {%- if show_vendor -%}

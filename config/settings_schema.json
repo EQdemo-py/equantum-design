@@ -1515,6 +1515,92 @@
       },
       {
         "type": "header",
+        "content": "Especificaciones rápidas"
+      },
+      {
+        "type": "paragraph",
+        "content": "Datos automáticos de cada reloj mostrados entre el nombre y el precio."
+      },
+      {
+        "type": "checkbox",
+        "id": "um_card_show_specs",
+        "label": "Mostrar especificaciones",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "um_card_show_spec_icons",
+        "label": "Mostrar iconos",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "um_card_icon_case",
+        "label": "Icono — Tamaño de caja",
+        "default": "◷"
+      },
+      {
+        "type": "text",
+        "id": "um_card_icon_water",
+        "label": "Icono — Resistencia al agua",
+        "default": "◇"
+      },
+      {
+        "type": "text",
+        "id": "um_card_icon_crystal",
+        "label": "Icono — Cristal",
+        "default": "♢"
+      },
+      {
+        "type": "color",
+        "id": "um_card_spec_icon_color",
+        "label": "Color de los iconos",
+        "default": "#006BFF"
+      },
+      {
+        "type": "range",
+        "id": "um_card_spec_value_size",
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del valor",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "um_card_spec_label_size",
+        "min": 8,
+        "max": 14,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño de la descripción",
+        "default": 10
+      },
+      {
+        "type": "color",
+        "id": "um_card_spec_value_color",
+        "label": "Color del valor",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "um_card_spec_label_color",
+        "label": "Color de la descripción",
+        "default": "#777777"
+      },
+      {
+        "type": "range",
+        "id": "um_card_spec_spacing",
+        "min": 8,
+        "max": 28,
+        "step": 1,
+        "unit": "px",
+        "label": "Espaciado vertical",
+        "default": 14
+      },
+      {
+        "type": "header",
         "content": "Presentación"
       },
       {

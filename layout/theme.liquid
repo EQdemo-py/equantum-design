@@ -499,7 +499,7 @@
       .um-product-card-specs {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin: 14px 0 12px;
+        margin: {{ settings.um_card_spec_spacing | default: 14 }}px 0;
         padding: 12px 0;
         border-top: 1px solid rgba(17, 17, 17, .10);
         border-bottom: 1px solid rgba(17, 17, 17, .10);
@@ -528,7 +528,7 @@
         display: block;
         min-height: 18px;
         margin-bottom: 4px;
-        color: {{ settings.um_card_accent_color | default: '#006BFF' }};
+        color: {{ settings.um_card_spec_icon_color | default: '#006BFF' }};
         font-size: 16px;
         line-height: 1;
       }
@@ -537,8 +537,8 @@
         display: block;
         overflow: hidden;
         margin: 0 0 3px;
-        color: {{ settings.um_card_title_color | default: '#111111' }};
-        font-size: 14px;
+        color: {{ settings.um_card_spec_value_color | default: '#111111' }};
+        font-size: {{ settings.um_card_spec_value_size | default: 14 }}px;
         font-weight: 600;
         line-height: 1.15;
         text-overflow: ellipsis;
@@ -547,35 +547,48 @@
 
       .um-product-card-spec > span:last-child {
         display: block;
-        color: {{ settings.um_card_compare_color | default: '#777777' }};
-        font-size: 10px;
+        color: {{ settings.um_card_spec_label_color | default: '#777777' }};
+        font-size: {{ settings.um_card_spec_label_size | default: 10 }}px;
         font-weight: 500;
         line-height: 1.2;
       }
 
       @media screen and (max-width: 749px) {
         .um-product-card-specs {
-          margin: 10px 0;
-          padding: 9px 0;
+          gap: 6px;
+          margin: 14px 0 12px;
+          padding: 12px 0;
+          border-top: 1px solid rgba(17, 17, 17, .08);
+          border-bottom: 1px solid rgba(17, 17, 17, .08);
         }
 
         .um-product-card-spec {
-          padding: 0 5px;
+          padding: 0 4px;
+        }
+
+        .um-product-card-spec + .um-product-card-spec {
+          border-left-color: rgba(17, 17, 17, .08);
         }
 
         .um-product-card-spec__icon {
-          min-height: 15px;
-          margin-bottom: 3px;
-          font-size: 13px;
+          min-height: 17px;
+          margin-bottom: 5px;
+          font-size: 14px;
         }
 
         .um-product-card-spec strong {
-          font-size: 11px;
+          font-size: 12px;
+          line-height: 1.2;
         }
 
         .um-product-card-spec > span:last-child {
+          margin-top: 4px;
           font-size: 8px;
-          line-height: 1.15;
+          line-height: 1.25;
+        }
+
+        .um-product-card-details {
+          margin-top: 10px;
         }
       }
 
