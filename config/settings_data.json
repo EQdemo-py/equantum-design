@@ -112,7 +112,10 @@
     "um_discount_badge_border_color": "#F10C0C",
     "um_discount_badge_radius": 24,
     "um_discount_badge_position": "top-left",
-    "um_discount_badge_vertical": 0,
+    "um_card_vendor_size": 15,
+    "um_card_title_size": 16,
+    "um_card_title_weight": "600",
+    "um_card_price_size": 15,
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
@@ -134,6 +137,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "um_discount_badge_vertical": 0,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
