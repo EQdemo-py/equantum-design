@@ -116,6 +116,8 @@
     "um_card_title_size": 16,
     "um_card_title_weight": "600",
     "um_card_price_size": 15,
+    "um_card_alignment": "left",
+    "um_card_accent_width": 30,
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
