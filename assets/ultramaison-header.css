@@ -409,3 +409,20 @@
     font-size: 13.5px !important;
   }
 }
+
+
+/* Evita que el spinner de búsqueda se pinte antes de cargar Predictive Search */
+predictive-search:not([loading]) .predictive-search__loading-state {
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__loading-state {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+predictive-search .predictive-search__loading-state .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+}
