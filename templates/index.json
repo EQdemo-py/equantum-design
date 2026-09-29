@@ -30,10 +30,30 @@
             "text_alignment_mobile": "left",
             "color_scheme": "scheme-2"
           }
+        },
+        "slide_iDKjWE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_9_sept_2026_05_14_28_p.m..png",
+            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_23.png",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
         }
       },
       "block_order": [
-        "slide-0"
+        "slide-0",
+        "slide_iDKjWE"
       ],
       "name": "BANNERS PRINCIPAL",
       "settings": {
@@ -266,6 +286,35 @@
         "padding_top": 20,
         "padding_bottom": 16
       }
+    },
+    "featured_collection_fDRb9z": {
+      "type": "featured-collection",
+      "name": "¡ÚLTIMAS UNIDADES!",
+      "settings": {
+        "collection": "lusso-mare-hombres",
+        "products_to_show": 25,
+        "title": "PARA LAS DAMAS",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 16
+      }
     }
   },
   "order": [
@@ -275,6 +324,7 @@
     "featured_collection_XF4B43",
     "ultramaison_commercial_banners_AL3UzB",
     "slideshow_FpdATL",
-    "featured_collection_WmJTTf"
+    "featured_collection_WmJTTf",
+    "featured_collection_fDRb9z"
   ]
 }
