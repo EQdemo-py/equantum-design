@@ -315,6 +315,42 @@
         "padding_top": 20,
         "padding_bottom": 0
       }
+    },
+    "ultramaison_collection_banner_tYEnzm": {
+      "type": "ultramaison-collection-banner",
+      "name": "UM — Colección + Banner",
+      "settings": {
+        "show_banner": true,
+        "banner_image": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_12_03_12_p.m..png",
+        "banner_link": "",
+        "banner_alt": "",
+        "banner_position": "left",
+        "banner_mobile_position": "first",
+        "banner_width": 25,
+        "collection": "lusso-mare-hombres",
+        "products_to_show": 25,
+        "title": "Colección destacada",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -325,6 +361,7 @@
     "ultramaison_commercial_banners_AL3UzB",
     "slideshow_FpdATL",
     "featured_collection_WmJTTf",
-    "featured_collection_fDRb9z"
+    "featured_collection_fDRb9z",
+    "ultramaison_collection_banner_tYEnzm"
   ]
 }
