@@ -11,45 +11,38 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter": {
-      "type": "newsletter",
+    "footer": {
+      "type": "footer",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "link_list_tJxf3r": {
+          "type": "link_list",
           "settings": {
-            "heading": "<strong>Subscribe to our emails</strong>",
-            "heading_size": "h2"
+            "heading": "COMPRAR",
+            "menu": "comprar"
           }
         },
-        "paragraph": {
-          "type": "paragraph",
+        "brand_information_BWa4JL": {
+          "type": "brand_information",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+            "show_social": true
           }
         },
-        "email-form": {
-          "type": "email_form",
-          "settings": {}
+        "link_list_UdwRGf": {
+          "type": "link_list",
+          "settings": {
+            "heading": "AYUDA",
+            "menu": "footer"
+          }
         }
       },
       "block_order": [
-        "heading",
-        "paragraph",
-        "email-form"
+        "link_list_tJxf3r",
+        "brand_information_BWa4JL",
+        "link_list_UdwRGf"
       ],
-      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-3",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 12
-      }
-    },
-    "footer": {
-      "type": "footer",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "newsletter_enable": false,
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
         "show_social": true,
@@ -64,7 +57,6 @@
     }
   },
   "order": [
-    "newsletter",
     "footer"
   ]
 }
