@@ -23,31 +23,15 @@
         "slide_e7mdfJ": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_03_26_06_p.m..png",
             "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
-            "button_label": "Etiqueta de botón",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
-          }
-        },
-        "slide_zkg7JW": {
-          "type": "slide",
-          "settings": {
-            "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
-            "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
-            "button_label": "Etiqueta de botón",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -56,24 +40,90 @@
         }
       },
       "block_order": [
-        "slide_e7mdfJ",
-        "slide_zkg7JW"
+        "slide_e7mdfJ"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Presentación de diapositivas sobre tu marca"
+        "show_text_below": false,
+        "accessibility_info": ""
+      }
+    },
+    "featured_collection_FLxpmK": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "dream-sea-mujer",
+        "products_to_show": 25,
+        "title": "Dream Sea",
+        "heading_size": "hxl",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ultramaison_collection_banner_FrF3DH": {
+      "type": "ultramaison-collection-banner",
+      "name": "UM — Colección + Banner",
+      "settings": {
+        "show_banner": true,
+        "banner_link": "",
+        "banner_alt": "",
+        "banner_position": "left",
+        "banner_mobile_position": "first",
+        "banner_height": "adapt",
+        "banner_width": 25,
+        "collection": "2-lusso-mare-mujer",
+        "products_to_show": 25,
+        "title": "Colección destacada",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "slideshow_gGyUpp"
+    "slideshow_gGyUpp",
+    "featured_collection_FLxpmK",
+    "ultramaison_collection_banner_FrF3DH"
   ]
 }
