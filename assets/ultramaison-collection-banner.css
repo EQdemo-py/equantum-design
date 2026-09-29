@@ -179,3 +179,40 @@
     object-position: center top;
   }
 }
+
+/* =========================================================
+   MOBILE FINAL — respetar proporción real del banner
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .um-collection-banner-grid .um-collection-banner-item {
+    width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+    max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+    flex: 0 0 calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: flex-start;
+  }
+
+  .um-collection-banner-item.um-banner-height-adapt
+    .um-collection-banner-link,
+  .um-collection-banner-item.um-banner-height-adapt
+    .um-collection-banner-picture {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .um-collection-banner-item.um-banner-height-adapt
+    .um-collection-banner-image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto;
+    object-fit: contain !important;
+    object-position: center top;
+  }
+}
