@@ -14,17 +14,24 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_BWa4JL": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "text_ndTMJx": {
+          "type": "text",
+          "settings": {
+            "heading": "Encabezado",
+            "subtext": "<p><em>“Relojes que marcan tu estilo.”</em></p>"
+          }
+        },
         "link_list_tJxf3r": {
           "type": "link_list",
           "settings": {
             "heading": "COMPRAR",
             "menu": "comprar"
-          }
-        },
-        "brand_information_BWa4JL": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
           }
         },
         "link_list_UdwRGf": {
@@ -36,8 +43,9 @@
         }
       },
       "block_order": [
-        "link_list_tJxf3r",
         "brand_information_BWa4JL",
+        "text_ndTMJx",
+        "link_list_tJxf3r",
         "link_list_UdwRGf"
       ],
       "settings": {
