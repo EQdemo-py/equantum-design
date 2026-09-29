@@ -293,11 +293,12 @@
       "settings": {
         "show_banner": true,
         "banner_image": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_12_05_29_p.m..png",
-        "banner_image_mobile": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_12_07_31_p.m..png",
+        "banner_image_mobile": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_12_20_23_p.m..png",
         "banner_link": "",
         "banner_alt": "",
         "banner_position": "left",
         "banner_mobile_position": "first",
+        "banner_height": "adapt",
         "banner_width": 40,
         "collection": "lusso-mare-hombres",
         "products_to_show": 25,
