@@ -105,7 +105,7 @@
 
           {%- if section.settings.show_banner and section.settings.banner_image != blank -%}
             <li
-              class="grid__item um-collection-banner-item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+              class="grid__item um-collection-banner-item um-banner-height-{{ section.settings.banner_height }}{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
               style="--um-banner-width: {{ section.settings.banner_width }}%;"
             >
               {%- if section.settings.banner_link != blank -%}
@@ -334,6 +334,30 @@
           }
         ],
         "default": "first"
+      },
+      {
+        "type": "select",
+        "id": "banner_height",
+        "label": "Altura del banner",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "Adaptarse a la imagen"
+          },
+          {
+            "value": "small",
+            "label": "Pequeño"
+          },
+          {
+            "value": "medium",
+            "label": "Medio"
+          },
+          {
+            "value": "large",
+            "label": "Grande"
+          }
+        ],
+        "default": "adapt"
       },
       {
         "type": "range",

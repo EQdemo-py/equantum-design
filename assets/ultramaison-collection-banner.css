@@ -68,3 +68,66 @@
     height: auto;
   }
 }
+
+/* =========================================================
+   Altura configurable del banner
+   ========================================================= */
+
+/* ADAPTAR: respeta completamente la proporción de la imagen */
+.um-collection-banner-item.um-banner-height-adapt,
+.um-collection-banner-item.um-banner-height-adapt .um-collection-banner-link,
+.um-collection-banner-item.um-banner-height-adapt .um-collection-banner-picture {
+  height: auto;
+  min-height: 0;
+}
+
+.um-collection-banner-item.um-banner-height-adapt .um-collection-banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Alturas fijas opcionales */
+@media screen and (min-width: 990px) {
+  .um-collection-banner-item.um-banner-height-small {
+    height: 500px;
+  }
+
+  .um-collection-banner-item.um-banner-height-medium {
+    height: 650px;
+  }
+
+  .um-collection-banner-item.um-banner-height-large {
+    height: 800px;
+  }
+
+  .um-collection-banner-item.um-banner-height-small .um-collection-banner-image,
+  .um-collection-banner-item.um-banner-height-medium .um-collection-banner-image,
+  .um-collection-banner-item.um-banner-height-large .um-collection-banner-image {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .um-collection-banner-item.um-banner-height-adapt .um-collection-banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .um-collection-banner-item.um-banner-height-small .um-collection-banner-image {
+    height: 420px;
+    object-fit: cover;
+  }
+
+  .um-collection-banner-item.um-banner-height-medium .um-collection-banner-image {
+    height: 560px;
+    object-fit: cover;
+  }
+
+  .um-collection-banner-item.um-banner-height-large .um-collection-banner-image {
+    height: 700px;
+    object-fit: cover;
+  }
+}
