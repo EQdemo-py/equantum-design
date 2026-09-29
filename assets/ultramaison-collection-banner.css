@@ -1,0 +1,70 @@
+/* UltraMaison — Colección + Banner */
+
+.ultramaison-collection-banner {
+  position: relative;
+}
+
+.um-collection-banner-item {
+  list-style: none;
+}
+
+.um-collection-banner-link,
+.um-collection-banner-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.um-collection-banner-link {
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.um-collection-banner-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Desktop */
+@media screen and (min-width: 990px) {
+  .um-collection-banner-grid {
+    align-items: stretch;
+  }
+
+  .um-collection-banner-grid .um-collection-banner-item {
+    width: var(--um-banner-width, 25%);
+    max-width: var(--um-banner-width, 25%);
+    flex: 0 0 var(--um-banner-width, 25%);
+  }
+
+  .um-banner-desktop-left .um-collection-banner-item {
+    order: -1;
+  }
+
+  .um-banner-desktop-right .um-collection-banner-item {
+    order: 999;
+  }
+}
+
+/* Mobile / tablet */
+@media screen and (max-width: 989px) {
+  .um-collection-banner-grid .um-collection-banner-item {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .um-banner-mobile-first .um-collection-banner-item {
+    order: -1;
+  }
+
+  .um-banner-mobile-last .um-collection-banner-item {
+    order: 999;
+  }
+
+  .um-collection-banner-image {
+    height: auto;
+  }
+}
