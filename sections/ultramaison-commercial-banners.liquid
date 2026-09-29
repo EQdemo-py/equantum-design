@@ -7,9 +7,10 @@
   }
 
   #shopify-section-{{ section.id }} .ultra-commercial__inner {
-    width: min(
-      calc(100% - 48px),
-      {{ section.settings.content_width }}px
+    width: calc(100% - 48px);
+    max-width: min(
+      {{ section.settings.content_width }}px,
+      var(--page-width)
     );
     margin: 0 auto;
   }
