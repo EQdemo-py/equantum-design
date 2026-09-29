@@ -33,6 +33,10 @@
     align-items: stretch;
   }
 
+    .slider--desktop.um-collection-banner-grid {
+          flex-wrap: nowrap;
+    }
+
   .um-collection-banner-grid .um-collection-banner-item {
     width: var(--um-banner-width, 25%);
     max-width: var(--um-banner-width, 25%);
@@ -41,7 +45,8 @@
 
     /* Desktop Slider: Override fixed width for banner item */
     .slider--desktop.um-collection-banner-grid .um-collection-banner-item {
-          width: auto;
+          36
+      ;
           max-width: none;
           flex: 0 0 auto;
     }
