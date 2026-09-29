@@ -39,6 +39,13 @@
     flex: 0 0 var(--um-banner-width, 25%);
   }
 
+    /* Desktop Slider: Override fixed width for banner item */
+    .slider--desktop.um-collection-banner-grid .um-collection-banner-item {
+          width: auto;
+          max-width: none;
+          flex: 0 0 auto;
+    }
+
   .um-banner-desktop-left .um-collection-banner-item {
     order: -1;
   }
