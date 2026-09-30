@@ -28,6 +28,9 @@
     --footer-link-hover-color: {{ section.settings.link_hover_color }};
     --footer-heading-weight: {{ section.settings.heading_weight }};
     --footer-column-spacing: {{ section.settings.column_spacing }}rem;
+    --footer-heading-letter-spacing: {{ section.settings.heading_letter_spacing }}px;
+    --footer-heading-uppercase: {% if section.settings.heading_uppercase %}uppercase{% else %}none{% endif %};
+    --footer-payment-icon-size: {{ section.settings.payment_icon_size }}px;
   }
 
   @media screen and (max-width: 749px) {
@@ -930,7 +933,57 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 36,
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Heading Letter Spacing",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_uppercase",
+      "label": "Heading Uppercase",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "payment_label",
+      "label": "Payment Label",
+      "default": "PAGO SEGURO"
+    },
+    {
+      "type": "range",
+      "id": "payment_icon_size",
+      "min": 16,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Payment Icon Size",
+      "default": 32
+    },
+    {
+      "type": "text",
+      "id": "newsletter_description",
+      "label": "Newsletter Description",
+      "default": "Suscribirse a nuestro boletin"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder",
+      "default": "Ingresa tu correo"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_label",
+      "label": "Newsletter Button Label",
+      "default": "Suscribir"
+    }
     }
   ],
   "default": {
