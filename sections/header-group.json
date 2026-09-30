@@ -20,13 +20,25 @@
             "text": "BIENVENIDO",
             "link": ""
           }
+        },
+        "announcement_Ykawdy": {
+          "type": "announcement",
+          "settings": {
+            "text": "A nuestra tienda",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_Ykawdy"
+      ],
+      "custom_css": [
+        "p,a {font-size: 18px !important; font-weight: 500 !important; letter-spacing: 0.01em; line-height: 1.4; text-transform: none;}",
+        "@media screen and (max-width: 749px) {p, a {font-size: 16px !important; }}"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-3",
         "show_line_separator": true,
