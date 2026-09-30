@@ -43,8 +43,8 @@
     font-weight: var(--footer-heading-weight);
     color: var(--footer-heading-color);
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: var(--footer-heading-uppercase);
+    letter-spacing: var(--footer-heading-letter-spacing);
 }
 
 .footer-premium__benefit-description {
@@ -333,5 +333,11 @@
 
     .footer-premium-block__heading {
           font-size: calc(var(--footer-heading-size) * 0.9);
+    }
+
+    /* Payment Icon Sizing */
+    .footer-premium_payment img {
+          width: var(--footer-payment-icon-size);
+          height: var(--footer-payment-icon-size);
     }
 }
