@@ -59,16 +59,16 @@
 
 <footer class="footer section-{{ section.id }}-padding">
   {%- liquid
-    assign has_social_icons = true
+    assign section.settings.has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
-      assign has_social_icons = false
+      assign section.settings.has_social_icons = false
     endif
 
     if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
       assign brand_empty = true
     endif
 
-    if section.blocks.size == 1 and section.blocks[0].type == 'um-brand-logo' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
+    if section.blocks.size == 1 and section.blocks[0].type == 'um-brand-logo' and brand_empty and section.settings.has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
       assign only_empty_brand = true
     endif
   -%}
@@ -107,7 +107,7 @@
     </div>
   {%- endif -%}
 
-  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or (section.settings.show_social and has_social_icons == true) or section.settings.enable_follow_on_shop -%}
+  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or (section.settings.show_social and section.settings.has_social_icons == true) or section.settings.enable_follow_on_shop -%}
     {%- unless only_empty_brand -%}
       <div class="footer-premium__content-top page-width">
         {%- if section.blocks.size > 0 -%}
@@ -168,7 +168,7 @@
                       {%- if block.settings.brand_text != blank -%}
                         <p class="footer-premium-block__brand-text">{{ block.settings.brand_text }}</p>
                       {%- endif -%}
-                      {%- if block.settings.show_social_icons and has_social_icons -%}
+                      {%- if block.settings.show_social_icons and section.settings.has_social_icons -%}
                         {%- render 'social-icons', class: 'footer-premium__list-social' -%}
                       {%- endif -%}
                     </div>
@@ -320,7 +320,7 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.show_social and has_social_icons -%}
+        {%- if section.settings.show_social and section.settings.has_social_icons -%}
           <div class="footer-premium-block__social{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
