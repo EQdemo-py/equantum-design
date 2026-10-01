@@ -43,7 +43,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "card_style": "standard",
+    "card_style": "card",
     "card_image_padding": 4,
     "card_text_alignment": "left",
     "card_color_scheme": "scheme-1",
@@ -207,7 +207,7 @@
         "settings": {
           "background": "#000000",
           "background_gradient": "",
-          "text": "#F4F7FC",
+          "text": "#f4f7fc",
           "button": "#ffffff",
           "button_label": "#000000",
           "secondary_button_label": "#ffffff",
