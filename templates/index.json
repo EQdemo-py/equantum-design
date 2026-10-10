@@ -9,6 +9,87 @@
  */
 {
   "sections": {
+    "slideshow_FpdATL": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_dDzdHx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AQUA_CUADRAN_DESK.webp",
+            "mobile_image": "shopify://shop_images/AQUA_CUADRAN_MOB.webp",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
+        },
+        "slide_9ztD4y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_10_36_01_a.m..png",
+            "mobile_image": "shopify://shop_images/HASTA_65_OFF_MOB_1.webp",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
+        },
+        "slide_93NbpF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_9_sept_2026_05_14_28_p.m..png",
+            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_23.png",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dDzdHx",
+        "slide_9ztD4y",
+        "slide_93NbpF"
+      ],
+      "custom_css": [
+        ".slideshow__controls,.slider-buttons {display: none !important;}"
+      ],
+      "name": "PROMOCION",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": ""
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -55,6 +136,7 @@
         "slide-0",
         "slide_iDKjWE"
       ],
+      "disabled": true,
       "name": "BANNERS PRINCIPAL",
       "settings": {
         "layout": "full_bleed",
@@ -67,8 +149,230 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "ultramaison_categorias_7AYeef": {
+      "type": "ultramaison-categorias",
+      "blocks": {
+        "category_YrBf6y": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/TechnoMarine_Diamond-Set_Watch_Close-Up.png",
+            "title": "DAMAS",
+            "subtitle": "",
+            "collection": "cruise-lady-mujer",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_QeJUy7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/TechnoMarine_Diamond-Set_Watch_Close-Up.png",
+            "title": "DAMAS",
+            "subtitle": "",
+            "collection": "cruise-lady-mujer",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_gEFKDf": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Gold_and_Black_Luxury_Chronograph_Watch.png",
+            "title": "CABALLERO",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_UwmkTf": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Gold_and_Black_Luxury_Chronograph_Watch.png",
+            "title": "CABALLERO",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_mXpJcG": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Aqua_TechnoMarine_Watch_Retreat.png",
+            "title": "OFERTAS",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_wQPW3L": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Luxury_TechnoMarine_Chronograph_Wristwatch.png",
+            "title": "NOVEDADES",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_azk63F": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Luxury_TechnoMarine_Chronograph_Wristwatch.png",
+            "title": "NOVEDADES",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_bHDqEH": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Luxury_TechnoMarine_Chronograph_Wristwatch.png",
+            "title": "NOVEDADES",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        },
+        "category_AfxEr7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Gold_and_Black_Luxury_Chronograph_Watch.png",
+            "title": "CRUISE",
+            "subtitle": "",
+            "collection": "cruise-california-hombre",
+            "link": "",
+            "alt": "",
+            "show_title": true,
+            "text_position": "below",
+            "text_align": "center",
+            "image_fit": "contain",
+            "image_position": "center",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 25
+          }
+        }
+      },
+      "block_order": [
+        "category_YrBf6y",
+        "category_QeJUy7",
+        "category_gEFKDf",
+        "category_UwmkTf",
+        "category_mXpJcG",
+        "category_wQPW3L",
+        "category_azk63F",
+        "category_bHDqEH",
+        "category_AfxEr7"
+      ],
+      "name": "UltraMaison · Categorías",
+      "settings": {
+        "title": "CATEGORIAS",
+        "subtitle": "",
+        "heading_align": "left",
+        "heading_size": 18,
+        "color_scheme": "scheme-1",
+        "desktop_layout": "carousel",
+        "columns": 8,
+        "desktop_width_mode": "columns",
+        "desktop_card_width": 280,
+        "desktop_gap": 24,
+        "desktop_ratio": "0.8",
+        "desktop_fixed_height": false,
+        "desktop_height": 270,
+        "max_width": 1320,
+        "desktop_side_padding": 8,
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "desktop_arrows": false,
+        "desktop_dots": false,
+        "desktop_autoplay": true,
+        "mobile_layout": "carousel",
+        "mobile_width_mode": "visible",
+        "mobile_visible": 1.6,
+        "mobile_columns": 3,
+        "mobile_card_width": 220,
+        "mobile_gap": 6,
+        "mobile_ratio": "0.8",
+        "mobile_fixed_height": false,
+        "mobile_height": 240,
+        "mobile_side_padding": 16,
+        "mobile_padding_top": 32,
+        "mobile_padding_bottom": 32,
+        "mobile_arrows": false,
+        "mobile_dots": false,
+        "mobile_autoplay": false,
+        "autoplay_seconds": 5,
+        "loop": true,
+        "card_title_size": 15,
+        "image_radius": 0,
+        "image_background": "#FFFFFF"
+      }
+    },
     "ultramaison_editorial_9JUVHL": {
       "type": "ultramaison-editorial",
+      "disabled": true,
       "custom_css": [
         ".ultra-editorial {border-bottom: 1px solid rgba(2, 119, 255, 0.16);}"
       ],
@@ -220,10 +524,10 @@
         "padding_bottom_mobile": 32
       }
     },
-    "slideshow_FpdATL": {
+    "slideshow_p4zfzX": {
       "type": "slideshow",
       "blocks": {
-        "slide_dDzdHx": {
+        "slide_myVwb3": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_10_sept_2026_10_12_24_a.m..png",
@@ -244,7 +548,7 @@
         }
       },
       "block_order": [
-        "slide_dDzdHx"
+        "slide_myVwb3"
       ],
       "name": "PROMOCION",
       "settings": {
@@ -275,7 +579,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -324,16 +628,48 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured_collection_47rwQy": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "cruise-monogram-hombre",
+        "products_to_show": 4,
+        "title": "CRUISE MONOGRAM",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
+    "slideshow_FpdATL",
     "slideshow",
+    "ultramaison_categorias_7AYeef",
     "ultramaison_editorial_9JUVHL",
     "ultramaison_commercial_banners_pyUPNU",
     "featured_collection_XF4B43",
     "ultramaison_commercial_banners_AL3UzB",
-    "slideshow_FpdATL",
+    "slideshow_p4zfzX",
     "featured_collection_WmJTTf",
-    "ultramaison_collection_banner_tYEnzm"
+    "ultramaison_collection_banner_tYEnzm",
+    "featured_collection_47rwQy"
   ]
 }
