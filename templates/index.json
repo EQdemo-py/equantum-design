@@ -76,7 +76,8 @@
         "slide_93NbpF"
       ],
       "custom_css": [
-        ".slideshow__controls,.slider-buttons {display: none !important;}"
+        ".slideshow__controls,.slider-buttons {display: none !important;}",
+        ".slideshow__autoplay,.slider-button--autoplay {display: none !important;}"
       ],
       "name": "PROMOCION",
       "settings": {
