@@ -1,0 +1,743 @@
+
+{{ 'ultramaison-categorias.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ultramaison-categorias.js' | asset_url }}" defer></script>
+
+{% style %}
+  #UMCategories-{{ section.id }} {
+    --um-columns: {{ section.settings.columns }};
+    --um-card-width: {{ section.settings.desktop_card_width }}px;
+    --um-gap: {{ section.settings.desktop_gap }}px;
+    --um-ratio: {{ section.settings.desktop_ratio }};
+    --um-height: {% if section.settings.desktop_fixed_height %}{{ section.settings.desktop_height }}px{% else %}auto{% endif %};
+    --um-max-width: {{ section.settings.max_width }}px;
+    --um-side: {{ section.settings.desktop_side_padding }}px;
+    --um-top: {{ section.settings.padding_top }}px;
+    --um-bottom: {{ section.settings.padding_bottom }}px;
+    --um-heading-size: {{ section.settings.heading_size }}px;
+    --um-title-size: {{ section.settings.card_title_size }}px;
+    --um-radius: {{ section.settings.image_radius }}px;
+    --um-image-bg: {{ section.settings.image_background }};
+  }
+  @media (max-width: 749px) {
+    #UMCategories-{{ section.id }} {
+      --um-columns: {{ section.settings.mobile_columns }};
+      --um-visible: {{ section.settings.mobile_visible }};
+      --um-card-width: {{ section.settings.mobile_card_width }}px;
+      --um-gap: {{ section.settings.mobile_gap }}px;
+      --um-ratio: {{ section.settings.mobile_ratio }};
+      --um-height: {% if section.settings.mobile_fixed_height %}{{ section.settings.mobile_height }}px{% else %}auto{% endif %};
+      --um-side: {{ section.settings.mobile_side_padding }}px;
+      --um-top: {{ section.settings.mobile_padding_top }}px;
+      --um-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<um-category-showcase
+  id="UMCategories-{{ section.id }}"
+  class="um-categories color-{{ section.settings.color_scheme }} gradient"
+  data-section-id="{{ section.id }}"
+  data-desktop-layout="{{ section.settings.desktop_layout }}"
+  data-mobile-layout="{{ section.settings.mobile_layout }}"
+  data-desktop-width="{{ section.settings.desktop_width_mode }}"
+  data-mobile-width="{{ section.settings.mobile_width_mode }}"
+  data-desktop-arrows="{{ section.settings.desktop_arrows }}"
+  data-mobile-arrows="{{ section.settings.mobile_arrows }}"
+  data-desktop-dots="{{ section.settings.desktop_dots }}"
+  data-mobile-dots="{{ section.settings.mobile_dots }}"
+  data-desktop-autoplay="{{ section.settings.desktop_autoplay }}"
+  data-mobile-autoplay="{{ section.settings.mobile_autoplay }}"
+  data-interval="{{ section.settings.autoplay_seconds | times: 1000 }}"
+  data-loop="{{ section.settings.loop }}"
+>
+  <div class="um-categories__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <header class="um-categories__heading" style="text-align: {{ section.settings.heading_align }};">
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title | escape }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p>{{ section.settings.subtitle | escape }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <ul id="UMTrack-{{ section.id }}" class="um-categories__track" role="list" aria-label="{{ section.settings.title | default: 'Categorías' | escape }}">
+      {% for block in section.blocks %}
+        {% liquid
+          assign destination = block.settings.link | default: block.settings.collection.url
+          assign category_title = block.settings.title | default: block.settings.collection.title | default: 'Categoría'
+          assign desktop_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.image_mobile
+          assign mobile_image = block.settings.image_mobile | default: desktop_image
+          assign image_alt = block.settings.alt | default: desktop_image.alt | default: category_title
+        %}
+        <li class="um-category" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+          
+{% capture category_content %}
+<div class="um-category__media">
+              {% if desktop_image != blank %}
+                <picture>
+                  <source media="(max-width: 749px)"
+                    srcset="{{ mobile_image | image_url: width: 240 }} 240w, {{ mobile_image | image_url: width: 480 }} 480w, {{ mobile_image | image_url: width: 720 }} 720w"
+                    sizes="(max-width: 749px) 100vw, 50vw">
+                  {{ desktop_image | image_url: width: 1200 | image_tag:
+                    loading: 'lazy',
+                    widths: '240, 480, 720, 960, 1200',
+                    sizes: '(max-width: 749px) 100vw, (max-width: 1199px) 50vw, 33vw',
+                    alt: image_alt,
+                    class: 'um-category__image'
+                  }}
+                </picture>
+              {% else %}
+                {{ 'collection-1' | placeholder_svg_tag: 'um-category__placeholder' }}
+              {% endif %}
+            </div>
+            {% if block.settings.show_title or block.settings.subtitle != blank %}
+              <div class="um-category__text">
+                {% if block.settings.show_title %}
+                  <h3>{{ category_title | escape }}</h3>
+                {% endif %}
+                {% if block.settings.subtitle != blank %}
+                  <p>{{ block.settings.subtitle | escape }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          
+{% endcapture %}
+{% if destination != blank %}
+  <a class="um-category__card um-category__card--{{ block.settings.text_position }}" href="{{ destination | escape }}" aria-label="{{ category_title | escape }}" style="--um-fit: {{ block.settings.image_fit }}; --um-position: {{ block.settings.image_position }}; --um-align: {{ block.settings.text_align }}; --um-overlay-color: {{ block.settings.overlay_color }}; --um-overlay: {{ block.settings.overlay_strength | divided_by: 100.0 }};">
+    {{ category_content }}
+  </a>
+{% else %}
+  <div class="um-category__card um-category__card--{{ block.settings.text_position }}" style="--um-fit: {{ block.settings.image_fit }}; --um-position: {{ block.settings.image_position }}; --um-align: {{ block.settings.text_align }}; --um-overlay-color: {{ block.settings.overlay_color }}; --um-overlay: {{ block.settings.overlay_strength | divided_by: 100.0 }};">
+    {{ category_content }}
+  </div>
+{% endif %}
+
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="um-categories__controls" hidden>
+      <div class="um-categories__arrows" hidden>
+        <button type="button" data-um-prev aria-label="Categoría anterior" aria-controls="UMTrack-{{ section.id }}">←</button>
+        <button type="button" data-um-next aria-label="Categoría siguiente" aria-controls="UMTrack-{{ section.id }}">→</button>
+      </div>
+      <div class="um-categories__dots" aria-label="Navegación de categorías" hidden></div>
+      <button type="button" data-um-pause hidden aria-label="Pausar reproducción automática">Pausar</button>
+    </div>
+  </div>
+</um-category-showcase>
+
+{% schema %}
+{
+  "name": "UltraMaison · Categorías",
+  "tag": "section",
+  "class": "ultramaison-category-section",
+  "max_blocks": 50,
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Comprar por categoría"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo opcional"
+    },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "label": "Alineación del encabezado",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colores del tema",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Presentación",
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grilla"
+        },
+        {
+          "value": "carousel",
+          "label": "Carrusel"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Tarjetas visibles",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "desktop_width_mode",
+      "label": "Ancho de tarjeta",
+      "default": "columns",
+      "options": [
+        {
+          "value": "columns",
+          "label": "Según columnas"
+        },
+        {
+          "value": "fixed",
+          "label": "Ancho fijo en carrusel"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_width",
+      "label": "Ancho fijo de tarjeta",
+      "min": 160,
+      "max": 480,
+      "step": 10,
+      "default": 280,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Separación",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "desktop_ratio",
+      "label": "Proporción de imagen",
+      "default": "0.8",
+      "options": [
+        {
+          "value": "1",
+          "label": "Cuadrada"
+        },
+        {
+          "value": "0.8",
+          "label": "Vertical 4:5"
+        },
+        {
+          "value": "0.75",
+          "label": "Vertical 3:4"
+        },
+        {
+          "value": "1.5",
+          "label": "Horizontal 3:2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_fixed_height",
+      "label": "Usar altura fija",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Altura fija de imagen",
+      "min": 120,
+      "max": 600,
+      "step": 10,
+      "default": 320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Ancho máximo de sección",
+      "min": 800,
+      "max": 1920,
+      "step": 20,
+      "default": 1440,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_side_padding",
+      "label": "Padding lateral",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_arrows",
+      "label": "Mostrar flechas",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_dots",
+      "label": "Mostrar puntos",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_autoplay",
+      "label": "Reproducción automática",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Presentación en mobile",
+      "default": "carousel",
+      "options": [
+        {
+          "value": "carousel",
+          "label": "Carrusel"
+        },
+        {
+          "value": "grid",
+          "label": "Grilla"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_width_mode",
+      "label": "Ancho de tarjeta en mobile",
+      "default": "visible",
+      "options": [
+        {
+          "value": "visible",
+          "label": "Según tarjetas visibles"
+        },
+        {
+          "value": "fixed",
+          "label": "Ancho fijo en carrusel"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_visible",
+      "label": "Tarjetas visibles en carrusel",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Columnas en grilla",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Ancho fijo en mobile",
+      "min": 120,
+      "max": 320,
+      "step": 10,
+      "default": 200,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Separación en mobile",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "mobile_ratio",
+      "label": "Proporción de imagen en mobile",
+      "default": "0.8",
+      "options": [
+        {
+          "value": "1",
+          "label": "Cuadrada"
+        },
+        {
+          "value": "0.8",
+          "label": "Vertical 4:5"
+        },
+        {
+          "value": "0.75",
+          "label": "Vertical 3:4"
+        },
+        {
+          "value": "1.5",
+          "label": "Horizontal 3:2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_fixed_height",
+      "label": "Usar altura fija en mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Altura fija en mobile",
+      "min": 100,
+      "max": 440,
+      "step": 10,
+      "default": 240,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Padding lateral en mobile",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding superior en mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding inferior en mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_arrows",
+      "label": "Mostrar flechas en mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_dots",
+      "label": "Mostrar puntos en mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_autoplay",
+      "label": "Reproducción automática en mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Carrusel y estilo"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_seconds",
+      "label": "Intervalo de reproducción",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 5,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Volver al inicio al llegar al final",
+      "default": false
+    },
+    {
+      "type": "paragraph",
+      "content": "La reproducción se pausa al interactuar y respeta la preferencia de movimiento reducido. El retorno al inicio no duplica tarjetas."
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Tamaño del nombre de categoría",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Redondeado de imagen",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "image_background",
+      "label": "Fondo de imagen",
+      "default": "#f5f5f3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Categoría",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Imagen mobile opcional"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Nombre",
+          "info": "Si queda vacío, utiliza el nombre de la colección."
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtítulo opcional"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Colección destino"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace personalizado",
+          "info": "Tiene prioridad sobre la colección. Podés elegir producto, página u otra URL."
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Texto alternativo"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Mostrar nombre",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "text_position",
+          "label": "Posición del texto",
+          "default": "below",
+          "options": [
+            {
+              "value": "below",
+              "label": "Debajo"
+            },
+            {
+              "value": "top",
+              "label": "Sobre imagen: arriba"
+            },
+            {
+              "value": "center",
+              "label": "Sobre imagen: centro"
+            },
+            {
+              "value": "bottom",
+              "label": "Sobre imagen: abajo"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Alineación",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Izquierda"
+            },
+            {
+              "value": "center",
+              "label": "Centro"
+            },
+            {
+              "value": "right",
+              "label": "Derecha"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_fit",
+          "label": "Ajuste de imagen",
+          "default": "contain",
+          "options": [
+            {
+              "value": "contain",
+              "label": "Completa, sin recortar"
+            },
+            {
+              "value": "cover",
+              "label": "Rellenar el espacio"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Posición de imagen",
+          "default": "center",
+          "options": [
+            {
+              "value": "center",
+              "label": "Centro"
+            },
+            {
+              "value": "top",
+              "label": "Arriba"
+            },
+            {
+              "value": "bottom",
+              "label": "Abajo"
+            },
+            {
+              "value": "left",
+              "label": "Izquierda"
+            },
+            {
+              "value": "right",
+              "label": "Derecha"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Color de texto sobre imagen",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "overlay_strength",
+          "label": "Oscurecer imagen detrás del texto",
+          "min": 0,
+          "max": 70,
+          "step": 5,
+          "default": 25,
+          "unit": "%"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "UltraMaison · Categorías",
+      "blocks": [
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
