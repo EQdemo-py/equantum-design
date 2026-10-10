@@ -339,7 +339,7 @@
         "color_scheme": "scheme-1",
         "desktop_layout": "carousel",
         "columns": 8,
-        "desktop_width_mode": "columns",
+        "desktop_width_mode": "fixed",
         "desktop_card_width": 280,
         "desktop_gap": 24,
         "desktop_ratio": "0.8",
