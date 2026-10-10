@@ -327,6 +327,9 @@
         "category_bHDqEH",
         "category_AfxEr7"
       ],
+      "custom_css": [
+        ".um-categories__controls {display: none !important;}"
+      ],
       "name": "UltraMaison · Categorías",
       "settings": {
         "title": "",
@@ -365,7 +368,7 @@
         "mobile_dots": false,
         "mobile_autoplay": false,
         "autoplay_seconds": 5,
-        "loop": true,
+        "loop": false,
         "card_title_size": 15,
         "image_radius": 0,
         "image_background": "#FFFFFF"
