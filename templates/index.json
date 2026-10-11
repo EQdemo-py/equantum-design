@@ -157,7 +157,7 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/TechnoMarine_Diamond-Set_Watch_Close-Up.png",
-            "title": "DAMAS",
+            "title": "Cruise Star",
             "subtitle": "",
             "collection": "cruise-lady-mujer",
             "link": "",
@@ -371,7 +371,7 @@
         "loop": false,
         "card_title_size": 15,
         "image_radius": 0,
-        "image_background": "#FFFFFF"
+        "image_background": "#ffffff"
       }
     },
     "ultramaison_editorial_9JUVHL": {
