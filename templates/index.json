@@ -156,7 +156,7 @@
         "category_YrBf6y": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Luxury_Blue-Gold_Nautical_Chronograph_Watch.png",
+            "image": "shopify://shop_images/TechnoMarine_Cruise_Chronograph_Watch.png",
             "title": "Cruise Star",
             "subtitle": "",
             "collection": "cruise-star-hombres",
@@ -174,7 +174,7 @@
         "category_QeJUy7": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Rose-Gold_Cruise_Lady_Yacht_Watch.png",
+            "image": "shopify://shop_images/Pink_TechnoMarine_Cruise_Chronograph_Watch.png",
             "title": "Cruise Lady",
             "subtitle": "",
             "collection": "cruise-lady-mujer",
@@ -192,8 +192,8 @@
         "category_gEFKDf": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Gold_and_Black_Luxury_Chronograph_Watch.png",
-            "title": "CABALLERO",
+            "image": "shopify://shop_images/Luxury_Gold_TechnoMarine_Chronograph_Watch.png",
+            "title": "Cruise California",
             "subtitle": "",
             "collection": "cruise-california-hombre",
             "link": "",
@@ -210,10 +210,10 @@
         "category_UwmkTf": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Gold_and_Black_Luxury_Chronograph_Watch.png",
-            "title": "CABALLERO",
+            "image": "shopify://shop_images/TechnoMarine_Blue_Chronograph_Watch.png",
+            "title": "Ocean Men",
             "subtitle": "",
-            "collection": "cruise-california-hombre",
+            "collection": "ocean-victory-men",
             "link": "",
             "alt": "",
             "show_title": true,
