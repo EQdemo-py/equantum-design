@@ -165,7 +165,7 @@
             "show_title": true,
             "text_position": "below",
             "text_align": "center",
-            "image_fit": "cover",
+            "image_fit": "contain",
             "image_position": "bottom",
             "overlay_color": "#ffffff",
             "overlay_strength": 0
@@ -183,7 +183,7 @@
             "show_title": true,
             "text_position": "below",
             "text_align": "center",
-            "image_fit": "contain",
+            "image_fit": "cover",
             "image_position": "center",
             "overlay_color": "#ffffff",
             "overlay_strength": 25
@@ -201,7 +201,7 @@
             "show_title": true,
             "text_position": "below",
             "text_align": "center",
-            "image_fit": "contain",
+            "image_fit": "cover",
             "image_position": "center",
             "overlay_color": "#ffffff",
             "overlay_strength": 25
