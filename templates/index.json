@@ -94,6 +94,25 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "slide_eBJzgW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/65_OFF_DESK_62b559e1-efca-43fc-a787-ff96c814d584.webp",
+            "mobile_image": "shopify://shop_images/Oferta_picante__Technomarine_Hot_Sale.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://pages/caballeros",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide-0": {
           "type": "slide",
           "settings": {
@@ -134,6 +153,7 @@
         }
       },
       "block_order": [
+        "slide_eBJzgW",
         "slide-0",
         "slide_iDKjWE"
       ],
