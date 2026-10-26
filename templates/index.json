@@ -327,9 +327,7 @@
         "category_bHDqEH",
         "category_AfxEr7"
       ],
-      "custom_css": [
-        ".um-categories__controls {display: none !important;}"
-      ],
+      "custom_css": [],
       "name": "UltraMaison · Categorías",
       "settings": {
         "title": "",
@@ -364,12 +362,12 @@
         "mobile_side_padding": 32,
         "mobile_padding_top": 8,
         "mobile_padding_bottom": 0,
-        "mobile_arrows": true,
-        "mobile_dots": true,
-        "mobile_autoplay": true,
-        "autoplay_seconds": 5,
-        "loop": false,
-        "card_title_size": 14,
+        "mobile_arrows": false,
+        "mobile_dots": false,
+        "mobile_autoplay": false,
+        "autoplay_seconds": 4,
+        "loop": true,
+        "card_title_size": 13,
         "image_radius": 0,
         "image_background": "#ffffff"
       }
