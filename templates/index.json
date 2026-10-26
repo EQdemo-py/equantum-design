@@ -31,6 +31,25 @@
             "color_scheme": "scheme-2"
           }
         },
+        "slide_BnqzKF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/65_OFF_DESK_62b559e1-efca-43fc-a787-ff96c814d584.webp",
+            "mobile_image": "shopify://shop_images/Oferta_picante__Technomarine_Hot_Sale.png",
+            "image_overlay_opacity": 10,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-2"
+          }
+        },
         "slide_9ztD4y": {
           "type": "slide",
           "settings": {
@@ -72,6 +91,7 @@
       },
       "block_order": [
         "slide_dDzdHx",
+        "slide_BnqzKF",
         "slide_9ztD4y",
         "slide_93NbpF"
       ],
@@ -89,84 +109,6 @@
         "image_behavior": "none",
         "show_text_below": true,
         "accessibility_info": ""
-      }
-    },
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/65_OFF_DESK_62b559e1-efca-43fc-a787-ff96c814d584.webp",
-            "mobile_image": "shopify://shop_images/Oferta_picante__Technomarine_Hot_Sale.png",
-            "image_overlay_opacity": 10,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-2"
-          }
-        },
-        "slide_xKHEEx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_9_sept_2026_05_14_28_p.m..png",
-            "mobile_image": "shopify://shop_images/Diseno_sin_titulo_23.png",
-            "image_overlay_opacity": 10,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-2"
-          }
-        },
-        "slide_iDKjWE": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_29_sept_2026_10_36_01_a.m..png",
-            "mobile_image": "shopify://shop_images/HASTA_65_OFF_MOB_1.webp",
-            "image_overlay_opacity": 10,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-2"
-          }
-        }
-      },
-      "block_order": [
-        "slide-0",
-        "slide_xKHEEx",
-        "slide_iDKjWE"
-      ],
-      "name": "BANNERS PRINCIPAL",
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "ambient",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
       }
     },
     "ultramaison_categorias_7AYeef": {
@@ -682,7 +624,6 @@
   },
   "order": [
     "slideshow_FpdATL",
-    "slideshow",
     "ultramaison_categorias_7AYeef",
     "ultramaison_editorial_9JUVHL",
     "ultramaison_commercial_banners_pyUPNU",
