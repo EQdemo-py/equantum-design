@@ -16,6 +16,7 @@
       "blocks": {
         "brand_information_BWa4JL": {
           "type": "brand_information",
+          "disabled": true,
           "settings": {
             "show_social": true
           }
@@ -23,7 +24,7 @@
         "text_ndTMJx": {
           "type": "text",
           "settings": {
-            "heading": "ULTRAMAISON",
+            "heading": "&nbsp;MAISON D´SOTO&nbsp;",
             "subtext": "<p><em>“Relojes que marcan tu estilo.”</em></p>"
           }
         },
@@ -59,7 +60,7 @@
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 0,
+        "padding_top": 12,
         "padding_bottom": 4
       }
     }
