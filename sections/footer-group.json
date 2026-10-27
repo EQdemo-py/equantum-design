@@ -14,6 +14,14 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "image_kNj8bk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Logotipo_de_lujo_Maison_D_Soto.png",
+            "image_width": 245,
+            "alignment": "center"
+          }
+        },
         "brand_information_BWa4JL": {
           "type": "brand_information",
           "disabled": true,
@@ -24,7 +32,7 @@
         "text_ndTMJx": {
           "type": "text",
           "settings": {
-            "heading": "&nbsp;MAISON D´SOTO&nbsp;",
+            "heading": "",
             "subtext": "<p><em>“Relojes que marcan tu estilo.”</em></p>"
           }
         },
@@ -44,6 +52,7 @@
         }
       },
       "block_order": [
+        "image_kNj8bk",
         "brand_information_BWa4JL",
         "text_ndTMJx",
         "link_list_tJxf3r",
