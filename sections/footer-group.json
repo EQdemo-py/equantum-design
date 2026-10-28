@@ -17,9 +17,9 @@
         "image_kNj8bk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Logotipo_de_lujo_Maison_D_Soto.png",
-            "image_width": 245,
-            "alignment": "center"
+            "image": "shopify://shop_images/Emblema_mecanico_Ultra_Maison.png",
+            "image_width": 160,
+            "alignment": ""
           }
         },
         "brand_information_BWa4JL": {
@@ -27,13 +27,6 @@
           "disabled": true,
           "settings": {
             "show_social": true
-          }
-        },
-        "text_ndTMJx": {
-          "type": "text",
-          "settings": {
-            "heading": "",
-            "subtext": "<p><em>“Relojes que marcan tu estilo.”</em></p>"
           }
         },
         "link_list_tJxf3r": {
@@ -54,7 +47,6 @@
       "block_order": [
         "image_kNj8bk",
         "brand_information_BWa4JL",
-        "text_ndTMJx",
         "link_list_tJxf3r",
         "link_list_UdwRGf"
       ],
