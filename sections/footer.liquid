@@ -130,7 +130,7 @@
 
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or show_social_row or section.settings.enable_follow_on_shop -%}
     {%- unless only_empty_brand -%}
-      <div class="footer-premium__content-top page-width">
+      <div class="footer-premium__content-top page-width{% if section.blocks.size > 0 and section.settings.newsletter_enable %} footer-premium__content-top--with-newsletter{% endif %}">
         {%- if section.blocks.size > 0 -%}
           {%- liquid
             assign footer_columns = 0

@@ -498,7 +498,12 @@
   line-height: 1.5;
 }
 
-/* Crédito de desarrollo: siempre centrado, debajo del copyright. */
+/* Crédito de desarrollo: siempre centrado, debajo del copyright.
+   El padding inferior evita que quede pegado al borde cuando el padding de la sección es mínimo. */
+.footer-premium__credit {
+  padding-bottom: 2.4rem;
+}
+
 .footer-premium__credit-text {
   margin: 1.6rem 0 0;
   overflow-wrap: break-word;
@@ -635,44 +640,59 @@
     display: none;
   }
 
+  /* Franja inferior compacta y centrada: país/idioma, pagos, copyright y legales. */
   .footer-premium__content-bottom-wrapper {
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    column-gap: 2.4rem;
-  }
-
-  .footer-premium__content-bottom-wrapper--center {
-    justify-content: center;
-  }
-
-  .footer-premium__localization {
-    justify-content: flex-start;
+    row-gap: 1.2rem;
   }
 
   .footer-premium__localization h2 {
     margin: 1rem 0 0;
   }
 
-  .footer-premium__column--info {
-    align-items: flex-end;
-  }
-
   .footer-premium__payment .list-payment {
-    justify-content: flex-end;
+    justify-content: center;
   }
 
-  .footer-premium__content-bottom-wrapper:not(.footer-premium__content-bottom-wrapper--center) .footer-premium__copyright {
-    text-align: right;
+  /* Separa el crédito del bloque legal para que se lea como cierre del footer. */
+  .footer-premium__credit {
+    margin-top: 2.4rem;
+    padding-top: 1.6rem;
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
 
-  .footer-premium__content-bottom-wrapper:not(.footer-premium__content-bottom-wrapper--center) .footer-premium__policies {
-    justify-content: flex-end;
+  .footer-premium__credit-text {
+    margin-top: 0;
   }
 }
 
 @media screen and (min-width: 990px) {
   .footer-premium__blocks-wrapper {
     grid-template-columns: repeat(var(--footer-columns), minmax(0, 1fr));
+  }
+
+  /* Logo, menús y newsletter en una sola fila; redes y Shop debajo del newsletter. */
+  .footer-premium__content-top--with-newsletter {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(32rem, 40rem);
+    column-gap: clamp(4rem, 5vw, 8rem);
+    align-items: start;
+  }
+
+  .footer-premium__content-top--with-newsletter .footer-premium__blocks-wrapper {
+    grid-row: 1 / span 3;
+  }
+
+  .footer-premium__content-top--with-newsletter .footer-premium-block__newsletter {
+    grid-column: 2;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .footer-premium__content-top--with-newsletter .footer-premium-block__social,
+  .footer-premium__content-top--with-newsletter .footer-premium__follow-on-shop {
+    grid-column: 2;
   }
 }
