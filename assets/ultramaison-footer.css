@@ -510,6 +510,11 @@
     max-width: var(--logo-width-mobile);
   }
 
+  /* Logo del bloque Imagen centrado en móvil, sin importar la alineación elegida para desktop. */
+  .footer-premium-block--image .footer-premium-block__image {
+    justify-content: center;
+  }
+
   .footer-premium-block:not(.footer-premium-block--accordion) + .footer-premium-block,
   .footer-premium-block--accordion + .footer-premium-block:not(.footer-premium-block--accordion) {
     margin-top: 2.4rem;
