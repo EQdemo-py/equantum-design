@@ -1,10 +1,10 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
-{{ 'ultramaison-footer.css' | asset_url | stylesheet_tag }}
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{{ 'ultramaison-footer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .footer {
@@ -17,7 +17,8 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .footer-premium__blocks-wrapper {
+  .footer {
+    --footer-bg-color: {{ section.settings.footer_bg_color }};
     --footer-heading-size-desktop: {{ section.settings.heading_font_size_desktop }}px;
     --footer-text-size-desktop: {{ section.settings.text_font_size_desktop }}px;
     --footer-heading-size-mobile: {{ section.settings.heading_font_size_mobile }}px;
@@ -34,7 +35,7 @@
   }
 
   @media screen and (max-width: 749px) {
-    .footer-premium__blocks-wrapper {
+    .footer {
       --footer-heading-size: var(--footer-heading-size-mobile);
       --footer-text-size: var(--footer-text-size-mobile);
     }
@@ -50,25 +51,30 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 
-    .footer-premium__blocks-wrapper {
+    .footer {
       --footer-heading-size: var(--footer-heading-size-desktop);
       --footer-text-size: var(--footer-text-size-desktop);
     }
   }
 {%- endstyle -%}
 
-<footer class="footer section-{{ section.id }}-padding">
+<footer class="footer footer-premium{% if section.settings.color_scheme != blank %} color-{{ section.settings.color_scheme }}{% endif %} section-{{ section.id }}-padding">
   {%- liquid
-    assign section.settings.has_social_icons = true
+    assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
-      assign section.settings.has_social_icons = false
+      assign has_social_icons = false
+    endif
+
+    assign show_social_row = false
+    if section.settings.show_social and has_social_icons
+      assign show_social_row = true
     endif
 
     if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
       assign brand_empty = true
     endif
 
-    if section.blocks.size == 1 and section.blocks[0].type == 'um-brand-logo' and brand_empty and section.settings.has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
+    if section.blocks.size == 1 and section.blocks[0].type == 'um-brand-logo' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
       assign only_empty_brand = true
     endif
   -%}
@@ -77,13 +83,28 @@
     <div class="footer-premium__benefits page-width">
       <div class="footer-premium__benefits-grid">
         {%- for i in (1..4) -%}
-          {%- assign benefit_heading = section.settings | map: 'benefit_' | concat: i | concat: '_heading' -%}
-          {%- assign benefit_description = section.settings | map: 'benefit_' | concat: i | concat: '_description' -%}
-          {%- assign benefit_icon = section.settings | map: 'benefit_' | concat: i | concat: '_icon_type' -%}
+          {%- liquid
+            assign benefit_heading = 'benefit_' | append: i | append: '_heading'
+            assign benefit_description = 'benefit_' | append: i | append: '_description'
+            assign benefit_icon_key = 'benefit_' | append: i | append: '_icon_type'
+
+            case i
+              when 1
+                assign benefit_icon_default = 'check'
+              when 2
+                assign benefit_icon_default = 'truck'
+              when 3
+                assign benefit_icon_default = 'lock'
+              else
+                assign benefit_icon_default = 'shield'
+            endcase
+
+            assign benefit_icon = section.settings[benefit_icon_key] | default: benefit_icon_default
+          -%}
 
           {%- if section.settings[benefit_heading] != blank -%}
             <div class="footer-premium__benefit-item">
-              <div class="footer-premium__benefit-icon">
+              <div class="footer-premium__benefit-icon" aria-hidden="true">
                 {%- if benefit_icon == 'shield' -%}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" stroke-width="1.5"/></svg>
                 {%- elsif benefit_icon == 'truck' -%}
@@ -107,28 +128,43 @@
     </div>
   {%- endif -%}
 
-  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or (section.settings.show_social and section.settings.has_social_icons == true) or section.settings.enable_follow_on_shop -%}
+  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or show_social_row or section.settings.enable_follow_on_shop -%}
     {%- unless only_empty_brand -%}
       <div class="footer-premium__content-top page-width">
         {%- if section.blocks.size > 0 -%}
           {%- liquid
-            if section.blocks.size >= 9
-              assign footer_grid_class = 'grid--3-col-tablet'
-            elsif section.blocks.size >= 6
-              assign footer_grid_class = 'grid--4-col-desktop'
-            elsif section.blocks.size >= 4
-              assign footer_grid_class = 'grid--3-col-tablet'
-            else
-              assign footer_grid_class = 'grid--2-col-tablet'
-            endif
+            assign footer_columns = 0
+            for block in section.blocks
+              unless block.type == 'brand_information'
+                assign footer_columns = footer_columns | plus: 1
+              endunless
+            endfor
+            assign footer_columns = footer_columns | at_most: 4 | at_least: 1
+            assign footer_columns_tablet = footer_columns | at_most: 3
           -%}
-          <div class="footer-premium__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          <div
+            class="footer-premium__blocks-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            style="--footer-columns: {{ footer_columns }}; --footer-columns-tablet: {{ footer_columns_tablet }};"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}>
             {%- for block in section.blocks -%}
+              {%- comment -%}Bloque heredado del footer original: se conserva solo por compatibilidad y no se muestra.{%- endcomment -%}
+              {%- if block.type == 'brand_information' -%}
+                {%- continue -%}
+              {%- endif -%}
+              {%- liquid
+                assign is_accordion = false
+                if block.settings.heading != blank
+                  if block.type == 'link_list'
+                    assign is_accordion = true
+                  elsif block.type == 'um-contact' and block.settings.use_accordion_mobile
+                    assign is_accordion = true
+                  endif
+                endif
+              -%}
               <div
-                class="footer-premium-block grid__item{% if block.type == 'link_list' or block.type == 'um-contact' %} footer-premium-block--accordion{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-premium-block footer-premium-block--{{ block.type | handleize }}{% if is_accordion %} footer-premium-block--accordion{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -142,60 +178,60 @@
 
                   {%- when 'um-brand-logo' -%}
                     {%- liquid
-                      assign logo_img = block.settings.logo_image
+                      assign logo_img = block.settings.logo_image | default: block.settings.logo_image_mobile
                       assign logo_mobile = block.settings.logo_image_mobile
                       assign logo_width = block.settings.logo_width
                       assign logo_width_mobile = block.settings.logo_width_mobile
-                      assign logo_alignment = block.settings.logo_alignment
+                      assign logo_width_2x = logo_width | times: 2
+                      assign logo_width_mobile_2x = logo_width_mobile | times: 2
+                      assign logo_widths = logo_width | append: ', ' | append: logo_width_2x
+                      assign logo_sizes = logo_width | append: 'px'
                     -%}
-                    <div class="footer-premium-block__brand-logo" data-alignment="{{ logo_alignment }}">
-                      {%- if logo_img != blank or logo_mobile != blank -%}
-                        <div class="footer-premium-block__logo-wrapper" style="max-width: min(100%, {{ logo_width }}px);">
-                          {%- if logo_mobile != blank -%}
-                            <picture>
-                              <source media="(max-width: 749px)" srcset="{{ logo_mobile | image_url: width: 300 }}">
-                              {%- if logo_img != blank -%}
-                                <img src="{{ logo_img | image_url: width: logo_width }}" alt="{{ shop.name }}" loading="lazy" width="{{ logo_width }}" style="max-width: 100%; height: auto;">
-                              {%- else -%}
-                                <img src="{{ logo_mobile | image_url: width: logo_width_mobile }}" alt="{{ shop.name }}" loading="lazy" width="{{ logo_width_mobile }}" style="max-width: 100%; height: auto;">
-                              {%- endif -%}
-                            </picture>
-                          {%- elsif logo_img != blank -%}
-                            <img src="{{ logo_img | image_url: width: logo_width }}" alt="{{ shop.name }}" loading="lazy" width="{{ logo_width }}" style="max-width: 100%; height: auto;">
-                          {%- endif -%}
+                    <div class="footer-premium-block__brand-logo" data-alignment="{{ block.settings.logo_alignment }}">
+                      {%- if logo_img != blank -%}
+                        <div
+                          class="footer-premium-block__logo-wrapper"
+                          style="--logo-width: {{ logo_width }}px; --logo-width-mobile: {{ logo_width_mobile }}px;"
+                        >
+                          <picture>
+                            {%- if logo_mobile != blank -%}
+                              <source
+                                media="(max-width: 749px)"
+                                srcset="{{ logo_mobile | image_url: width: logo_width_mobile }} 1x, {{ logo_mobile | image_url: width: logo_width_mobile_2x }} 2x"
+                              >
+                            {%- endif -%}
+                            {{
+                              logo_img
+                              | image_url: width: logo_width_2x
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: logo_widths,
+                                sizes: logo_sizes,
+                                alt: shop.name
+                            }}
+                          </picture>
                         </div>
                       {%- endif -%}
                       {%- if block.settings.brand_text != blank -%}
                         <p class="footer-premium-block__brand-text">{{ block.settings.brand_text }}</p>
                       {%- endif -%}
-                      {%- if block.settings.show_social_icons and section.settings.has_social_icons -%}
+                      {%- if block.settings.show_social_icons and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer-premium__list-social' -%}
                       {%- endif -%}
                     </div>
 
-                  {%- when 'um-benefits' -%}
-                    <div class="footer-premium-block__benefits">
-                      {%- if block.settings.heading != blank -%}
-                        <h3 class="footer-premium-block__heading">{{ block.settings.heading }}</h3>
-                      {%- endif -%}
-                      <div class="footer-premium-block__benefits-list">
-                        {%- for i in (1..3) -%}
-                          {%- assign item_text = block.settings | map: 'benefit_item_' | concat: i -%}
-                          {%- if block.settings[item_text] != blank -%}
-                            <div class="footer-premium-block__benefit-item">{{ block.settings[item_text] }}</div>
-                          {%- endif -%}
-                        {%- endfor -%}
-                      </div>
-                    </div>
-
                   {%- when 'um-contact' -%}
-                    {%- assign use_accordion = block.settings.use_accordion_mobile -%}
-                    <div class="footer-premium-block__contact" data-accordion="{{ use_accordion }}">
-                      {%- if block.settings.heading != blank -%}
-                        <button class="footer-premium-block__accordion-trigger" aria-expanded="false" aria-controls="accordion-{{ block.id }}">
-                          <span class="footer-premium-block__heading">{{ block.settings.heading }}</span>
-                          <span class="footer-premium-block__accordion-icon">+</span>
-                        </button>
+                    <div class="footer-premium-block__contact">
+                      {%- if is_accordion -%}
+                        <h3 class="footer-premium-block__heading footer-premium-block__heading--static">{{ block.settings.heading }}</h3>
+                        <h3 class="footer-premium-block__accordion-title">
+                          <button type="button" class="footer-premium-block__accordion-trigger" aria-expanded="false" aria-controls="accordion-{{ block.id }}">
+                            <span class="footer-premium-block__heading">{{ block.settings.heading }}</span>
+                            <span class="footer-premium-block__accordion-icon" aria-hidden="true">+</span>
+                          </button>
+                        </h3>
+                      {%- elsif block.settings.heading != blank -%}
+                        <h3 class="footer-premium-block__heading">{{ block.settings.heading }}</h3>
                       {%- endif -%}
                       <div class="footer-premium-block__contact-content" id="accordion-{{ block.id }}">
                         {%- if block.settings.whatsapp != blank -%}
@@ -222,11 +258,15 @@
                     </div>
 
                   {%- when 'link_list' -%}
-                    {%- if block.settings.heading != blank -%}
-                      <button class="footer-premium-block__accordion-trigger" aria-expanded="false" aria-controls="accordion-{{ block.id }}">
-                        <span class="footer-premium-block__heading">{{ block.settings.heading }}</span>
-                        <span class="footer-premium-block__accordion-icon">+</span>
-                      </button>
+                    {%- if is_accordion -%}
+                      {%- comment -%}Título estático en desktop; botón de acordeón solo en mobile.{%- endcomment -%}
+                      <h3 class="footer-premium-block__heading footer-premium-block__heading--static">{{ block.settings.heading }}</h3>
+                      <h3 class="footer-premium-block__accordion-title">
+                        <button type="button" class="footer-premium-block__accordion-trigger" aria-expanded="false" aria-controls="accordion-{{ block.id }}">
+                          <span class="footer-premium-block__heading">{{ block.settings.heading }}</span>
+                          <span class="footer-premium-block__accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                      </h3>
                     {%- endif -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-premium-block__links" id="accordion-{{ block.id }}">
@@ -251,8 +291,17 @@
                   {%- when 'image' -%}
                     <div class="footer-premium-block__image" data-alignment="{{ block.settings.alignment }}">
                       {%- if block.settings.image != blank -%}
+                        {%- liquid
+                          assign image_width_2x = block.settings.image_width | times: 2
+                          assign image_widths = block.settings.image_width | append: ', ' | append: image_width_2x
+                          assign image_sizes = block.settings.image_width | append: 'px'
+                        -%}
                         <div class="footer-premium-block__image-wrapper" style="max-width: min(100%, {{ block.settings.image_width }}px);">
-                          <img src="{{ block.settings.image | image_url: width: block.settings.image_width }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" style="max-width: 100%; height: auto;">
+                          {{
+                            block.settings.image
+                            | image_url: width: image_width_2x
+                            | image_tag: loading: 'lazy', widths: image_widths, sizes: image_sizes
+                          }}
                         </div>
                       {%- else -%}
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
@@ -275,7 +324,16 @@
                 <h3 class="footer-premium-block__heading">{{ section.settings.newsletter_heading }}</h3>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer-premium__newsletter-form newsletter-form' -%}
-                <input type="hidden" name="contact[tags]" value="newsletter">
+                {%- liquid
+                  assign newsletter_privacy_url = section.settings.newsletter_privacy_url | default: shop.privacy_policy.url
+                  assign newsletter_consent_active = false
+                  if section.settings.newsletter_consent_enable and section.settings.newsletter_consent_text != blank
+                    assign newsletter_consent_active = true
+                  endif
+                -%}
+                {%- unless newsletter_consent_active -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                {%- endunless -%}
                 <div class="newsletter-form__field-wrapper">
                   <div class="field">
                     <input
@@ -309,6 +367,23 @@
                     </small>
                   {%- endif -%}
                 </div>
+                {%- if newsletter_consent_active -%}
+                  <div class="footer-premium__newsletter-consent">
+                    <input
+                      type="checkbox"
+                      id="NewsletterConsent--{{ section.id }}"
+                      name="contact[tags]"
+                      value="newsletter,consentimiento-datos"
+                      required
+                    >
+                    <label for="NewsletterConsent--{{ section.id }}">
+                      {{ section.settings.newsletter_consent_text }}
+                      {%- if newsletter_privacy_url != blank and section.settings.newsletter_privacy_label != blank %}
+                        <a href="{{ newsletter_privacy_url }}">{{ section.settings.newsletter_privacy_label | escape }}</a>
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endif -%}
                 {%- if form.posted_successfully? -%}
                   <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>
                     <span class="svg-wrapper">{{- 'icon-success.svg' | inline_asset_content -}}</span>
@@ -320,7 +395,7 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.show_social and section.settings.has_social_icons -%}
+        {%- if section.settings.show_social and has_social_icons -%}
           <div class="footer-premium-block__social{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -399,7 +474,58 @@
                 <li><a href="{{ policy.url }}">{{ policy.title | escape }}</a></li>
               {%- endif -%}
             {%- endfor -%}
+            {%- for i in (1..5) -%}
+              {%- liquid
+                assign legal_label_key = 'legal_link_' | append: i | append: '_label'
+                assign legal_url_key = 'legal_link_' | append: i | append: '_url'
+                assign legal_label = section.settings[legal_label_key]
+                assign legal_url = section.settings[legal_url_key]
+              -%}
+              {%- if legal_label != blank and legal_url != blank -%}
+                <li><a href="{{ legal_url }}">{{ legal_label | escape }}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if section.settings.show_sic_link -%}
+              <li>
+                <a href="https://www.sic.gov.co" target="_blank" rel="noopener" aria-describedby="a11y-new-window-message">
+                  Superintendencia de Industria y Comercio
+                </a>
+              </li>
+            {%- endif -%}
           </ul>
+        {%- endif -%}
+        {%- liquid
+          assign legal_info = ''
+          if section.settings.legal_business_name != blank
+            assign legal_info = legal_info | append: section.settings.legal_business_name
+          endif
+          if section.settings.legal_tax_id != blank
+            if legal_info != blank
+              assign legal_info = legal_info | append: ' · '
+            endif
+            assign legal_info = legal_info | append: 'NIT ' | append: section.settings.legal_tax_id
+          endif
+          if section.settings.legal_address != blank
+            if legal_info != blank
+              assign legal_info = legal_info | append: ' · '
+            endif
+            assign legal_info = legal_info | append: section.settings.legal_address
+          endif
+          if section.settings.legal_phone != blank
+            if legal_info != blank
+              assign legal_info = legal_info | append: ' · '
+            endif
+            assign legal_info = legal_info | append: section.settings.legal_phone
+          endif
+          if section.settings.legal_email != blank
+            if legal_info != blank
+              assign legal_info = legal_info | append: ' · '
+            endif
+            assign legal_info = legal_info | append: section.settings.legal_email
+          endif
+        -%}
+        {%- if legal_info != blank -%}
+          <p class="footer-premium__legal-info">{{ legal_info | escape }}</p>
         {%- endif -%}
       </div>
     </div>
@@ -407,46 +533,22 @@
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const triggers = document.querySelectorAll('.footer-premium-block__accordion-trigger');
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', function(e) {
-        e.preventDefault();
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        const contentId = this.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        const icon = this.querySelector('.footer-premium-block__accordion-icon');
+  (function () {
+    // Delegado en document: sigue funcionando cuando el editor de temas recarga la sección.
+    if (window.umFooterAccordionReady) return;
+    window.umFooterAccordionReady = true;
 
-        this.setAttribute('aria-expanded', !isExpanded);
-        if (content) {
-          content.style.display = isExpanded ? 'none' : 'block';
-          icon.textContent = isExpanded ? '+' : '−';
-        }
-      });
+    document.addEventListener('click', function (event) {
+      const trigger = event.target.closest('.footer-premium-block__accordion-trigger');
+      if (!trigger || window.matchMedia('(min-width: 750px)').matches) return;
+
+      const block = trigger.closest('.footer-premium-block--accordion');
+      if (!block) return;
+
+      const isOpen = block.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen);
     });
-
-    // Close accordions by default on load if mobile
-    if (window.innerWidth < 750) {
-      const contents = document.querySelectorAll('.footer-premium-block__contact-content, .footer-premium-block__links');
-      contents.forEach(content => {
-        content.style.display = 'none';
-      });
-    }
-
-    // Handle resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth >= 750) {
-        triggers.forEach(trigger => {
-          const contentId = trigger.getAttribute('aria-controls');
-          const content = document.getElementById(contentId);
-          if (content) {
-            content.style.display = 'block';
-            trigger.style.display = 'none';
-          }
-        });
-      }
-    });
-  });
+  })();
 </script>
 
 {% schema %}
@@ -645,6 +747,10 @@
           "label": "Alignment",
           "options": [
             {
+              "value": "",
+              "label": "Left (heredado)"
+            },
+            {
               "value": "left",
               "label": "Left"
             },
@@ -660,9 +766,32 @@
           "default": "center"
         }
       ]
+    },
+    {
+      "type": "brand_information",
+      "name": "Información de marca (heredado)",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Bloque del footer original. Se conserva por compatibilidad con la configuración existente y no se muestra en la tienda. Usar \"Logo de marca\" en su lugar."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label"
+        }
+      ]
     }
   ],
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1",
+      "info": "Colores base de los componentes estándar (campo del newsletter, selectores, íconos). Títulos, textos y enlaces usan la sección \"Colors\"."
+    },
     {
       "type": "header",
       "content": "Benefits Bar"
@@ -841,6 +970,32 @@
     },
     {
       "type": "checkbox",
+      "id": "newsletter_consent_enable",
+      "default": true,
+      "label": "Solicitar autorización de tratamiento de datos",
+      "info": "Agrega una casilla obligatoria. Los suscriptores quedan con las etiquetas \"newsletter\" y \"consentimiento-datos\"."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_consent_text",
+      "default": "Autorizo el tratamiento de mis datos personales para recibir comunicaciones comerciales.",
+      "label": "Texto de autorización",
+      "info": "Revisar con asesoría legal (Ley 1581 de 2012). Si se deja vacío, la casilla no se muestra."
+    },
+    {
+      "type": "url",
+      "id": "newsletter_privacy_url",
+      "label": "Enlace a la política de tratamiento de datos",
+      "info": "Si se deja vacío, se usa la política de privacidad de Shopify cuando exista."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_privacy_label",
+      "default": "Ver política de tratamiento de datos",
+      "label": "Texto del enlace a la política"
+    },
+    {
+      "type": "checkbox",
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
@@ -878,6 +1033,95 @@
       "id": "show_policy",
       "default": true,
       "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "header",
+      "content": "Información legal"
+    },
+    {
+      "type": "paragraph",
+      "content": "Enlaces adicionales que se muestran junto a las políticas de Shopify (por ejemplo: derecho de retracto, reversión del pago, garantía, tratamiento de datos). Cada enlace aparece solo si tiene texto y destino."
+    },
+    {
+      "type": "text",
+      "id": "legal_link_1_label",
+      "label": "Enlace legal 1: texto"
+    },
+    {
+      "type": "url",
+      "id": "legal_link_1_url",
+      "label": "Enlace legal 1: destino"
+    },
+    {
+      "type": "text",
+      "id": "legal_link_2_label",
+      "label": "Enlace legal 2: texto"
+    },
+    {
+      "type": "url",
+      "id": "legal_link_2_url",
+      "label": "Enlace legal 2: destino"
+    },
+    {
+      "type": "text",
+      "id": "legal_link_3_label",
+      "label": "Enlace legal 3: texto"
+    },
+    {
+      "type": "url",
+      "id": "legal_link_3_url",
+      "label": "Enlace legal 3: destino"
+    },
+    {
+      "type": "text",
+      "id": "legal_link_4_label",
+      "label": "Enlace legal 4: texto"
+    },
+    {
+      "type": "url",
+      "id": "legal_link_4_url",
+      "label": "Enlace legal 4: destino"
+    },
+    {
+      "type": "text",
+      "id": "legal_link_5_label",
+      "label": "Enlace legal 5: texto"
+    },
+    {
+      "type": "url",
+      "id": "legal_link_5_url",
+      "label": "Enlace legal 5: destino"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sic_link",
+      "default": false,
+      "label": "Mostrar enlace a la Superintendencia de Industria y Comercio"
+    },
+    {
+      "type": "text",
+      "id": "legal_business_name",
+      "label": "Razón social"
+    },
+    {
+      "type": "text",
+      "id": "legal_tax_id",
+      "label": "NIT"
+    },
+    {
+      "type": "text",
+      "id": "legal_address",
+      "label": "Dirección"
+    },
+    {
+      "type": "text",
+      "id": "legal_phone",
+      "label": "Teléfono"
+    },
+    {
+      "type": "text",
+      "id": "legal_email",
+      "label": "Correo de contacto"
     },
     {
       "type": "checkbox",
@@ -933,7 +1177,8 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36,
+      "default": 36
+    },
     {
       "type": "range",
       "id": "heading_letter_spacing",
@@ -983,7 +1228,6 @@
       "id": "newsletter_button_label",
       "label": "Newsletter Button Label",
       "default": "Suscribir"
-    }
     }
   ],
   "default": {
