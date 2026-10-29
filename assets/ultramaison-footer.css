@@ -498,6 +498,37 @@
   line-height: 1.5;
 }
 
+/* Crédito de desarrollo: siempre centrado, debajo del copyright. */
+.footer-premium__credit-text {
+  margin: 1.6rem 0 0;
+  overflow-wrap: break-word;
+  color: var(--footer-text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.footer-premium__credit-separator {
+  margin: 0 0.6rem;
+}
+
+.footer-premium__credit-text a {
+  display: inline-block;
+  padding: 0.3rem 0;
+  color: var(--footer-heading-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-premium__credit-text a:hover,
+.footer-premium__credit-text a:focus-visible {
+  color: var(--footer-link-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
 /* 6. Mobile (< 750px)
    ========================================================================== */
 @media screen and (max-width: 749px) {
@@ -569,6 +600,15 @@
   /* Separa los métodos de pago del copyright. */
   .footer-premium__payment {
     margin-bottom: 1.6rem;
+  }
+
+  /* Crédito en dos líneas, sin el separador. */
+  .footer-premium__credit-text > span {
+    display: block;
+  }
+
+  .footer-premium__credit-text > .footer-premium__credit-separator {
+    display: none;
   }
 }
 
