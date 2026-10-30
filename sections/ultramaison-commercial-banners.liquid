@@ -222,9 +222,17 @@
     <div class="ultra-commercial__grid">
 
       {%- for block in section.blocks -%}
-        <a
+        {%- liquid
+          assign banner_tag = 'div'
+          if block.settings.link != blank
+            assign banner_tag = 'a'
+          endif
+        -%}
+        <{{ banner_tag }}
           class="ultra-commercial__banner ultra-commercial__banner--{{ block.settings.alignment }}{% if section.settings.height_mode == 'adapt' %} ultra-commercial__banner--adapt{% endif %}"
-          href="{{ block.settings.link | default: '#' }}"
+          {% if banner_tag == 'a' %}
+            href="{{ block.settings.link }}"
+          {% endif %}
           style="
             --overlay-left: {{ block.settings.overlay_left | divided_by: 100.0 }};
             --overlay-right: {{ block.settings.overlay_right | divided_by: 100.0 }};
@@ -287,7 +295,7 @@
             {%- endif -%}
           </div>
 
-        </a>
+        </{{ banner_tag }}>
       {%- endfor -%}
 
     </div>

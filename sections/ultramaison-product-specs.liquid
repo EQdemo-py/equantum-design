@@ -1,35 +1,42 @@
-{{ 'ultramaison-product-specs.css' | asset_url | stylesheet_tag }}
+{%- capture specs_content -%}
+  {%- render 'ultramaison-product-specs' -%}
+{%- endcapture -%}
+{%- assign specs_content = specs_content | strip -%}
 
-<section
-  class="um-product-specs-section"
-  style="
-    --um-spec-bg: {{ section.settings.background_color }};
-    --um-spec-heading: {{ section.settings.heading_color }};
-    --um-spec-label: {{ section.settings.label_color }};
-    --um-spec-value: {{ section.settings.value_color }};
-    --um-spec-border: {{ section.settings.border_color }};
-  "
->
-  <div class="page-width">
-    <details class="um-specs-disclosure">
-      <summary>
-        <div>
-          <span class="um-specs-mobile__eyebrow">DETALLES DEL RELOJ</span>
-          <strong>Especificaciones técnicas</strong>
+{%- if specs_content != blank -%}
+  {{ 'ultramaison-product-specs.css' | asset_url | stylesheet_tag }}
+
+  <section
+    class="um-product-specs-section"
+    style="
+      --um-spec-bg: {{ section.settings.background_color }};
+      --um-spec-heading: {{ section.settings.heading_color }};
+      --um-spec-label: {{ section.settings.label_color }};
+      --um-spec-value: {{ section.settings.value_color }};
+      --um-spec-border: {{ section.settings.border_color }};
+    "
+  >
+    <div class="page-width">
+      <details class="um-specs-disclosure">
+        <summary>
+          <div>
+            <span class="um-specs-mobile__eyebrow">DETALLES DEL RELOJ</span>
+            <strong>Especificaciones técnicas</strong>
+          </div>
+
+          <div class="um-specs-mobile__action">
+            <span>Ver detalles</span>
+            <span class="um-specs-mobile__plus">+</span>
+          </div>
+        </summary>
+
+        <div class="um-specs-mobile__content">
+          {{ specs_content }}
         </div>
-
-        <div class="um-specs-mobile__action">
-          <span>Ver detalles</span>
-          <span class="um-specs-mobile__plus">+</span>
-        </div>
-      </summary>
-
-      <div class="um-specs-mobile__content">
-        {% render 'ultramaison-product-specs' %}
-      </div>
-    </details>
-  </div>
-</section>
+      </details>
+    </div>
+  </section>
+{%- endif -%}
 
 {% schema %}
 {
