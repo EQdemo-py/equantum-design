@@ -1,3 +1,20 @@
+<style>
+  #shopify-section-{{ section.id }} .slideshow__slide { position: relative; }
+  #shopify-section-{{ section.id }} .um-slideshow__full-link {
+    position: absolute; inset: 0; display: block; z-index: 2;
+    cursor: pointer;
+  }
+  #shopify-section-{{ section.id }} .um-slideshow__full-link:focus-visible {
+    outline: 3px solid #006dff; outline-offset: -5px;
+  }
+  #shopify-section-{{ section.id }} .slideshow__text-wrapper {
+    position: relative; z-index: 3; pointer-events: none;
+  }
+  #shopify-section-{{ section.id }} .slideshow__text-wrapper a,
+  #shopify-section-{{ section.id }} .slideshow__text-wrapper button {
+    pointer-events: auto;
+  }
+</style>
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
@@ -196,6 +213,14 @@
             {%- endif -%}
           {%- endif -%}
         </div>
+        {%- if block.settings.link != blank -%}
+          <a
+            class="um-slideshow__full-link"
+            href="{{ block.settings.link }}"
+            aria-label="{{ block.settings.heading | default: 'Ver colección' | strip_html | escape }}"
+            tabindex="0"
+          ></a>
+        {%- endif -%}
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.heading != blank -%}
